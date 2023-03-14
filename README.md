@@ -1,1 +1,1 @@
-# mousetune-app
+# Flat Mouse
