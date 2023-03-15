@@ -1,4 +1,4 @@
 module.exports = {
     root: true,
-    extends: ['with-tsconfig'],
+    extends: ['with-tsconfig']
 }

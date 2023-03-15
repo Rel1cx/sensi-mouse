@@ -1,5 +1,6 @@
 import 'ress/ress.css'
-import './polyfill'
+import './theme/global.scss'
+import '@total-typescript/ts-reset'
 
 import { enableAllPlugins, setAutoFreeze, setUseProxies } from 'immer'
 

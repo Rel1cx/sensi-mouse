@@ -18,10 +18,6 @@
         "open": true
       }
     },
-    "systemTray": {
-      "iconPath": "icons/128x128.png",
-      "iconAsTemplate": true
-    },
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
@@ -61,14 +57,27 @@
     "updater": {
       "active": false
     },
+    "macOSPrivateApi": true,
     "windows": [
       {
-        "fullscreen": false,
-        "height": 600,
-        "resizable": true,
         "title": "Flat Mouse",
-        "width": 800
+        "fullscreen": false,
+        "width": 300,
+        "height": 360,
+        "resizable": false,
+        "visible": false,
+        "hiddenTitle": true,
+        "decorations": false,
+        "focus": false,
+        "transparent": true,
+        "skipTaskbar": true,
+        "alwaysOnTop": true
       }
-    ]
+    ],
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true,
+      "menuOnLeftClick": false
+    }
   }
 }
