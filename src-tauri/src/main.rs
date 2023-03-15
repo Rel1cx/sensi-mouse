@@ -2,6 +2,7 @@ use tauri::{
     CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
 };
 use tauri_plugin_positioner::{Position, WindowExt};
+use window_vibrancy::NSVisualEffectMaterial;
 
 // // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 // #[tauri::command]
@@ -20,13 +21,6 @@ fn system_tray() -> SystemTray {
         .add_item(quit);
     SystemTray::new().with_menu(tray_menu)
 }
-
-// fn main() {
-//     tauri::Builder::default()
-//         .invoke_handler(tauri::generate_handler![greet])
-//         .run(tauri::generate_context!())
-//         .expect("error while running tauri application");
-// }
 
 fn main() {
     let context = tauri::generate_context!();
@@ -90,8 +84,15 @@ fn main() {
         })
         .invoke_handler(tauri::generate_handler![])
         .setup(move |app| {
-            // let main_window = app.get_window("main").unwrap();
-            // main_window.show().unwrap();
+            let main_window = app.get_window("main").unwrap();
+
+            window_vibrancy::apply_vibrancy(
+                &main_window,
+                NSVisualEffectMaterial::HudWindow,
+                None,
+                Some(16f64),
+            )
+            .expect("unable to apply vibrancy");
             Ok(())
         })
         .run(context)

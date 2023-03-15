@@ -11,17 +11,15 @@ const theme: MantineThemeOverride = {
 
 const AppShellScreen = styled('main', {
     width: '100%',
-    height: '100%',
-    padding: '4px'
+    height: '100%'
 })
 
 const MainContent = styled('div', {
     width: '100%',
     height: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    background: '#2ac'
+    borderRadius: '16px',
+    overflow: 'hidden'
+    // backgroundColor: 'rgba(240, 240, 240, 0.8)'
 })
 
 export const App = () => {
