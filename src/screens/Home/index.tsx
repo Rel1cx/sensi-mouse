@@ -1,4 +1,4 @@
-import { Divider, Input, List, Slider, Switch, Text } from '@mantine/core'
+import { Divider, Input, Slider, Switch, Text } from '@mantine/core'
 
 import { styled } from '@/theme'
 
@@ -10,8 +10,9 @@ const Container = styled('div', {
     padding: '8px 16px'
 })
 
-const Title = styled('h1', {
-    fontSize: '16px',
+const Title = styled(Text, {
+    color: 'rgb(16, 17, 19)',
+    fontSize: '15px',
     margin: '0',
     padding: '0',
     fontWeight: 'normal'
@@ -23,6 +24,10 @@ const Controls = styled('div', {
     gap: '8px',
     width: '100%',
     padding: '8px 0'
+})
+
+const SCxSwitch = styled(Switch, {
+    marginTop: '2px'
 })
 
 const SCxDivider = styled(Divider, {
@@ -46,10 +51,10 @@ const Home: FC<HomeProps> = () => {
                     />
                 </Input.Wrapper>
                 <Input.Wrapper label="Acceleration">
-                    <Switch size="md" onLabel="ON" offLabel="OFF" />
+                    <SCxSwitch size="md" onLabel="ON" offLabel="OFF" />
                 </Input.Wrapper>
             </Controls>
-            <SCxDivider />
+            <SCxDivider color="#7f828c95" />
             <Text
                 sx={{
                     fontSize: '12px',
