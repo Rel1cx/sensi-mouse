@@ -77,7 +77,7 @@ fn main() {
             tauri::WindowEvent::Focused(is_focused) => {
                 // detect click outside of the focused window and hide the app
                 if !is_focused {
-                    event.window().hide().unwrap();
+                    // event.window().hide().unwrap();
                 }
             }
             _ => {}

@@ -6,4 +6,19 @@ body,
     margin: 0;
     padding: 0;
     background: transparent !important;
+
+    font-family: 'SF Pro Text', 'SF Pro Icons', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, 'Meiryo UI', Meiryo,
+        Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' sans-serif;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*,
+*:before,
+*:after {
+    cursor: default;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
 }
