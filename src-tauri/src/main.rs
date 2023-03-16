@@ -5,9 +5,9 @@ use tauri::{
 use tauri_plugin_positioner::{Position, WindowExt};
 use window_vibrancy::NSVisualEffectMaterial;
 
-use mouse::*;
+use helper::write_mouse_cfg;
 
-mod mouse;
+mod helper;
 
 // #[tauri::command]
 // fn greet(name: &str) -> String {
@@ -114,7 +114,7 @@ fn main() {
                     let sen = v["sen"].as_i64().unwrap() as i32 + 100;
                     let acc_enabled = v["accEnabled"].as_bool().unwrap();
 
-                    write(sen, acc_enabled).unwrap();
+                    write_mouse_cfg(sen, acc_enabled).unwrap();
                 }
             });
 

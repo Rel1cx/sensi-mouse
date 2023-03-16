@@ -13,7 +13,7 @@ pub fn sen_to_res(sen: i32) -> i32 {
     std::cmp::max(10, std::cmp::min(1990, 2000 - (sen * 10))) * 65536
 }
 
-pub fn read() -> Result<(i32, bool), String> {
+pub fn read_mouse_cfg() -> Result<(i32, bool), String> {
     let sen = res_to_sen(get_pointer_resolution()?);
     let acc = get_mouse_acceleration()?;
     let acc_enabled = acc != 0;
@@ -21,7 +21,7 @@ pub fn read() -> Result<(i32, bool), String> {
     Ok((sen, acc_enabled))
 }
 
-pub fn write(sen: i32, acc_enabled: bool) -> Result<(), String> {
+pub fn write_mouse_cfg(sen: i32, acc_enabled: bool) -> Result<(), String> {
     let sen = std::cmp::max(1, std::cmp::min(MAX_SEN, sen));
     let acc = if acc_enabled { DEFAULT_ACC } else { 0 };
 
