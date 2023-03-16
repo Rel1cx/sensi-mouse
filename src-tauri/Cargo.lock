@@ -634,6 +634,7 @@ dependencies = [
 name = "flatmouse"
 version = "0.0.0"
 dependencies = [
+ "mac-mouse-sys",
  "serde",
  "serde_json",
  "tauri",
@@ -1383,6 +1384,16 @@ name = "mac"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c41e0c4fef86961ac6d6f8a82609f55f31b05e4fce149ac5710e439df7619ba4"
+
+[[package]]
+name = "mac-mouse-sys"
+version = "0.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a41f09ccc655c368948f0f4f580eac72039c467a95898005a2f0a47dfd1b15fe"
+dependencies = [
+ "cc",
+ "libc",
+]
 
 [[package]]
 name = "mac-notification-sys"

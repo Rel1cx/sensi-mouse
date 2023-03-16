@@ -1,21 +1,25 @@
+use serde_json::Value;
 use tauri::{
     CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
 };
 use tauri_plugin_positioner::{Position, WindowExt};
 use window_vibrancy::NSVisualEffectMaterial;
 
-// // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+use mouse::*;
+
+mod mouse;
+
 // #[tauri::command]
 // fn greet(name: &str) -> String {
 //     format!("Hello, {}! You've been greeted from Rust!", name)
 // }
 
 fn system_tray() -> SystemTray {
-    let preference = CustomMenuItem::new("preference", "Preference");
+    // let preference = CustomMenuItem::new("preference", "Preference");
     let about = CustomMenuItem::new("about", "About");
     let quit = CustomMenuItem::new("quit", "Quit");
     let tray_menu = SystemTrayMenu::new()
-        .add_item(preference)
+        // .add_item(preference)
         .add_item(about)
         .add_native_item(SystemTrayMenuItem::Separator)
         .add_item(quit);
@@ -80,6 +84,12 @@ fn main() {
                     // event.window().hide().unwrap();
                 }
             }
+            tauri::WindowEvent::CloseRequested { .. } => {
+                event.window().hide().unwrap();
+            }
+            tauri::WindowEvent::ThemeChanged(theme) => {
+                println!("theme changed: {:?}", theme);
+            }
             _ => {}
         })
         .invoke_handler(tauri::generate_handler![])
@@ -93,6 +103,21 @@ fn main() {
                 Some(16f64),
             )
             .expect("unable to apply vibrancy");
+
+            app.listen_global("set_mouse_params", |event| {
+                let payload: Option<&str> = event.payload();
+
+                println!("payload: {:?}", payload);
+
+                if let Some(payload) = payload {
+                    let v: Value = serde_json::from_str(payload).unwrap();
+                    let sen = v["sen"].as_i64().unwrap() as i32 + 100;
+                    let acc_enabled = v["accEnabled"].as_bool().unwrap();
+
+                    write(sen, acc_enabled).unwrap();
+                }
+            });
+
             Ok(())
         })
         .run(context)

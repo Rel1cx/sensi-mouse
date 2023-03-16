@@ -1,4 +1,7 @@
 import { Divider, Input, Slider, Switch, Text } from '@mantine/core'
+import { emit, listen } from '@tauri-apps/api/event'
+import { useEffect } from 'react'
+import { useImmer } from 'use-immer'
 
 import { styled } from '@/theme'
 
@@ -39,27 +42,52 @@ const SCxDivider = styled(Divider, {
 })
 
 const marks = [
-    { value: 1, label: '1' },
-    { value: 25, label: '' },
+    { value: 0, label: '1' },
+    { value: 25, label: '25' },
     { value: 50, label: '50' },
-    { value: 75, label: '' },
-    { value: 100, label: '100' },
-    { value: 125, label: '' },
-    { value: 150, label: '150' },
-    { value: 175, label: '' },
-    { value: 199, label: '199' }
+    { value: 75, label: '75' },
+    { value: 99, label: '100' }
 ]
 
 const Home: FC<HomeProps> = () => {
+    const [data, setData] = useImmer({
+        sen: 0,
+        accEnabled: false
+    })
+
+    useEffect(() => {
+        emit('set_mouse_params', data)
+    }, [data])
+
     return (
         <Container>
             <Title>Flat Mouse</Title>
             <Controls>
                 <Input.Wrapper label="Sensitivity">
-                    <SCxSlider size="lg" marks={marks} min={1} max={199} defaultValue={50} />
+                    <SCxSlider
+                        size="lg"
+                        marks={marks}
+                        min={1}
+                        max={99}
+                        defaultValue={0}
+                        onChange={value => {
+                            setData(draft => {
+                                draft.sen = value
+                            })
+                        }}
+                    />
                 </Input.Wrapper>
                 <Input.Wrapper label="Acceleration">
-                    <SCxSwitch size="md" onLabel="ON" offLabel="OFF" />
+                    <SCxSwitch
+                        size="md"
+                        onLabel="ON"
+                        offLabel="OFF"
+                        onChange={event => {
+                            setData(draft => {
+                                draft.accEnabled = event.target.checked
+                            })
+                        }}
+                    />
                 </Input.Wrapper>
             </Controls>
             <SCxDivider color="#7f828c95" />
