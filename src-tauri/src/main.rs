@@ -1,4 +1,3 @@
-use serde_json::Value;
 use tauri::{
     CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
 };
@@ -9,10 +8,10 @@ use helper::write_mouse_cfg;
 
 mod helper;
 
-// #[tauri::command]
-// fn greet(name: &str) -> String {
-//     format!("Hello, {}! You've been greeted from Rust!", name)
-// }
+#[tauri::command]
+fn set_mouse_params(sen: usize, accEnabled: bool) {
+    write_mouse_cfg(sen as i32 + 100, accEnabled).unwrap();
+}
 
 fn system_tray() -> SystemTray {
     // let preference = CustomMenuItem::new("preference", "Preference");
@@ -92,7 +91,7 @@ fn main() {
             }
             _ => {}
         })
-        .invoke_handler(tauri::generate_handler![])
+        .invoke_handler(tauri::generate_handler![set_mouse_params])
         .setup(move |app| {
             let main_window = app.get_window("main").unwrap();
 
@@ -104,19 +103,19 @@ fn main() {
             )
             .expect("unable to apply vibrancy");
 
-            app.listen_global("set_mouse_params", |event| {
-                let payload: Option<&str> = event.payload();
+            // app.listen_global("set_mouse_params", |event| {
+            //     let payload: Option<&str> = event.payload();
 
-                println!("payload: {:?}", payload);
+            //     println!("payload: {:?}", payload);
 
-                if let Some(payload) = payload {
-                    let v: Value = serde_json::from_str(payload).unwrap();
-                    let sen = v["sen"].as_i64().unwrap() as i32 + 100;
-                    let acc_enabled = v["accEnabled"].as_bool().unwrap();
+            //     if let Some(payload) = payload {
+            //         let v: Value = serde_json::from_str(payload).unwrap();
+            //         let sen = v["sen"].as_i64().unwrap() as i32 + 100;
+            //         let acc_enabled = v["accEnabled"].as_bool().unwrap();
 
-                    write_mouse_cfg(sen, acc_enabled).unwrap();
-                }
-            });
+            //         write_mouse_cfg(sen, acc_enabled).unwrap();
+            //     }
+            // });
 
             Ok(())
         })

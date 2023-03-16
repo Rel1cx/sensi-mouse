@@ -1,6 +1,6 @@
 import { Divider, Input, Slider, Switch, Text } from '@mantine/core'
-import { emit, listen } from '@tauri-apps/api/event'
-import { useEffect } from 'react'
+import { invoke } from '@tauri-apps/api'
+import { useUpdateEffect } from 'react-use'
 import { useImmer } from 'use-immer'
 
 import { styled } from '@/theme'
@@ -55,8 +55,8 @@ const Home: FC<HomeProps> = () => {
         accEnabled: false
     })
 
-    useEffect(() => {
-        emit('set_mouse_params', data)
+    useUpdateEffect(() => {
+        invoke('set_mouse_params', data).then(console.log)
     }, [data])
 
     return (
@@ -66,6 +66,7 @@ const Home: FC<HomeProps> = () => {
                 <Input.Wrapper label="Sensitivity">
                     <SCxSlider
                         size="lg"
+                        labelAlwaysOn
                         marks={marks}
                         min={1}
                         max={99}
