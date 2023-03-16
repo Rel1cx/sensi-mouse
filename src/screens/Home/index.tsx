@@ -26,13 +26,29 @@ const Controls = styled('div', {
     padding: '8px 0'
 })
 
+const SCxSlider = styled(Slider, {
+    marginBottom: '8px'
+})
+
 const SCxSwitch = styled(Switch, {
     marginTop: '2px'
 })
 
 const SCxDivider = styled(Divider, {
-    margin: '8px 0'
+    margin: '4px 0'
 })
+
+const marks = [
+    { value: 1, label: '1' },
+    { value: 25, label: '' },
+    { value: 50, label: '50' },
+    { value: 75, label: '' },
+    { value: 100, label: '100' },
+    { value: 125, label: '' },
+    { value: 150, label: '150' },
+    { value: 175, label: '' },
+    { value: 199, label: '199' }
+]
 
 const Home: FC<HomeProps> = () => {
     return (
@@ -40,15 +56,7 @@ const Home: FC<HomeProps> = () => {
             <Title>Flat Mouse</Title>
             <Controls>
                 <Input.Wrapper label="Sensitivity">
-                    <Slider
-                        size="lg"
-                        sx={{
-                            width: '100%'
-                        }}
-                        min={1}
-                        max={199}
-                        defaultValue={50}
-                    />
+                    <SCxSlider size="lg" marks={marks} min={1} max={199} defaultValue={50} />
                 </Input.Wrapper>
                 <Input.Wrapper label="Acceleration">
                     <SCxSwitch size="md" onLabel="ON" offLabel="OFF" />
