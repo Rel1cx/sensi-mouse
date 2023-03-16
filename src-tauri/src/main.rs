@@ -9,7 +9,14 @@ use helper::write_mouse_cfg;
 mod helper;
 
 #[tauri::command]
-fn set_mouse_params(sen: usize, acc_enabled: bool) {
+fn get_mouse_cfg() -> (usize, bool) {
+    let (sen, acc_enabled) = helper::read_mouse_cfg().unwrap();
+    (sen as usize - 100, acc_enabled)
+}
+
+#[tauri::command]
+fn set_mouse_cfg(sen: usize, acc_enabled: bool) {
+    print!("set_mouse_cfg({}, {})", sen, acc_enabled);
     write_mouse_cfg(sen as i32 + 100, acc_enabled).unwrap();
 }
 
@@ -80,7 +87,7 @@ fn main() {
             tauri::WindowEvent::Focused(is_focused) => {
                 // detect click outside of the focused window and hide the app
                 if !is_focused {
-                    // event.window().hide().unwrap();
+                    event.window().hide().unwrap();
                 }
             }
             tauri::WindowEvent::CloseRequested { .. } => {
@@ -91,7 +98,7 @@ fn main() {
             }
             _ => {}
         })
-        .invoke_handler(tauri::generate_handler![set_mouse_params])
+        .invoke_handler(tauri::generate_handler![get_mouse_cfg, set_mouse_cfg])
         .setup(move |app| {
             let main_window = app.get_window("main").unwrap();
 
@@ -102,20 +109,6 @@ fn main() {
                 Some(16f64),
             )
             .expect("unable to apply vibrancy");
-
-            // app.listen_global("set_mouse_params", |event| {
-            //     let payload: Option<&str> = event.payload();
-
-            //     println!("payload: {:?}", payload);
-
-            //     if let Some(payload) = payload {
-            //         let v: Value = serde_json::from_str(payload).unwrap();
-            //         let sen = v["sen"].as_i64().unwrap() as i32 + 100;
-            //         let acc_enabled = v["accEnabled"].as_bool().unwrap();
-
-            //         write_mouse_cfg(sen, acc_enabled).unwrap();
-            //     }
-            // });
 
             Ok(())
         })

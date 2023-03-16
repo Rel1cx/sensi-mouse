@@ -1,97 +1,65 @@
-import { Divider, Input, Slider, Switch, Text } from '@mantine/core'
-import { invoke } from '@tauri-apps/api'
-import { useUpdateEffect } from 'react-use'
-import { useImmer } from 'use-immer'
+import { Input, Text } from '@mantine/core'
+import { useEffect } from 'react'
+import { useSnapshot } from 'valtio'
 
-import { styled } from '@/theme'
+import { off, on } from '@/helper'
+import { fetchState, state } from '@/store'
+
+import * as SC from './styles'
 
 interface HomeProps {}
 
-const Container = styled('div', {
-    width: '100%',
-    height: '100%',
-    padding: '8px 16px'
-})
-
-const Title = styled(Text, {
-    color: 'rgb(16, 17, 19)',
-    fontSize: '15px',
-    margin: '0',
-    padding: '0',
-    fontWeight: 'normal'
-})
-
-const Controls = styled('div', {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '8px',
-    width: '100%',
-    padding: '8px 0'
-})
-
-const SCxSlider = styled(Slider, {
-    marginBottom: '8px'
-})
-
-const SCxSwitch = styled(Switch, {
-    marginTop: '2px'
-})
-
-const SCxDivider = styled(Divider, {
-    margin: '4px 0'
-})
-
 const marks = [
-    { value: 0, label: '1' },
+    { value: 0, label: '0' },
     { value: 25, label: '25' },
     { value: 50, label: '50' },
     { value: 75, label: '75' },
-    { value: 99, label: '100' }
+    { value: 100, label: '100' }
 ]
 
 const Home: FC<HomeProps> = () => {
-    const [data, setData] = useImmer({
-        sen: 0,
-        accEnabled: false
-    })
+    const data = useSnapshot(state)
 
-    useUpdateEffect(() => {
-        invoke('set_mouse_params', data).then(console.log)
-    }, [data])
+    useEffect(() => {
+        fetchState()
+
+        on(window, 'focus', fetchState)
+
+        return () => {
+            off(window, 'focus', fetchState)
+        }
+    }, [])
 
     return (
-        <Container>
-            <Title>Flat Mouse</Title>
-            <Controls>
+        <SC.Container>
+            <SC.Title>Flat Mouse</SC.Title>
+            <SC.Controls>
                 <Input.Wrapper label="Sensitivity">
-                    <SCxSlider
+                    <SC.xSlider
                         size="lg"
                         labelAlwaysOn
                         marks={marks}
-                        min={1}
-                        max={99}
-                        defaultValue={0}
+                        min={0}
+                        max={100}
+                        value={data.sen}
                         onChange={value => {
-                            setData(draft => {
-                                draft.sen = value
-                            })
+                            state.sen = value
                         }}
                     />
                 </Input.Wrapper>
                 <Input.Wrapper label="Acceleration">
-                    <SCxSwitch
+                    <SC.xSwitch
                         size="md"
                         onLabel="ON"
                         offLabel="OFF"
+                        checked={data.accEnabled}
                         onChange={event => {
-                            setData(draft => {
-                                draft.accEnabled = event.target.checked
-                            })
+                            state.accEnabled = event.target.checked
                         }}
                     />
                 </Input.Wrapper>
-            </Controls>
-            <SCxDivider color="#7f828c95" />
+            </SC.Controls>
+            <SC.xDivider color="#7f828c95" />
             <Text
                 sx={{
                     fontSize: '12px',
@@ -101,7 +69,7 @@ const Home: FC<HomeProps> = () => {
             >
                 Made with ❤️ by @Eva1ent
             </Text>
-        </Container>
+        </SC.Container>
     )
 }
 
