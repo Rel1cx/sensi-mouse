@@ -9,8 +9,8 @@ use helper::write_mouse_cfg;
 mod helper;
 
 #[tauri::command]
-fn set_mouse_params(sen: usize, accEnabled: bool) {
-    write_mouse_cfg(sen as i32 + 100, accEnabled).unwrap();
+fn set_mouse_params(sen: usize, acc_enabled: bool) {
+    write_mouse_cfg(sen as i32 + 100, acc_enabled).unwrap();
 }
 
 fn system_tray() -> SystemTray {
