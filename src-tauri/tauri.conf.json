@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "Flat Mouse",
-    "version": "0.0.0"
+    "version": "0.0.1"
   },
   "tauri": {
     "allowlist": {
@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.relicx.mset",
+      "identifier": "com.github.nicify.flatmouse",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -75,7 +75,7 @@
       }
     ],
     "systemTray": {
-      "iconPath": "icons/icon.png",
+      "iconPath": "icons/line.png",
       "iconAsTemplate": true,
       "menuOnLeftClick": false
     }
