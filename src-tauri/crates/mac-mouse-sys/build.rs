@@ -6,10 +6,6 @@ fn main() {
             .file("c/mouse.c")
             .flag("-fmodules")
             .flag("-Wno-deprecated-declarations")
-            .flag("-framework")
-            .flag("CoreFoundation")
-            .flag("-framework")
-            .flag("IOKit")
             .compile("mouse");
     }
 }
