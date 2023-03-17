@@ -13,7 +13,8 @@
     "format:rs": "cd src-tauri && cargo fmt",
     "lint:rs": "cd src-tauri && cargo clippy --fix --allow-dirty --allow-staged",
     "format": "npm run format:ts && npm run format:rs",
-    "lint": "npm run lint:ts && npm run lint:rs"
+    "lint": "npm run lint:ts && npm run lint:rs",
+    "clean": "rm -rf node_modules pnpm-lock.yaml && cd src-tauri && cargo clean"
   },
   "dependencies": {
     "@mantine/core": "6.0.2",
