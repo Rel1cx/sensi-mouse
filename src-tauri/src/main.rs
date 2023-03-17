@@ -1,12 +1,15 @@
 use tauri::{
-    CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, SystemTrayMenuItem,
+    ActivationPolicy, CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu,
+    SystemTrayMenuItem,
 };
 use tauri_plugin_positioner::{Position, WindowExt};
 use window_vibrancy::NSVisualEffectMaterial;
 
 use helper::write_mouse_cfg;
+use plugins::{BackgroundPlugin, EnvironmentPlugin};
 
 mod helper;
+mod plugins;
 
 #[tauri::command]
 fn get_mouse_cfg() -> (usize, bool) {
@@ -21,7 +24,7 @@ fn set_mouse_cfg(sen: usize, acc_enabled: bool) {
 }
 
 fn system_tray() -> SystemTray {
-    // let about = CustomMenuItem::new("about", "About");
+    let about = CustomMenuItem::new("about", "About");
     let quit = CustomMenuItem::new("quit", "Quit");
     let tray_menu = SystemTrayMenu::new()
         // .add_item(about)
@@ -35,6 +38,8 @@ fn main() {
 
     tauri::Builder::default()
         .plugin(tauri_plugin_positioner::init())
+        .plugin(BackgroundPlugin)
+        .plugin(EnvironmentPlugin)
         .system_tray(system_tray())
         .on_system_tray_event(|app, event| {
             tauri_plugin_positioner::on_tray_event(app, &event);
@@ -72,9 +77,7 @@ fn main() {
                     "quit" => {
                         std::process::exit(0);
                     }
-                    // "hide" => {
-                    //     let window = app.get_window("main").unwrap();
-                    //     window.hide().unwrap();
+                    // "about" => {
                     // }
                     _ => {}
                 },
@@ -107,7 +110,7 @@ fn main() {
                 Some(16f64),
             )
             .expect("unable to apply vibrancy");
-
+            app.set_activation_policy(ActivationPolicy::Accessory);
             Ok(())
         })
         .run(context)

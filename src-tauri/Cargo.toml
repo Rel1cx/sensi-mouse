@@ -14,9 +14,9 @@ rust-version = "1.68"
 name = "flatmouse"
 path = "src/main.rs"
 
-[lib]
-name = "flatmouse_lib"
-path = "src/lib/lib.rs"
+# [lib]
+# name = "flatmouse_lib"
+# path = "src/lib/lib.rs"
 
 [build-dependencies]
 tauri-build = { version = "1.2.1", features = [] }
