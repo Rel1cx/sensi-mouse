@@ -1,16 +1,14 @@
 use mac_mouse_sys::*;
 
 const MAX_SEN: i32 = 199;
-const MAX_ACC: i32 = 10000000;
-const DEFAULT_SEN: i32 = 100;
 const DEFAULT_ACC: i32 = 57344;
 
 pub fn res_to_sen(res: i32) -> i32 {
-    std::cmp::max(1, std::cmp::min(MAX_SEN, (2000 - (res / 65536)) / 10))
+    (2000 - (res / 65536)) / 10
 }
 
 pub fn sen_to_res(sen: i32) -> i32 {
-    std::cmp::max(10, std::cmp::min(1990, 2000 - (sen * 10))) * 65536
+    (2000 - (sen * 10)) * 65536
 }
 
 pub fn read_mouse_cfg() -> Result<(i32, bool), String> {
@@ -22,7 +20,9 @@ pub fn read_mouse_cfg() -> Result<(i32, bool), String> {
 }
 
 pub fn write_mouse_cfg(sen: i32, acc_enabled: bool) -> Result<(), String> {
-    let sen = std::cmp::max(1, std::cmp::min(MAX_SEN, sen));
+    if sen < 0 || sen > MAX_SEN {
+        return Err(format!("Invalid sensitivity value: {}", sen));
+    }
     let acc = if acc_enabled { DEFAULT_ACC } else { 0 };
 
     set_pointer_resolution(sen_to_res(sen))?;

@@ -16,7 +16,7 @@ fn get_mouse_cfg() -> (usize, bool) {
 
 #[tauri::command]
 fn set_mouse_cfg(sen: usize, acc_enabled: bool) {
-    print!("set_mouse_cfg({}, {})", sen, acc_enabled);
+    let sen = std::cmp::min(sen, 99);
     write_mouse_cfg(sen as i32 + 100, acc_enabled).unwrap();
 }
 
