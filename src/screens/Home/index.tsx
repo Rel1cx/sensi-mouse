@@ -32,8 +32,8 @@ const Home: FC<HomeProps> = () => {
 
     return (
         <SC.Container>
-            <SC.Title>Pointer Sense</SC.Title>
-            <SC.Controls>
+            <SC.Header>Pointer Sense</SC.Header>
+            <SC.Content>
                 <Input.Wrapper label="Sensitivity">
                     <SC.xSlider
                         size="lg"
@@ -58,10 +58,10 @@ const Home: FC<HomeProps> = () => {
                         }}
                     />
                 </Input.Wrapper>
-            </SC.Controls>
-            <SC.xDivider color="#7f828c95" />
+            </SC.Content>
+            <SC.xDivider color="#7f828c" />
             <SC.Footer>
-                <Text>Made with ❤️ by @Eva1ent</Text>
+                <Text>More Settings...</Text>
             </SC.Footer>
         </SC.Container>
     )

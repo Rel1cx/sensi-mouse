@@ -63,7 +63,7 @@
         "title": "Pointer Sense",
         "fullscreen": false,
         "width": 300,
-        "height": 190,
+        "height": 200,
         "resizable": false,
         "visible": false,
         "hiddenTitle": true,
