@@ -21,12 +21,10 @@ fn set_mouse_cfg(sen: usize, acc_enabled: bool) {
 }
 
 fn system_tray() -> SystemTray {
-    // let preference = CustomMenuItem::new("preference", "Preference");
-    let about = CustomMenuItem::new("about", "About");
+    // let about = CustomMenuItem::new("about", "About");
     let quit = CustomMenuItem::new("quit", "Quit");
     let tray_menu = SystemTrayMenu::new()
-        // .add_item(preference)
-        .add_item(about)
+        // .add_item(about)
         .add_native_item(SystemTrayMenuItem::Separator)
         .add_item(quit);
     SystemTray::new().with_menu(tray_menu)
@@ -74,10 +72,10 @@ fn main() {
                     "quit" => {
                         std::process::exit(0);
                     }
-                    "hide" => {
-                        let window = app.get_window("main").unwrap();
-                        window.hide().unwrap();
-                    }
+                    // "hide" => {
+                    //     let window = app.get_window("main").unwrap();
+                    //     window.hide().unwrap();
+                    // }
                     _ => {}
                 },
                 _ => {}
