@@ -1,0 +1,59 @@
+name: Release
+on:
+    push:
+        tags:
+            - 'v*'
+jobs:
+    release:
+        runs-on: macos-12
+        steps:
+            - uses: actions/checkout@v3
+            - name: setup node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+            - uses: pnpm/action-setup@v2
+              name: Install pnpm
+              id: pnpm-install
+              with:
+                  version: 7
+                  run_install: false
+            - name: Get pnpm store directory
+              id: pnpm-cache
+              shell: bash
+              run: |
+                  echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+            - uses: actions/cache@v3
+              name: Setup pnpm cache
+              with:
+                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-release-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-release-
+            - name: install Rust stable
+              uses: dtolnay/rust-toolchain@stable
+              with:
+                  targets: aarch64-apple-darwin
+            - name: install app dependencies and build it
+              run: pnpm i && pnpm build
+            - uses: Swatinem/rust-cache@v2
+              with:
+                  workspaces: src-tauri
+            - uses: tauri-apps/tauri-action@dev
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  ENABLE_CODE_SIGNING: ${{ secrets.APPLE_CERTIFICATE }}
+                  APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+                  APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+                  APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+                  APPLE_ID: ${{ secrets.APPLE_ID }}
+                  APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+                  TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+                  SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+              with:
+                  tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
+                  releaseName: 'v__VERSION__'
+                  releaseBody: 'See the assets to download this version and install.'
+                  releaseDraft: true
+                  prerelease: false
+                  args: --target universal-apple-darwin
