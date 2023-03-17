@@ -1,6 +1,5 @@
 import type { MantineThemeOverride } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
-import { invoke } from '@tauri-apps/api/tauri'
 
 import Home from './screens/Home'
 import { styled } from './theme'
@@ -19,7 +18,6 @@ const MainContent = styled('div', {
     height: '100%',
     borderRadius: '16px',
     overflow: 'hidden'
-    // backgroundColor: 'rgba(240, 240, 240, 0.8)'
 })
 
 export const App = () => {

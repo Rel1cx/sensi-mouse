@@ -60,15 +60,9 @@ const Home: FC<HomeProps> = () => {
                 </Input.Wrapper>
             </SC.Controls>
             <SC.xDivider color="#7f828c95" />
-            <Text
-                sx={{
-                    fontSize: '12px',
-                    opacity: 0.8
-                }}
-                size="sm"
-            >
-                Made with ❤️ by @Eva1ent
-            </Text>
+            <SC.Footer>
+                <Text>Made with ❤️ by @Eva1ent</Text>
+            </SC.Footer>
         </SC.Container>
     )
 }
