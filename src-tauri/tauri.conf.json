@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "Flat Mouse",
+    "productName": "Pointer Sense",
     "version": "0.0.1"
   },
   "tauri": {
@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.github.nicify.flatmouse",
+      "identifier": "com.github.nicify.pointer-sense",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -60,7 +60,7 @@
     "macOSPrivateApi": true,
     "windows": [
       {
-        "title": "Flat Mouse",
+        "title": "Pointer Sense",
         "fullscreen": false,
         "width": 300,
         "height": 190,

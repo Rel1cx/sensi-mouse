@@ -1,5 +1,5 @@
 [package]
-name = "flatmouse"
+name = "pointer-sense"
 version = "0.0.0"
 description = "A Tauri App"
 authors = ["you"]
@@ -11,11 +11,11 @@ rust-version = "1.68"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [[bin]]
-name = "flatmouse"
+name = "pointer-sense"
 path = "src/main.rs"
 
 # [lib]
-# name = "flatmouse_lib"
+# name = "pointer-sense_lib"
 # path = "src/lib/lib.rs"
 
 [build-dependencies]

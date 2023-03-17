@@ -32,7 +32,7 @@ const Home: FC<HomeProps> = () => {
 
     return (
         <SC.Container>
-            <SC.Title>Flat Mouse</SC.Title>
+            <SC.Title>Pointer Sense</SC.Title>
             <SC.Controls>
                 <Input.Wrapper label="Sensitivity">
                     <SC.xSlider
