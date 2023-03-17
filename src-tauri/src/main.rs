@@ -28,7 +28,7 @@ fn system_tray() -> SystemTray {
     let quit = CustomMenuItem::new("quit", "Quit");
     let tray_menu = SystemTrayMenu::new()
         .add_item(about)
-        .add_native_item(SystemTrayMenuItem::Separator)
+        // .add_native_item(SystemTrayMenuItem::Separator)
         .add_item(quit);
     SystemTray::new().with_menu(tray_menu)
 }
