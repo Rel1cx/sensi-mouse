@@ -27,7 +27,7 @@ serde = { version = "1.0", features = ["derive"] }
 tauri = { version = "1.2.4", features = ["macos-private-api", "shell-open", "system-tray"] }
 tauri-plugin-positioner = { version = "1.0.4", features = ["system-tray"] }
 window-vibrancy = "0.3.2"
-mac-mouse-sys = "0.0.5"
+mac-mouse-sys = { path = "./crates/mac-mouse-sys" }
 
 [features]
 # by default Tauri runs in production mode

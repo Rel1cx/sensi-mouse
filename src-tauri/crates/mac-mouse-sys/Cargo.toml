@@ -1,0 +1,24 @@
+[package]
+name = "mac-mouse-sys"
+version = "0.0.5"
+authors = ["Eva1ent <let@ik.me>"]
+description = "Thin wrapper for macOS system-wide mouse settings manipulation."
+edition = "2021"
+
+homepage = "https://github.com/Nicify/mac-mouse-sys"
+repository = "https://github.com/Nicify/mac-mouse-sys"
+# documentation = ""
+
+license = "MIT"
+keywords = ["mouse", "hid", "macOS", "osx"]
+readme = "README.md"
+
+include = ["Cargo.toml", "build.rs", "c/*", "src/*.rs", "tests/*.rs"]
+
+build = "build.rs"
+
+[dependencies]
+libc = "0.2"
+
+[build-dependencies]
+cc = "1.0"

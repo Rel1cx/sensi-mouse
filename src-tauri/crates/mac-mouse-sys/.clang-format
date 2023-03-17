@@ -1,0 +1,18 @@
+---
+Language: Cpp
+BasedOnStyle: google
+
+AlignAfterOpenBracket: DontAlign
+AlignOperands: false
+AllowAllArgumentsOnNextLine: false
+AllowShortFunctionsOnASingleLine: Inline
+BinPackArguments: false
+BreakStringLiterals: false
+ColumnLimit: 180
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
+NamespaceIndentation: All
+SpacesInContainerLiterals: false
+TabWidth: 4
+---
+
