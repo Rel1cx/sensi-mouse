@@ -34,22 +34,14 @@ jobs:
               uses: dtolnay/rust-toolchain@stable
               with:
                   targets: aarch64-apple-darwin
-            - name: install app dependencies and build it
-              run: pnpm i && pnpm build
+            - name: install front-end dependencies
+              run: pnpm i
             - uses: Swatinem/rust-cache@v2
               with:
                   workspaces: src-tauri
             - uses: tauri-apps/tauri-action@dev
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  ENABLE_CODE_SIGNING: ${{ secrets.APPLE_CERTIFICATE }}
-                  APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
-                  APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
-                  APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
-                  APPLE_ID: ${{ secrets.APPLE_ID }}
-                  APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
-                  TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-                  SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
               with:
                   tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
                   releaseName: 'v__VERSION__'
