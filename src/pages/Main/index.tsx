@@ -1,9 +1,8 @@
 import { Input, Text } from '@mantine/core'
-import { useEffect } from 'react'
+import { invoke } from '@tauri-apps/api/tauri'
 import { useSnapshot } from 'valtio'
 
-import { off, on } from '@/helper'
-import { fetchState, state } from '@/store'
+import { state } from '@/store'
 
 import * as SC from './styles'
 
@@ -20,16 +19,6 @@ const marks = [
 const Main: FC<MainProps> = () => {
     const data = useSnapshot(state)
 
-    useEffect(() => {
-        fetchState()
-
-        on(window, 'focus', fetchState)
-
-        return () => {
-            off(window, 'focus', fetchState)
-        }
-    }, [])
-
     return (
         <SC.Container>
             <SC.Header>Pointer Sense</SC.Header>
@@ -44,6 +33,7 @@ const Main: FC<MainProps> = () => {
                         value={data.sen}
                         onChange={value => {
                             state.sen = value
+                            invoke('set_mouse_cfg', { sen: value, accEnabled: data.accEnabled })
                         }}
                     />
                 </Input.Wrapper>
@@ -54,7 +44,9 @@ const Main: FC<MainProps> = () => {
                         offLabel="OFF"
                         checked={data.accEnabled}
                         onChange={event => {
-                            state.accEnabled = event.target.checked
+                            const { checked } = event.target
+                            state.accEnabled = checked
+                            invoke('set_mouse_cfg', { sen: data.sen, accEnabled: checked })
                         }}
                     />
                 </Input.Wrapper>

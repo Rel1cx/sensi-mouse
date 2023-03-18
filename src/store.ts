@@ -1,5 +1,7 @@
 import { invoke } from '@tauri-apps/api/tauri'
-import { proxy, subscribe } from 'valtio'
+import { proxy } from 'valtio'
+
+import { on } from './helper'
 
 export const state = proxy({
     sen: 0,
@@ -13,6 +15,6 @@ export const fetchState = async () => {
     state.accEnabled = accEnabled
 }
 
-subscribe(state, () => {
-    requestAnimationFrame(() => invoke('set_mouse_cfg', { sen: state.sen, accEnabled: state.accEnabled }))
-})
+fetchState()
+
+on(window, 'focus', fetchState)
