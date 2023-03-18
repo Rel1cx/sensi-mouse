@@ -1,6 +1,5 @@
 use tauri::{
     ActivationPolicy, CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu,
-    SystemTrayMenuItem,
 };
 use tauri_plugin_positioner::{Position, WindowExt};
 use window_vibrancy::NSVisualEffectMaterial;
@@ -77,22 +76,25 @@ fn main() {
                     "quit" => {
                         std::process::exit(0);
                     }
-                    "about" => {}
+                    "about" => {
+                        let about_window = app.get_window("about").unwrap();
+                        about_window.show().unwrap();
+                    }
                     _ => {}
                 },
                 _ => {}
             }
         })
         .on_window_event(|event| match event.event() {
-            tauri::WindowEvent::Focused(is_focused) => {
-                // detect click outside of the focused window and hide the app
-                if !is_focused {
-                    event.window().hide().unwrap();
-                }
-            }
-            tauri::WindowEvent::CloseRequested { .. } => {
-                event.window().hide().unwrap();
-            }
+            // tauri::WindowEvent::Focused(is_focused) => {
+            //     // detect click outside of the focused window and hide the app
+            //     if !is_focused {
+            //         event.window().hide().unwrap();
+            //     }
+            // }
+            // tauri::WindowEvent::CloseRequested { .. } => {
+            //     event.window().hide().unwrap();
+            // }
             tauri::WindowEvent::ThemeChanged(theme) => {
                 println!("theme changed: {:?}", theme);
             }

@@ -20,7 +20,7 @@ pub fn read_mouse_cfg() -> Result<(i32, bool), String> {
 }
 
 pub fn write_mouse_cfg(sen: i32, acc_enabled: bool) -> Result<(), String> {
-    if sen < 0 || sen > MAX_SEN {
+    if !(0..=MAX_SEN).contains(&sen) {
         return Err(format!("Invalid sensitivity value: {}", sen));
     }
     let acc = if acc_enabled { DEFAULT_ACC } else { 0 };

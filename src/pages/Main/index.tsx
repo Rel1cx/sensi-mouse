@@ -7,7 +7,7 @@ import { fetchState, state } from '@/store'
 
 import * as SC from './styles'
 
-interface HomeProps {}
+interface MainProps {}
 
 const marks = [
     { value: 0, label: '0' },
@@ -17,7 +17,7 @@ const marks = [
     { value: 100, label: '100' }
 ]
 
-const Home: FC<HomeProps> = () => {
+const Main: FC<MainProps> = () => {
     const data = useSnapshot(state)
 
     useEffect(() => {
@@ -61,10 +61,12 @@ const Home: FC<HomeProps> = () => {
             </SC.Content>
             <SC.xDivider color="#7f828c" />
             <SC.Footer>
-                <Text>More Settings...</Text>
+                <Text size={14}>More Settings...</Text>
             </SC.Footer>
         </SC.Container>
     )
 }
 
-export default Home
+Main.displayName = 'Main'
+
+export default Main

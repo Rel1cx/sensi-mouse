@@ -21,12 +21,14 @@
     "@mantine/hooks": "6.0.2",
     "@mantine/utils": "6.0.2",
     "@stitches/react": "1.2.8",
+    "@tanstack/react-location": "3.7.4",
     "@tauri-apps/api": "1.2.0",
     "@total-typescript/ts-reset": "0.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-use": "17.4.0",
     "ress": "5.0.2",
+    "taze": "0.9.0",
     "valtio": "1.10.3"
   },
   "devDependencies": {
@@ -43,5 +45,6 @@
     "sass": "1.59.3",
     "typescript": "5.0.2",
     "vite": "4.2.0"
-  }
+  },
+  "packageManager": "pnpm@7.29.3"
 }

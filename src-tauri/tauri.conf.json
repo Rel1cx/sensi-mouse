@@ -60,6 +60,7 @@
     "macOSPrivateApi": true,
     "windows": [
       {
+        "label": "main",
         "title": "Pointer Sense",
         "fullscreen": false,
         "width": 300,
@@ -72,6 +73,17 @@
         "transparent": true,
         "skipTaskbar": true,
         "alwaysOnTop": true
+      },
+      {
+        "label": "about",
+        "title": "About",
+        "url": "/about",
+        "fullscreen": false,
+        "center": true,
+        "resizable": false,
+        "visible": false,
+        "height": 180,
+        "width": 240
       }
     ],
     "systemTray": {
