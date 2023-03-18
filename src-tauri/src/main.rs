@@ -86,15 +86,14 @@ fn main() {
             }
         })
         .on_window_event(|event| match event.event() {
-            // tauri::WindowEvent::Focused(is_focused) => {
-            //     // detect click outside of the focused window and hide the app
-            //     if !is_focused {
-            //         event.window().hide().unwrap();
-            //     }
-            // }
-            // tauri::WindowEvent::CloseRequested { .. } => {
-            //     event.window().hide().unwrap();
-            // }
+            tauri::WindowEvent::Focused(is_focused) => {
+                if !is_focused && event.window().label() == "main" {
+                    event.window().hide().unwrap();
+                }
+            }
+            tauri::WindowEvent::CloseRequested { .. } => {
+                event.window().hide().unwrap();
+            }
             tauri::WindowEvent::ThemeChanged(theme) => {
                 println!("theme changed: {:?}", theme);
             }
