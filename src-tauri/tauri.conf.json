@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.github.nicify.pointer-sense",
+      "identifier": "me.relicx.pointer-sense",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
