@@ -49,3 +49,6 @@ jobs:
                   releaseDraft: true
                   prerelease: false
                   args: --target universal-apple-darwin
+        permissions:
+            contents: write
+            pull-requests: read
