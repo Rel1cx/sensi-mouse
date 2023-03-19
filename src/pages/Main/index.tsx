@@ -21,7 +21,7 @@ const Main: FC<MainProps> = () => {
 
     return (
         <SC.Container>
-            <SC.Header>Pointer Sense</SC.Header>
+            <SC.Header>PointerSense</SC.Header>
             <SC.Content>
                 <Input.Wrapper label="Sensitivity">
                     <SC.xSlider

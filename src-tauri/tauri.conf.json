@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "Pointer Sense",
+    "productName": "PointerSense",
     "version": "0.0.1"
   },
   "tauri": {
@@ -61,7 +61,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "Pointer Sense",
+        "title": "PointerSense",
         "fullscreen": false,
         "width": 300,
         "height": 200,
