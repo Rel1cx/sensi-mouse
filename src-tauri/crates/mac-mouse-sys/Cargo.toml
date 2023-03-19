@@ -1,6 +1,6 @@
 [package]
 name = "mac-mouse-sys"
-version = "0.0.5"
+version = "0.0.6"
 authors = ["Eva1ent <let@ik.me>"]
 description = "Thin wrapper for macOS system-wide mouse settings manipulation."
 edition = "2021"

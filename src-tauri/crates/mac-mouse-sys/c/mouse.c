@@ -36,7 +36,7 @@ extern int getMouseAcceleration() {
 extern int setPointerResolution(uint32_t res) {
   NXEventHandle hdl = NXOpenEventStatus();
 
-  int32_t ret = IOHIDSetParameter(hdl, CFSTR(kIOHIDPointerResolutionKey), &res, sizeof(res));
+  int ret = IOHIDSetParameter(hdl, CFSTR(kIOHIDPointerResolutionKey), &res, sizeof(res));
 
   NXCloseEventStatus(hdl);
 
@@ -46,7 +46,7 @@ extern int setPointerResolution(uint32_t res) {
 extern int setMouseAcceleration(uint32_t acc) {
   NXEventHandle hdl = NXOpenEventStatus();
 
-  int32_t ret = IOHIDSetParameter(hdl, CFSTR(kIOHIDMouseAccelerationType), &acc, sizeof(acc));
+  int ret = IOHIDSetParameter(hdl, CFSTR(kIOHIDMouseAccelerationType), &acc, sizeof(acc));
 
   NXCloseEventStatus(hdl);
 
