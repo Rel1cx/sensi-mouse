@@ -35,6 +35,11 @@ const Main: FC<MainProps> = () => {
                             state.sen = value
                             invoke('set_mouse_cfg', { sen: value, accEnabled: data.accEnabled })
                         }}
+                        styles={theme => ({
+                            markLabel: {
+                                color: '#55585f'
+                            }
+                        })}
                     />
                 </Input.Wrapper>
                 <Input.Wrapper label="Acceleration">

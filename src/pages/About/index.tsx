@@ -5,7 +5,7 @@ interface AboutProps {}
 const Container = styled('div', {})
 
 const About: FC<AboutProps> = () => {
-    return <Container>About</Container>
+    return <Container></Container>
 }
 
 About.displayName = 'About'
