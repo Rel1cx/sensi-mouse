@@ -8,14 +8,14 @@
 
 ## What is PointerSense?
 
-PointerSense is a macOS app that allows you to easily change the system-wide mouse sensitivity and acceleration settings without accessibility permission
+PointerSense is a macOS app that allows you to easily change the system-wide mouse sensitivity and acceleration settings without requiring accessibility permission.
 
 ## Benefits
 
-- Change the mouse settings **globally**, what ever the mouse device reconnects or switches
-- No accessibility permission required
-- No take over the mouse input events
-- Fully compatible with other mouse scrolling or gesture customization apps
+- Change the mouse settings globally, no matter which mouse device is connected.
+- No accessibility permission is required.
+- No taking over mouse input events.
+- Fully compatible with other mouse scrolling or gesture customization apps.
 
 ## Screenshots
 
