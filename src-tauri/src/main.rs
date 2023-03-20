@@ -105,7 +105,7 @@ fn main() {
 
             window_vibrancy::apply_vibrancy(
                 &main_window,
-                NSVisualEffectMaterial::HudWindow,
+                NSVisualEffectMaterial::Sidebar,
                 None,
                 Some(8f64),
             )
