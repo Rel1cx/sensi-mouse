@@ -10,7 +10,7 @@ specifiers:
   '@tauri-apps/api': 1.2.0
   '@tauri-apps/cli': 1.2.3
   '@total-typescript/ts-reset': 0.4.2
-  '@types/node': 18.15.3
+  '@types/node': 18.15.5
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@vitejs/plugin-react': 3.1.0
@@ -44,7 +44,7 @@ dependencies:
 devDependencies:
   '@babel/core': 7.21.3
   '@tauri-apps/cli': 1.2.3
-  '@types/node': 18.15.3
+  '@types/node': 18.15.5
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@vitejs/plugin-react': 3.1.0_vite@4.2.1
@@ -54,7 +54,7 @@ devDependencies:
   prettier: 2.8.5
   sass: 1.59.3
   typescript: 5.0.2
-  vite: 4.2.1_bbhgkqmop4v24vevyan3j2nitq
+  vite: 4.2.1_y7rghahg7ddu72pko63vhsxa44
 
 packages:
 
@@ -1218,8 +1218,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node/18.15.3:
-    resolution: {integrity: sha512-p6ua9zBxz5otCmbpb5D3U4B5Nanw6Pk3PPyX05xnxbB/fRv71N7CPmORg7uAD5P70T0xmx1pzAx/FUfa5X+3cw==}
+  /@types/node/18.15.5:
+    resolution: {integrity: sha512-Ark2WDjjZO7GmvsyFFf81MXuGTA/d6oP38anyxWOL6EREyBKAxKoFHwBhaZxCfLRLpO8JgVXwqOwSwa7jRcjew==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -1560,7 +1560,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.3
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.2.1_bbhgkqmop4v24vevyan3j2nitq
+      vite: 4.2.1_y7rghahg7ddu72pko63vhsxa44
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4698,7 +4698,7 @@ packages:
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
-  /vite/4.2.1_bbhgkqmop4v24vevyan3j2nitq:
+  /vite/4.2.1_y7rghahg7ddu72pko63vhsxa44:
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4723,7 +4723,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.15.3
+      '@types/node': 18.15.5
       esbuild: 0.17.12
       postcss: 8.4.21
       resolve: 1.22.1
