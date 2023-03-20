@@ -8,7 +8,7 @@ jobs:
         runs-on: macos-12
         steps:
             - uses: actions/checkout@v3
-            - name: setup node
+            - name: Setup node
               uses: actions/setup-node@v3
               with:
                   node-version: 18
@@ -30,13 +30,13 @@ jobs:
                   key: ${{ runner.os }}-pnpm-store-release-${{ hashFiles('**/pnpm-lock.yaml') }}
                   restore-keys: |
                       ${{ runner.os }}-pnpm-store-release-
-            - name: install Rust stable
+            - name: Install Rust stable
               uses: dtolnay/rust-toolchain@stable
               with:
                   targets: aarch64-apple-darwin
-            - name: install front-end dependencies
+            - name: Install front-end dependencies
               run: pnpm i
-            - name: check
+            - name: Check
               run: pnpm run lint
             - uses: Swatinem/rust-cache@v2
               with:
