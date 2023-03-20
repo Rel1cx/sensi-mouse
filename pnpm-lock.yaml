@@ -16,7 +16,7 @@ specifiers:
   '@vitejs/plugin-react': 3.1.0
   core-dts: 0.0.3
   eslint: 8.36.0
-  eslint-config-with-tsconfig: 1.0.8
+  eslint-config-with-tsconfig: 1.1.3
   prettier: 2.8.4
   react: 18.2.0
   react-dom: 18.2.0
@@ -52,7 +52,7 @@ devDependencies:
   '@vitejs/plugin-react': 3.1.0_vite@4.2.0
   core-dts: 0.0.3
   eslint: 8.36.0
-  eslint-config-with-tsconfig: 1.0.8_er5nqlhvuo3biqk4s4oud2fkr4
+  eslint-config-with-tsconfig: 1.1.3_tkq4dilr2yvzwt3v6ptcpvgjya
   prettier: 2.8.4
   sass: 1.59.3
   typescript: 5.0.2
@@ -2525,8 +2525,8 @@ packages:
       eslint: 8.36.0
     dev: true
 
-  /eslint-config-with-tsconfig/1.0.8_er5nqlhvuo3biqk4s4oud2fkr4:
-    resolution: {integrity: sha512-bbGSr9zBL1hqFrJM3KHyzFvMAKuFivRXrV8liDy+wIYjNx1zpjmvu87FiRaHV2KkecQh0Cz4Iy0HuF7dslDepA==}
+  /eslint-config-with-tsconfig/1.1.3_tkq4dilr2yvzwt3v6ptcpvgjya:
+    resolution: {integrity: sha512-Rdg4+X3wYPNNFLobwocNqfbozvF0hOtAFoccygG0cRX0Po9aMPWPT85t90g3jsAA7l+p8hp4b3vj5U5E2alNVQ==}
     peerDependencies:
       eslint: '>=8.0.0'
     dependencies:
@@ -2539,11 +2539,13 @@ packages:
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: 2.27.5_cv2ve7gihl2yuq6scxnvfz5zoy
       eslint-plugin-simple-import-sort: 10.0.0_eslint@8.36.0
+      eslint-plugin-svelte3: 4.0.0_wzem237sbvnwe7n34ytc5phasy
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-webpack
       - jest
       - supports-color
+      - svelte
       - typescript
     dev: true
 
@@ -2935,6 +2937,16 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
+    dev: true
+
+  /eslint-plugin-svelte3/4.0.0_wzem237sbvnwe7n34ytc5phasy:
+    resolution: {integrity: sha512-OIx9lgaNzD02+MDFNLw0GEUbuovNcglg+wnd/UY0fbZmlQSz7GlQiQ1f+yX0XvC07XPcDOnFcichqI3xCwp71g==}
+    peerDependencies:
+      eslint: '>=8.0.0'
+      svelte: ^3.2.0
+    dependencies:
+      eslint: 8.36.0
+      svelte: 3.57.0
     dev: true
 
   /eslint-plugin-testing-library/5.9.1_zjoiagdsdpivymr5idw66lxttq:
@@ -5188,6 +5200,11 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /svelte/3.57.0:
+    resolution: {integrity: sha512-WMXEvF+RtAaclw0t3bPDTUe19pplMlfyKDsixbHQYgCWi9+O9VN0kXU1OppzrB9gPAvz4NALuoca2LfW2bOjTQ==}
+    engines: {node: '>= 8'}
+    dev: true
 
   /synckit/0.8.5:
     resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
