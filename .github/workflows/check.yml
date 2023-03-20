@@ -36,6 +36,8 @@ jobs:
                   targets: aarch64-apple-darwin
             - name: Install front-end dependencies
               run: pnpm i
+            - name: Build front-end assets
+              run: pnpm run build
             - name: Check
               run: pnpm run lint
             - uses: Swatinem/rust-cache@v2
