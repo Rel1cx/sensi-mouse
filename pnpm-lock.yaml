@@ -17,7 +17,7 @@ specifiers:
   core-dts: 0.0.3
   eslint: 8.36.0
   eslint-config-with-tsconfig: 1.1.4
-  prettier: 2.8.5
+  prettier: 2.8.6
   react: 18.2.0
   react-dom: 18.2.0
   react-use: 17.4.0
@@ -51,7 +51,7 @@ devDependencies:
   core-dts: 0.0.3
   eslint: 8.36.0
   eslint-config-with-tsconfig: 1.1.4_tkq4dilr2yvzwt3v6ptcpvgjya
-  prettier: 2.8.5
+  prettier: 2.8.6
   sass: 1.59.3
   typescript: 5.0.2
   vite: 4.2.1_y7rghahg7ddu72pko63vhsxa44
@@ -3874,8 +3874,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.8.5:
-    resolution: {integrity: sha512-3gzuxrHbKUePRBB4ZeU08VNkUcqEHaUaouNt0m7LGP4Hti/NuB07C7PPTM/LkWqXoJYJn2McEo5+kxPNrtQkLQ==}
+  /prettier/2.8.6:
+    resolution: {integrity: sha512-mtuzdiBbHwPEgl7NxWlqOkithPyp4VN93V7VeHVWBF+ad3I5avc0RVDT4oImXQy9H/AqxA2NSQH8pSxHW6FYbQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
