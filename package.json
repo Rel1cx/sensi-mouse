@@ -17,9 +17,9 @@
     "clean": "rm -rf node_modules pnpm-lock.yaml && cd src-tauri && cargo clean"
   },
   "dependencies": {
-    "@mantine/core": "6.0.2",
-    "@mantine/hooks": "6.0.2",
-    "@mantine/utils": "6.0.2",
+    "@mantine/core": "6.0.4",
+    "@mantine/hooks": "6.0.4",
+    "@mantine/utils": "6.0.4",
     "@stitches/react": "1.2.8",
     "@tanstack/react-location": "3.7.4",
     "@tauri-apps/api": "1.2.0",
