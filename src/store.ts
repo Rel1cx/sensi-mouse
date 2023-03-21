@@ -15,6 +15,16 @@ export const fetchState = async () => {
     state.accEnabled = accEnabled
 }
 
+export const updateSen = async (sen: number) => {
+    state.sen = sen
+    await invoke('set_mouse_cfg', { sen, accEnabled: state.accEnabled })
+}
+
+export const updateAccEnabled = async (accEnabled: boolean) => {
+    state.accEnabled = accEnabled
+    await invoke('set_mouse_cfg', { sen: state.sen, accEnabled })
+}
+
 fetchState()
 
 on(window, 'focus', fetchState)

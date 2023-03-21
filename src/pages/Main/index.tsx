@@ -1,8 +1,7 @@
 import { Input, Text } from '@mantine/core'
-import { invoke } from '@tauri-apps/api/tauri'
 import { useSnapshot } from 'valtio'
 
-import { state } from '@/store'
+import { state, updateAccEnabled, updateSen } from '@/store'
 
 import * as SC from './styles'
 
@@ -31,10 +30,7 @@ const Main: FC<MainProps> = () => {
                         min={0}
                         max={100}
                         value={data.sen}
-                        onChange={value => {
-                            state.sen = value
-                            invoke('set_mouse_cfg', { sen: value, accEnabled: data.accEnabled })
-                        }}
+                        onChange={updateSen}
                         styles={theme => ({
                             markLabel: {
                                 color: '#55585f'
@@ -49,9 +45,7 @@ const Main: FC<MainProps> = () => {
                         offLabel="OFF"
                         checked={data.accEnabled}
                         onChange={event => {
-                            const { checked } = event.target
-                            state.accEnabled = checked
-                            invoke('set_mouse_cfg', { sen: data.sen, accEnabled: checked })
+                            updateAccEnabled(event.target.checked)
                         }}
                     />
                 </Input.Wrapper>
