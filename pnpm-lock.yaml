@@ -16,7 +16,7 @@ specifiers:
   '@vitejs/plugin-react': 3.1.0
   core-dts: 0.0.3
   eslint: 8.36.0
-  eslint-config-with-tsconfig: 1.1.5
+  eslint-config-with-tsconfig: 1.1.4
   prettier: 2.8.6
   react: 18.2.0
   react-dom: 18.2.0
@@ -50,7 +50,7 @@ devDependencies:
   '@vitejs/plugin-react': 3.1.0_vite@4.2.1
   core-dts: 0.0.3
   eslint: 8.36.0
-  eslint-config-with-tsconfig: 1.1.5_tkq4dilr2yvzwt3v6ptcpvgjya
+  eslint-config-with-tsconfig: 1.1.4_tkq4dilr2yvzwt3v6ptcpvgjya
   prettier: 2.8.6
   sass: 1.59.3
   typescript: 5.0.2
@@ -2340,8 +2340,8 @@ packages:
       eslint: 8.36.0
     dev: true
 
-  /eslint-config-with-tsconfig/1.1.5_tkq4dilr2yvzwt3v6ptcpvgjya:
-    resolution: {integrity: sha512-JnrDDE3TrspnvIfmMyBuumTQGWsIup5tl4LUiA+YWFaWqjCmTm4jbjBdW2SC6v6rEhcO257WcrszyfeW6mNzMQ==}
+  /eslint-config-with-tsconfig/1.1.4_tkq4dilr2yvzwt3v6ptcpvgjya:
+    resolution: {integrity: sha512-O9uMcZecpX1aKb48Z1PYbzGFMop0+LlNncZeHZS81ZmnnOXUbaMDX+W0oQjNmI3Y4CaeyDHUMvZ12nbRnL8ovw==}
     peerDependencies:
       eslint: '>=8.0.0'
     dependencies:
