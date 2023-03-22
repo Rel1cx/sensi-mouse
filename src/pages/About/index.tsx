@@ -1,10 +1,8 @@
 import { styled } from '@stitches/react'
 
-interface AboutProps {}
-
 const Container = styled('div', {})
 
-const About: FC<AboutProps> = () => {
+const About = () => {
     return <Container />
 }
 
