@@ -16,7 +16,7 @@ specifiers:
   '@vitejs/plugin-react': 3.1.0
   core-dts: 0.0.3
   eslint: 8.36.0
-  eslint-config-with-tsconfig: 1.1.5
+  eslint-config-with-tsconfig: 1.1.6
   prettier: 2.8.6
   react: 18.2.0
   react-dom: 18.2.0
@@ -50,7 +50,7 @@ devDependencies:
   '@vitejs/plugin-react': 3.1.0_vite@4.2.1
   core-dts: 0.0.3
   eslint: 8.36.0
-  eslint-config-with-tsconfig: 1.1.5_tkq4dilr2yvzwt3v6ptcpvgjya
+  eslint-config-with-tsconfig: 1.1.6_er5nqlhvuo3biqk4s4oud2fkr4
   prettier: 2.8.6
   sass: 1.59.3
   typescript: 5.0.2
@@ -2340,8 +2340,8 @@ packages:
       eslint: 8.36.0
     dev: true
 
-  /eslint-config-with-tsconfig/1.1.5_tkq4dilr2yvzwt3v6ptcpvgjya:
-    resolution: {integrity: sha512-JnrDDE3TrspnvIfmMyBuumTQGWsIup5tl4LUiA+YWFaWqjCmTm4jbjBdW2SC6v6rEhcO257WcrszyfeW6mNzMQ==}
+  /eslint-config-with-tsconfig/1.1.6_er5nqlhvuo3biqk4s4oud2fkr4:
+    resolution: {integrity: sha512-mq5k5HnzI1sTHgqTMBQesmSLG4+G3CWUq4wvKb3uqtakyiMsc97JDeZ1a3DlQY3RqQZZe0kRizb/R8a6y2NeBw==}
     peerDependencies:
       eslint: '>=8.0.0'
     dependencies:
@@ -2355,12 +2355,12 @@ packages:
       eslint-plugin-import: 2.27.5_cv2ve7gihl2yuq6scxnvfz5zoy
       eslint-plugin-simple-import-sort: 10.0.0_eslint@8.36.0
       eslint-plugin-svelte3: 4.0.0_wzem237sbvnwe7n34ytc5phasy
+      svelte: 3.57.0
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-webpack
       - jest
       - supports-color
-      - svelte
       - typescript
     dev: true
 
