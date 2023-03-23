@@ -14,8 +14,8 @@ const Container = styled('div', {
 })
 
 const About = () => {
-    const { value: name } = useAsync(getName)
-    const { value: version } = useAsync(getVersion)
+    const { value: name = '' } = useAsync(getName)
+    const { value: version = '0.0.0' } = useAsync(getVersion)
 
     return (
         <Container>

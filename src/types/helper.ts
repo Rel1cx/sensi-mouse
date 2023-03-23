@@ -1,5 +1,3 @@
-export type Selector<T, Result> = (state: T) => Result
-
 export function passThrough<T>(val: T): T {
     return val
 }
