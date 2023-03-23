@@ -1,10 +1,9 @@
 import type { MantineThemeOverride } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
-import type { DefaultGenerics, Route } from '@tanstack/react-location'
-import { Outlet, Router } from '@tanstack/react-location'
 import { lazy } from 'react'
+import { match } from 'ts-pattern'
 
-import { location } from './router'
+import { Router } from './router'
 import { styled } from './theme'
 
 const Main = lazy(() => import('./pages/Main'))
@@ -26,19 +25,17 @@ const MainContent = styled('div', {
     overflow: 'hidden'
 })
 
-export const routes: Route[] = [
-    { path: '/', element: <Main /> },
-    { path: '/about', element: <About /> }
-]
-
 export const App = () => {
+    const route = Router.useRoute(['Main', 'About'])
+
     return (
         <MantineProvider withGlobalStyles withCSSVariables theme={theme}>
             <AppShellScreen id="app-shell-screen">
                 <MainContent>
-                    <Router location={location} routes={routes}>
-                        <Outlet />
-                    </Router>
+                    {match(route)
+                        .with({ name: 'Main' }, () => <Main />)
+                        .with({ name: 'About' }, () => <About />)
+                        .otherwise(() => null)}
                 </MainContent>
             </AppShellScreen>
         </MantineProvider>

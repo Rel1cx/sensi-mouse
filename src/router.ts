@@ -1,9 +1,6 @@
-import { createBrowserHistory, ReactLocation } from '@tanstack/react-location'
+import { createRouter } from '@swan-io/chicane'
 
-// Create a browser history
-const browserHistory = createBrowserHistory()
-
-// Set up a ReactLocation instance with the memory history
-export const location = new ReactLocation({
-    history: browserHistory
+export const Router = createRouter({
+    Main: '/',
+    About: '/about'
 })
