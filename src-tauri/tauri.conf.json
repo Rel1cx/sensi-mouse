@@ -83,7 +83,8 @@
         "resizable": false,
         "visible": false,
         "width": 240,
-        "height": 180
+        "height": 180,
+        "alwaysOnTop": true
       }
     ],
     "systemTray": {
