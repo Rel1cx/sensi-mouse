@@ -5,4 +5,9 @@ import '@total-typescript/ts-reset'
 
 import { renderApp } from './root'
 
-renderApp()
+renderApp().match({
+    Ok: value => {},
+    Error: error => {
+        document.write(error.message)
+    }
+})

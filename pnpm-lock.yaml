@@ -6,6 +6,7 @@ specifiers:
   '@mantine/hooks': 6.0.4
   '@mantine/utils': 6.0.4
   '@stitches/react': 1.2.8
+  '@swan-io/boxed': 0.12.1
   '@tanstack/react-location': 3.7.4
   '@tauri-apps/api': 1.2.0
   '@tauri-apps/cli': 1.2.3
@@ -16,7 +17,7 @@ specifiers:
   '@vitejs/plugin-react': 3.1.0
   core-dts: 0.0.3
   eslint: 8.36.0
-  eslint-config-with-tsconfig: 1.1.6
+  eslint-config-with-tsconfig: 1.1.7
   prettier: 2.8.6
   react: 18.2.0
   react-dom: 18.2.0
@@ -32,6 +33,7 @@ dependencies:
   '@mantine/hooks': 6.0.4_react@18.2.0
   '@mantine/utils': 6.0.4_react@18.2.0
   '@stitches/react': 1.2.8_react@18.2.0
+  '@swan-io/boxed': 0.12.1
   '@tanstack/react-location': 3.7.4_biqbaboplfbrettd7655fr4n2y
   '@tauri-apps/api': 1.2.0
   '@total-typescript/ts-reset': 0.4.2
@@ -50,7 +52,7 @@ devDependencies:
   '@vitejs/plugin-react': 3.1.0_vite@4.2.1
   core-dts: 0.0.3
   eslint: 8.36.0
-  eslint-config-with-tsconfig: 1.1.6_er5nqlhvuo3biqk4s4oud2fkr4
+  eslint-config-with-tsconfig: 1.1.7_er5nqlhvuo3biqk4s4oud2fkr4
   prettier: 2.8.6
   sass: 1.59.3
   typescript: 5.0.2
@@ -1068,6 +1070,10 @@ packages:
     dependencies:
       lodash: 4.17.21
     dev: true
+
+  /@swan-io/boxed/0.12.1:
+    resolution: {integrity: sha512-k+Ks6cqChWBEF55F0yEJUuurgLJzvWnSEEQJBeLp6tMQzVaLZwF7GAB31ElFvTuJCZC7PAOANNFolMAO0nOSog==}
+    dev: false
 
   /@tanstack/react-location/3.7.4_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-6rH2vNHGr0uyeUz5ZHvWMYjeYKGgIKFzvs5749QtnS9f+FU7t7fQE0hKZAzltBZk82LT7iYbcHBRyUg2lW13VA==}
@@ -2340,8 +2346,8 @@ packages:
       eslint: 8.36.0
     dev: true
 
-  /eslint-config-with-tsconfig/1.1.6_er5nqlhvuo3biqk4s4oud2fkr4:
-    resolution: {integrity: sha512-mq5k5HnzI1sTHgqTMBQesmSLG4+G3CWUq4wvKb3uqtakyiMsc97JDeZ1a3DlQY3RqQZZe0kRizb/R8a6y2NeBw==}
+  /eslint-config-with-tsconfig/1.1.7_er5nqlhvuo3biqk4s4oud2fkr4:
+    resolution: {integrity: sha512-fzSbFQ92E2FV2d6DCX8q9bybI3g4EQ9Cl6u9G/S+Pelrm6l4XSHCM2L/OJc2ihUQyY+vDpQdRCWAMwOCfRvF6w==}
     peerDependencies:
       eslint: '>=8.0.0'
     dependencies:

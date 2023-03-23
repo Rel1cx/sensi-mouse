@@ -1,4 +1,7 @@
 {
     "root": true,
-    "extends": ["with-tsconfig"]
+    "extends": ["with-tsconfig"],
+    "rules": {
+        "new-cap": "off"
+    }
 }

@@ -17,10 +17,6 @@ PointerSense is a macOS app that allows you to easily change the system-wide mou
 - No taking over mouse input events.
 - Fully compatible with other mouse scrolling or gesture customization apps.
 
-## Screenshots
-
-![screenshot](./public/screenshot.png)
-
 ## Releases
 
 Download the latest release from [here](https://github.com/Nicify/pointer-sense/releases)

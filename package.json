@@ -21,6 +21,7 @@
     "@mantine/hooks": "6.0.4",
     "@mantine/utils": "6.0.4",
     "@stitches/react": "1.2.8",
+    "@swan-io/boxed": "0.12.1",
     "@tanstack/react-location": "3.7.4",
     "@tauri-apps/api": "1.2.0",
     "@total-typescript/ts-reset": "0.4.2",
@@ -39,11 +40,11 @@
     "@vitejs/plugin-react": "3.1.0",
     "core-dts": "0.0.3",
     "eslint": "8.36.0",
-    "eslint-config-with-tsconfig": "1.1.6",
+    "eslint-config-with-tsconfig": "1.1.7",
     "prettier": "2.8.6",
     "sass": "1.59.3",
     "typescript": "5.0.2",
     "vite": "4.2.1"
   },
-  "packageManager": "pnpm@7.30.0"
+  "packageManager": "pnpm@7.30.1"
 }
