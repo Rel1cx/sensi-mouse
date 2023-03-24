@@ -23,7 +23,7 @@ specifiers:
   react-dom: 18.2.0
   react-use: 17.4.0
   ress: 5.0.2
-  sass: 1.59.3
+  sass: 1.60.0
   ts-pattern: ^4.2.2
   typescript: 5.0.2
   valtio: 1.10.3
@@ -56,9 +56,9 @@ devDependencies:
   eslint: 8.36.0
   eslint-config-with-tsconfig: 1.1.7_er5nqlhvuo3biqk4s4oud2fkr4
   prettier: 2.8.6
-  sass: 1.59.3
+  sass: 1.60.0
   typescript: 5.0.2
-  vite: 4.2.1_y7rghahg7ddu72pko63vhsxa44
+  vite: 4.2.1_rifweqbihhrszrptwgxzlnsyji
 
 packages:
 
@@ -1628,7 +1628,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.3
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.2.1_y7rghahg7ddu72pko63vhsxa44
+      vite: 4.2.1_rifweqbihhrszrptwgxzlnsyji
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4247,8 +4247,8 @@ packages:
       regexp-tree: 0.1.24
     dev: true
 
-  /sass/1.59.3:
-    resolution: {integrity: sha512-QCq98N3hX1jfTCoUAsF3eyGuXLsY7BCnCEg9qAact94Yc21npG2/mVOqoDvE0fCbWDqiM4WlcJQla0gWG2YlxQ==}
+  /sass/1.60.0:
+    resolution: {integrity: sha512-updbwW6fNb5gGm8qMXzVO7V4sWf7LMXnMly/JEyfbfERbVH46Fn6q02BX7/eHTdKpE7d+oTkMMQpFWNUMfFbgQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
@@ -4770,7 +4770,7 @@ packages:
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
-  /vite/4.2.1_y7rghahg7ddu72pko63vhsxa44:
+  /vite/4.2.1_rifweqbihhrszrptwgxzlnsyji:
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4800,7 +4800,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.19.1
-      sass: 1.59.3
+      sass: 1.60.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
