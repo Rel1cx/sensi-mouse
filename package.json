@@ -42,7 +42,7 @@
     "core-dts": "0.0.3",
     "eslint": "8.36.0",
     "eslint-config-with-tsconfig": "1.1.7",
-    "prettier": "2.8.6",
+    "prettier": "2.8.7",
     "sass": "1.59.3",
     "typescript": "5.0.2",
     "vite": "4.2.1"
