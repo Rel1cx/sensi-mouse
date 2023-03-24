@@ -24,3 +24,8 @@ Download the latest release from [here](https://github.com/Nicify/pointer-sense/
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Credits
+
+- [Tauri](https://tauri.app) - Build an optimized, secure, and frontend-independent application for multi-platform deployment.
+- [tmexclude](https://github.com/PhotonQuantum/tmexclude) - Exclude undesired files (node_modules, target, etc) from your TimeMachine backup.
