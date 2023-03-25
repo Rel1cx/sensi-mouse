@@ -29,13 +29,13 @@
     "react-dom": "18.2.0",
     "react-use": "17.4.0",
     "ress": "5.0.2",
-    "ts-pattern": "^4.2.2",
+    "ts-pattern": "4.2.2",
     "valtio": "1.10.3"
   },
   "devDependencies": {
     "@babel/core": "7.21.3",
     "@tauri-apps/cli": "1.2.3",
-    "@types/node": "18.15.8",
+    "@types/node": "18.15.9",
     "@types/react": "18.0.29",
     "@types/react-dom": "18.0.11",
     "@vitejs/plugin-react": "3.1.0",

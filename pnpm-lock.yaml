@@ -11,7 +11,7 @@ specifiers:
   '@tauri-apps/api': 1.2.0
   '@tauri-apps/cli': 1.2.3
   '@total-typescript/ts-reset': 0.4.2
-  '@types/node': 18.15.8
+  '@types/node': 18.15.9
   '@types/react': 18.0.29
   '@types/react-dom': 18.0.11
   '@vitejs/plugin-react': 3.1.0
@@ -24,7 +24,7 @@ specifiers:
   react-use: 17.4.0
   ress: 5.0.2
   sass: 1.60.0
-  ts-pattern: ^4.2.2
+  ts-pattern: 4.2.2
   typescript: 5.0.2
   valtio: 1.10.3
   vite: 4.2.1
@@ -48,7 +48,7 @@ dependencies:
 devDependencies:
   '@babel/core': 7.21.3
   '@tauri-apps/cli': 1.2.3
-  '@types/node': 18.15.8
+  '@types/node': 18.15.9
   '@types/react': 18.0.29
   '@types/react-dom': 18.0.11
   '@vitejs/plugin-react': 3.1.0_vite@4.2.1
@@ -58,7 +58,7 @@ devDependencies:
   prettier: 2.8.7
   sass: 1.60.0
   typescript: 5.0.2
-  vite: 4.2.1_2m3bexpi3wa4wf5pmohbqv5uje
+  vite: 4.2.1_wphih4v4mvc4nlbube6dr3gski
 
 packages:
 
@@ -1233,8 +1233,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node/18.15.8:
-    resolution: {integrity: sha512-kzGNJZ57XEH7RdckxZ7wfRjB9hgZABF+NLgR1B2zogUvV0gmK0/60VYA4yb4oKZckPiiJlmmfpdqTfCN0VRX+Q==}
+  /@types/node/18.15.9:
+    resolution: {integrity: sha512-dUxhiNzBLr6IqlZXz6e/rN2YQXlFgOei/Dxy+e3cyXTJ4txSUbGT2/fmnD6zd/75jDMeW5bDee+YXxlFKHoV0A==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -1575,7 +1575,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.3
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.2.1_2m3bexpi3wa4wf5pmohbqv5uje
+      vite: 4.2.1_wphih4v4mvc4nlbube6dr3gski
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4711,7 +4711,7 @@ packages:
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
 
-  /vite/4.2.1_2m3bexpi3wa4wf5pmohbqv5uje:
+  /vite/4.2.1_wphih4v4mvc4nlbube6dr3gski:
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4736,7 +4736,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.15.8
+      '@types/node': 18.15.9
       esbuild: 0.17.13
       postcss: 8.4.21
       resolve: 1.22.1
