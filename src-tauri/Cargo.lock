@@ -1932,19 +1932,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "pointer-sense"
-version = "0.0.0"
-dependencies = [
- "mac-mouse-sys",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-positioner",
- "window-vibrancy",
-]
-
-[[package]]
 name = "ppv-lite86"
 version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2310,6 +2297,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bebd363326d05ec3e2f532ab7660680f3b02130d780c299bca73469d521bc0ed"
 dependencies = [
  "serde",
+]
+
+[[package]]
+name = "sensi-mouse"
+version = "0.0.0"
+dependencies = [
+ "mac-mouse-sys",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-positioner",
+ "window-vibrancy",
 ]
 
 [[package]]

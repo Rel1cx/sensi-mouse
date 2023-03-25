@@ -18,7 +18,7 @@ const Main = () => {
 
     return (
         <SC.Container>
-            <SC.Header>PointerSense</SC.Header>
+            <SC.Header>SensiMouse</SC.Header>
             <SC.Content>
                 <Input.Wrapper label="Sensitivity">
                     <SC.xSlider

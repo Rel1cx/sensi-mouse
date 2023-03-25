@@ -1,14 +1,12 @@
-# PointerSense
+# SensiMouse
 
 <p align="center">
-  <img src="./public/icon.png" height="180" />
+  <img src="./public/icon.png" height="128" />
 </p>
 
-> Cursor icons created by [Freepik - Flaticon](https://www.flaticon.com/free-icons/cursor)
+## What is SensiMouse?
 
-## What is PointerSense?
-
-PointerSense is a macOS app that allows you to easily change the system-wide mouse sensitivity and acceleration settings without requiring accessibility permission.
+SensiMouse is a macOS app that allows you to easily change the system-wide mouse sensitivity and acceleration settings without requiring accessibility permission.
 
 ## Benefits
 
@@ -19,7 +17,7 @@ PointerSense is a macOS app that allows you to easily change the system-wide mou
 
 ## Releases
 
-Download the latest release from [here](https://github.com/Nicify/pointer-sense/releases)
+Download the latest release from [here](https://github.com/Nicify/sensi-mouse/releases)
 
 ## License
 

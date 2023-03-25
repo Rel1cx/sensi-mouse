@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "PointerSense",
+    "productName": "SensiMouse",
     "version": "0.0.3"
   },
   "tauri": {
@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "me.relicx.pointer-sense",
+      "identifier": "me.relicx.sensi-mouse",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -61,7 +61,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "PointerSense",
+        "title": "SensiMouse",
         "fullscreen": false,
         "width": 300,
         "height": 200,

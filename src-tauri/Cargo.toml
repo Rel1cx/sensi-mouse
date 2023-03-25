@@ -1,5 +1,5 @@
 [package]
-name = "pointer-sense"
+name = "sensi-mouse"
 version = "0.0.0"
 description = "A Tauri App"
 authors = ["you"]
@@ -10,11 +10,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [[bin]]
-name = "pointer-sense"
+name = "sensi-mouse"
 path = "src/main.rs"
 
 # [lib]
-# name = "pointer-sense_lib"
+# name = "sensi-mouse_lib"
 # path = "src/lib/lib.rs"
 
 [build-dependencies]
