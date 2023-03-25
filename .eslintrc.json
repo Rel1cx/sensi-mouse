@@ -3,5 +3,13 @@
     "extends": ["with-tsconfig"],
     "rules": {
         "new-cap": "off"
-    }
+    },
+    "overrides": [
+        {
+            "files": ["vite.config.ts"],
+            "parserOptions": {
+                "project": "tsconfig.node.json"
+            }
+        }
+    ]
 }

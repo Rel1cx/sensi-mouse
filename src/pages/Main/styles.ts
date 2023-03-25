@@ -1,5 +1,4 @@
 import { Divider, Slider, Switch, Title } from '@mantine/core'
-import type {} from '@mantine/utils'
 
 import { styled } from '@/theme'
 

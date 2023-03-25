@@ -1,4 +1,4 @@
-import type { MantineThemeOverride } from '@mantine/core'
+import { type MantineThemeOverride } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
 import { lazy } from 'react'
 import { match } from 'ts-pattern'
