@@ -48,9 +48,11 @@ const Main = () => {
                     />
                 </Input.Wrapper>
             </SC.Content>
-            <SC.xDivider color="#7f828c" />
+            <SC.xDivider color="#cccccc" />
             <SC.Footer>
-                <Text size={14}>More Settings...</Text>
+                <Text size={14} color="#252525">
+                    More Settings...
+                </Text>
             </SC.Footer>
         </SC.Container>
     )

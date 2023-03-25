@@ -107,7 +107,7 @@ fn main() {
                 &main_window,
                 NSVisualEffectMaterial::Sidebar,
                 None,
-                Some(8f64),
+                Some(16f64),
             )
             .expect("unable to apply vibrancy");
             app.set_activation_policy(ActivationPolicy::Accessory);

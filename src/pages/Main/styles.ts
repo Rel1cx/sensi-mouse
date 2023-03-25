@@ -1,4 +1,4 @@
-import { Divider, Slider, Switch, Text } from '@mantine/core'
+import { Divider, Slider, Switch, Title } from '@mantine/core'
 import type {} from '@mantine/utils'
 
 import { styled } from '@/theme'
@@ -12,12 +12,12 @@ export const Container = styled('div', {
     justifyContent: 'space-between'
 })
 
-export const Header = styled(Text, {
-    color: 'rgb(16, 17, 19)',
+export const Header = styled(Title, {
+    color: 'rgb(18, 18, 18)',
     fontSize: '15px',
     margin: '0',
     padding: '0',
-    fontWeight: 'normal'
+    fontWeight: '500'
 })
 
 export const Content = styled('div', {
