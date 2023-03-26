@@ -1,6 +1,6 @@
 import { type MantineThemeOverride } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
-import { lazy } from 'react'
+import { lazy, useMemo } from 'react'
 import { match } from 'ts-pattern'
 
 import { Router } from './router'
@@ -28,15 +28,19 @@ const MainContent = styled('div', {
 export const App = () => {
     const route = Router.useRoute(['Main', 'About'])
 
+    const contentView = useMemo(
+        () =>
+            match(route)
+                .with({ name: 'Main' }, () => <Main />)
+                .with({ name: 'About' }, () => <About />)
+                .otherwise(() => null),
+        [route]
+    )
+
     return (
         <MantineProvider withGlobalStyles withCSSVariables theme={theme}>
             <AppShellScreen id="app-shell-screen">
-                <MainContent>
-                    {match(route)
-                        .with({ name: 'Main' }, () => <Main />)
-                        .with({ name: 'About' }, () => <About />)
-                        .otherwise(() => null)}
-                </MainContent>
+                <MainContent>{contentView}</MainContent>
             </AppShellScreen>
         </MantineProvider>
     )
