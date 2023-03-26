@@ -1,3 +1,4 @@
+/* eslint-disable functional/immutable-data */
 import { invoke } from '@tauri-apps/api/tauri'
 import { proxy } from 'valtio'
 
