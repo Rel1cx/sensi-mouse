@@ -1,29 +1,25 @@
-/* eslint-disable functional/immutable-data */
 import { invoke } from '@tauri-apps/api/tauri'
-import { proxy } from 'valtio'
+import { atom, createStore } from 'jotai'
 
 import { on } from './helper'
 
-export const state = proxy({
-    sen: 0,
-    accEnabled: false
+export const store = createStore()
+
+export const senAtom = atom(0, (get, set, sen: number) => {
+    set(senAtom, sen)
+    invoke('set_mouse_cfg', { sen, accEnabled: get(accEnabledAtom) })
+})
+
+export const accEnabledAtom = atom(false, (get, set, accEnabled: boolean) => {
+    set(accEnabledAtom, accEnabled)
+    invoke('set_mouse_cfg', { sen: get(senAtom), accEnabled })
 })
 
 export const fetchState = async () => {
     const [sen, accEnabled] = await invoke<[number, boolean]>('get_mouse_cfg')
 
-    state.sen = sen
-    state.accEnabled = accEnabled
-}
-
-export const updateSen = async (sen: number) => {
-    state.sen = sen
-    await invoke('set_mouse_cfg', { sen, accEnabled: state.accEnabled })
-}
-
-export const updateAccEnabled = async (accEnabled: boolean) => {
-    state.accEnabled = accEnabled
-    await invoke('set_mouse_cfg', { sen: state.sen, accEnabled })
+    store.set(senAtom, sen)
+    store.set(accEnabledAtom, accEnabled)
 }
 
 fetchState()

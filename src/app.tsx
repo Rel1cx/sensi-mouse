@@ -1,9 +1,11 @@
 import { type MantineThemeOverride } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
+import { Provider } from 'jotai/react'
 import { lazy, useMemo } from 'react'
 import { match } from 'ts-pattern'
 
 import { Router } from './router'
+import { store } from './store'
 import { styled } from './theme'
 
 const Main = lazy(() => import('./pages/Main'))
@@ -40,7 +42,9 @@ export const App = () => {
     return (
         <MantineProvider withGlobalStyles withCSSVariables theme={theme}>
             <AppShellScreen id="app-shell-screen">
-                <MainContent>{contentView}</MainContent>
+                <Provider store={store}>
+                    <MainContent>{contentView}</MainContent>
+                </Provider>
             </AppShellScreen>
         </MantineProvider>
     )

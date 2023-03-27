@@ -1,7 +1,7 @@
 import { Input, Text } from '@mantine/core'
-import { useSnapshot } from 'valtio'
+import { useAtom } from 'jotai/react'
 
-import { state, updateAccEnabled, updateSen } from '@/store'
+import { accEnabledAtom, senAtom } from '@/store'
 
 import * as SC from './styles'
 
@@ -14,7 +14,8 @@ const marks = [
 ]
 
 const Main = () => {
-    const data = useSnapshot(state)
+    const [sen, setSen] = useAtom(senAtom)
+    const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
 
     return (
         <SC.Container>
@@ -23,12 +24,11 @@ const Main = () => {
                 <Input.Wrapper label="Sensitivity">
                     <SC.xSlider
                         size="lg"
-                        labelAlwaysOn
                         marks={marks}
                         min={0}
                         max={100}
-                        value={data.sen}
-                        onChange={updateSen}
+                        value={sen}
+                        onChange={setSen}
                         styles={theme => ({
                             markLabel: {
                                 color: '#55585f'
@@ -41,9 +41,9 @@ const Main = () => {
                         size="md"
                         onLabel="ON"
                         offLabel="OFF"
-                        checked={data.accEnabled}
+                        checked={accEnabled}
                         onChange={event => {
-                            updateAccEnabled(event.target.checked)
+                            setAccEnabled(event.target.checked)
                         }}
                     />
                 </Input.Wrapper>

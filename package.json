@@ -25,12 +25,12 @@
     "@swan-io/chicane": "1.3.4",
     "@tauri-apps/api": "1.2.0",
     "@total-typescript/ts-reset": "0.4.2",
+    "jotai": "2.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-use": "17.4.0",
     "ress": "5.0.2",
-    "ts-pattern": "4.2.2",
-    "valtio": "1.10.3"
+    "ts-pattern": "4.2.2"
   },
   "devDependencies": {
     "@babel/core": "7.21.3",

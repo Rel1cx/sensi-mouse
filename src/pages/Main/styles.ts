@@ -32,7 +32,8 @@ export const xSlider = styled(Slider, {
 })
 
 export const xSwitch = styled(Switch, {
-    marginTop: '4px'
+    marginTop: '4px',
+    cursor: 'pointer'
 })
 
 export const xDivider = styled(Divider, {
