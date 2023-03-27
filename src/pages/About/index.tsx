@@ -1,5 +1,6 @@
 import { Image, Text } from '@mantine/core'
 import { getName, getVersion } from '@tauri-apps/api/app'
+import { memo } from 'react'
 import { useAsync } from 'react-use'
 
 import { styled } from '@/theme'
@@ -42,4 +43,4 @@ const About = () => {
     )
 }
 
-export default About
+export default memo(About)
