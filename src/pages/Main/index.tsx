@@ -31,7 +31,8 @@ const Main = () => {
                         onChange={setSen}
                         styles={theme => ({
                             markLabel: {
-                                color: '#55585f'
+                                color: '#55585f',
+                                fontFamily: `var(--mono-font-family)`
                             }
                         })}
                     />

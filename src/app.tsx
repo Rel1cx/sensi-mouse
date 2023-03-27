@@ -12,7 +12,8 @@ const Main = lazy(() => import('./pages/Main'))
 const About = lazy(() => import('./pages/About'))
 
 const theme: MantineThemeOverride = {
-    colorScheme: 'light'
+    colorScheme: 'light',
+    fontFamily: `var(--base-font-family)`
 }
 
 const AppShellScreen = styled('main', {

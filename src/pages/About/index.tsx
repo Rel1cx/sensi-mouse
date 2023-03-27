@@ -10,7 +10,13 @@ const Container = styled('div', {
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '100%',
-    padding: '8px 16px'
+    padding: '16px'
+})
+
+const Link = styled('a', {
+    color: '$primary',
+    textDecoration: 'underline',
+    cursor: 'pointer'
 })
 
 const About = () => {
@@ -23,7 +29,14 @@ const About = () => {
             <Text size={14}>{name}</Text>
             <Text size={10}>Version: {version}</Text>
             <Text size={10} align="center">
-                Copyright © 2023 Eva1ent. All rights reserved.
+                Copyright © 2023 Eva1ent{' | '}
+                <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://raw.githubusercontent.com/Nicify/sensi-mouse/main/LICENSE"
+                >
+                    MIT License
+                </Link>
             </Text>
         </Container>
     )
