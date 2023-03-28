@@ -1,14 +1,11 @@
-import { Divider, Slider, Switch, Title } from '@mantine/core'
+import { Divider, Flex, Slider, Switch, Title } from '@mantine/core'
 
 import { styled } from '@/theme'
 
-export const Container = styled('div', {
+export const Container = styled(Flex, {
     width: '100%',
     height: '100%',
-    padding: '8px 16px 6px 16px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between'
+    padding: '8px 16px 6px 16px'
 })
 
 export const Header = styled(Title, {
@@ -23,7 +20,6 @@ export const Content = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     gap: '8px',
-    width: '100%',
     padding: '8px 0'
 })
 

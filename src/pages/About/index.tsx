@@ -1,15 +1,11 @@
-import { Image, Text } from '@mantine/core'
+import { Flex, Image, Text } from '@mantine/core'
 import { getName, getVersion } from '@tauri-apps/api/app'
 import { memo } from 'react'
 import { useAsync } from 'react-use'
 
 import { styled } from '@/theme'
 
-const Container = styled('div', {
-    display: 'flex',
-    flexFlow: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+const Container = styled(Flex, {
     height: '100%',
     padding: '16px'
 })
@@ -25,7 +21,7 @@ const About = () => {
     const { value: version = '0.0.0' } = useAsync(getVersion)
 
     return (
-        <Container>
+        <Container direction="column" justify="space-between" align="center" gap="0">
             <Image src="/icon.png" alt="logo" height="44px" width="auto" />
             <Text size={14}>{name}</Text>
             <Text size={10}>Version: {version}</Text>

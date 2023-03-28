@@ -18,7 +18,7 @@ const Main = () => {
     const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
 
     return (
-        <SC.Container>
+        <SC.Container direction="column" justify="space-between">
             <SC.Header>SensiMouse</SC.Header>
             <SC.Content>
                 <Input.Wrapper label="Sensitivity">
