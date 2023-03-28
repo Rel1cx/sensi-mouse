@@ -70,8 +70,8 @@ devDependencies:
     specifier: 8.36.0
     version: 8.36.0
   eslint-config-with-tsconfig:
-    specifier: 1.2.3
-    version: 1.2.3(@typescript-eslint/parser@5.56.0)(eslint@8.36.0)(tailwindcss@3.2.7)(typescript@5.0.2)
+    specifier: 1.2.5
+    version: 1.2.5(@typescript-eslint/parser@5.56.0)(eslint@8.36.0)(tailwindcss@3.2.7)(typescript@5.0.2)
   prettier:
     specifier: 2.8.7
     version: 2.8.7
@@ -2249,8 +2249,8 @@ packages:
       - eslint
     dev: true
 
-  /eslint-config-with-tsconfig@1.2.3(@typescript-eslint/parser@5.56.0)(eslint@8.36.0)(tailwindcss@3.2.7)(typescript@5.0.2):
-    resolution: {integrity: sha512-sO2NkIRT8o1Kr1i8lGUAyeWRSNPm4tQ9QWIWzT4h2bsD+fdyrbyRiruPo+p8OVyqFiem4K3vo4tpvB3sfJw79Q==}
+  /eslint-config-with-tsconfig@1.2.5(@typescript-eslint/parser@5.56.0)(eslint@8.36.0)(tailwindcss@3.2.7)(typescript@5.0.2):
+    resolution: {integrity: sha512-uJ0muKdwwguu4BughVxpJa6vzZ7mRDqtp8VPpcPSZEDDYAnQvBsceYwHC9lnWzw7t6IZVGePp3nCNPKsGdpXkw==}
     peerDependencies:
       eslint: '>=8.0.0'
       typescript: '>=5.0.0'
