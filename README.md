@@ -27,3 +27,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Tauri](https://tauri.app) - Build an optimized, secure, and frontend-independent application for multi-platform deployment.
 - [tmexclude](https://github.com/PhotonQuantum/tmexclude) - Exclude undesired files (node_modules, target, etc) from your TimeMachine backup.
+
+## THIRD-PARTY-LICENSE
+
+This project uses code from following third-party projects:
+
+- tmexclude (MIT)
+
+Licenses are list in [THIRD-PARTY-LICENSE](THIRD-PARTY-LICENSE)
