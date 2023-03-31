@@ -6,20 +6,11 @@ const { styled, createTheme } = createStitches({
     },
     theme: {
         colors: {
-            bounds: 'rgba(65, 132, 244, 1.000)',
-            boundsBg: 'rgba(65, 132, 244, 0.05)',
             hover: '#ececec',
             overlay: 'rgba(0, 0, 0, 0.15)',
-            overlayContrast: 'rgba(255, 255, 255, 0.15)',
-            panel: '#fefefe',
-            panelContrast: '#ffffff',
             selected: 'rgba(66, 133, 244, 1.000)',
-            selectedContrast: '#fefefe',
             text: '#333333',
-            tooltip: '#1d1d1d',
-            tooltipContrast: '#ffffff',
-            warn: 'rgba(255, 100, 100, 1)',
-            canvas: 'rgb(248, 249, 250)'
+            warn: 'rgba(255, 100, 100, 1)'
         },
         shadows: {
             2: '0px 1px 1px rgba(0, 0, 0, 0.14)',
@@ -69,30 +60,21 @@ const { styled, createTheme } = createStitches({
         },
         zIndices: {},
         transitions: {}
+    },
+    media: {
+        micro: '(max-width: 370px)',
+        sm: '(min-width: 640px)',
+        md: '(min-width: 768px)',
+        lg: '(min-width: 1024px)'
     }
-    // media: {
-    //     micro: '(max-width: 370px)',
-    //     sm: '(min-width: 640px)',
-    //     md: '(min-width: 768px)',
-    //     lg: '(min-width: 1024px)'
-    // }
 })
 
 export const dark = createTheme({
     colors: {
-        bounds: 'rgba(38, 150, 255, 1.000)',
-        boundsBg: 'rgba(38, 150, 255, 0.05)',
         hover: '#444A50',
         overlay: 'rgba(0, 0, 0, 0.15)',
-        overlayContrast: 'rgba(255, 255, 255, 0.15)',
-        panel: '#363D44',
-        panelContrast: '#49555f',
         selected: 'rgba(38, 150, 255, 1.000)',
-        selectedContrast: '#fefefe',
-        text: '#f8f9fa',
-        tooltip: '#1d1d1d',
-        tooltipContrast: '#ffffff',
-        canvas: '#212529'
+        text: '#f8f9fa'
     },
     shadows: {
         2: '0px 1px 1px rgba(0, 0, 0, 0.24)',
