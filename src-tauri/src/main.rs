@@ -10,6 +10,9 @@ use plugins::{BackgroundPlugin, EnvironmentPlugin};
 mod helper;
 mod plugins;
 
+#[macro_use]
+extern crate objc;
+
 #[tauri::command]
 fn get_mouse_cfg() -> (usize, bool) {
     let (sen, acc_enabled) = helper::read_mouse_cfg().unwrap();
@@ -23,9 +26,11 @@ fn set_mouse_cfg(sen: usize, acc_enabled: bool) {
 }
 
 fn system_tray() -> SystemTray {
+    let preferences = CustomMenuItem::new("preferences", "Preferences");
     let about = CustomMenuItem::new("about", "About");
     let quit = CustomMenuItem::new("quit", "Quit");
     let tray_menu = SystemTrayMenu::new()
+        .add_item(preferences)
         .add_item(about)
         // .add_native_item(SystemTrayMenuItem::Separator)
         .add_item(quit);
@@ -39,6 +44,7 @@ fn main() {
         .plugin(tauri_plugin_positioner::init())
         .plugin(BackgroundPlugin)
         .plugin(EnvironmentPlugin)
+        .plugin(plugins::auto_launch::init())
         .system_tray(system_tray())
         .on_system_tray_event(|app, event| {
             tauri_plugin_positioner::on_tray_event(app, &event);
@@ -79,6 +85,10 @@ fn main() {
                     "about" => {
                         let about_window = app.get_window("about").unwrap();
                         about_window.show().unwrap();
+                    }
+                    "preferences" => {
+                        let preferences_window = app.get_window("preferences").unwrap();
+                        preferences_window.show().unwrap();
                     }
                     _ => {}
                 },

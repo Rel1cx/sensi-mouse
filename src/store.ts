@@ -1,7 +1,7 @@
 import { invoke } from '@tauri-apps/api/tauri'
 import { atom, createStore } from 'jotai'
 
-import { on } from './helper'
+import { on } from './lib/dom'
 
 export const store = createStore()
 

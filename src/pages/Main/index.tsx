@@ -1,6 +1,7 @@
-import { Input, Text } from '@mantine/core'
+import { Button, Input } from '@mantine/core'
 import { useAtom } from 'jotai/react'
 
+import { openWindowByLabel } from '@/lib/tauri'
 import { accEnabledAtom, senAtom } from '@/store'
 
 import * as SC from './styles'
@@ -50,10 +51,23 @@ const Main = () => {
                 </Input.Wrapper>
             </SC.Content>
             <SC.xDivider color="#cccccc" />
-            <SC.Footer>
-                <Text size={14} color="#252525">
-                    More Settings...
-                </Text>
+            <SC.Footer gap={8} justify="flex-end" align="center">
+                <Button
+                    variant="outline"
+                    size="xs"
+                    compact
+                    onClick={() => {
+                        openWindowByLabel('preferences')
+                    }}
+                >
+                    Preferences
+                </Button>
+                <Button variant="outline" size="xs" compact>
+                    Reset
+                </Button>
+                <Button variant="outline" size="xs" compact>
+                    Quit
+                </Button>
             </SC.Footer>
         </SC.Container>
     )

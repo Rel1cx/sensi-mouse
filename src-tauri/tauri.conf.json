@@ -75,6 +75,18 @@
         "alwaysOnTop": true
       },
       {
+        "label": "preferences",
+        "title": "Preferences",
+        "url": "/preferences",
+        "fullscreen": false,
+        "center": true,
+        "resizable": false,
+        "visible": false,
+        "width": 500,
+        "height": 296,
+        "alwaysOnTop": false
+      },
+      {
         "label": "about",
         "title": "About",
         "url": "/about",
