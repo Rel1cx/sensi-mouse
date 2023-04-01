@@ -25,16 +25,17 @@ tauri-build = { version = "1.2.1", features = [] }
 anyhow = "1.0"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive", "rc"] }
-tauri = { version = "1.2.4", features = ["macos-private-api", "shell-open", "system-tray", "window-show"] }
+tauri = { version = "1.2.4", features = [
+    "macos-private-api",
+    "shell-open",
+    "system-tray",
+    "window-show",
+] }
 tracing = "0.1"
 tracing-subscriber = "0.3"
 tauri-plugin-positioner = { version = "1.0.4", features = ["system-tray"] }
 tauri-plugin-autostart = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "dev" }
 window-vibrancy = "0.3"
-auto-launch = "0.4"
-cocoa = "0.24.1"
-objc = "0.2.7"
-core-foundation = { version = "0.9.3", features = ["mac_os_10_8_features"] }
 
 mac-mouse-sys = { path = "./crates/mac-mouse-sys" }
 
@@ -47,6 +48,6 @@ default = ["custom-protocol"]
 custom-protocol = ["tauri/custom-protocol"]
 
 [profile.release]
-# strip = true
+strip = true
 opt-level = "z"
 lto = true

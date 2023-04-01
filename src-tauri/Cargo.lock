@@ -2345,11 +2345,7 @@ name = "sensi-mouse"
 version = "0.0.0"
 dependencies = [
  "anyhow",
- "auto-launch",
- "cocoa",
- "core-foundation",
  "mac-mouse-sys",
- "objc",
  "serde",
  "serde_json",
  "tauri",
