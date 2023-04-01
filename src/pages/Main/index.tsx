@@ -5,7 +5,7 @@ import { useAtom } from 'jotai/react'
 import { Button } from '@/components/Button'
 import { Divider } from '@/components/Divider'
 import { Header } from '@/components/Header'
-import { getWebviewWindow } from '@/lib/app'
+import { getWebviewWindow } from '@/lib/tauri'
 import { accEnabledAtom, resetState, senAtom } from '@/store'
 
 import * as SC from './styles'
