@@ -1,7 +1,8 @@
-import { Button, Input } from '@mantine/core'
+import { Input } from '@mantine/core'
 import { useAtom } from 'jotai/react'
 
-import { openWindowByLabel } from '@/lib/tauri'
+import { Button } from '@/components/Button'
+import { getWebviewWindow } from '@/lib/tauri'
 import { accEnabledAtom, senAtom } from '@/store'
 
 import * as SC from './styles'
@@ -14,7 +15,7 @@ const marks = [
     { value: 100, label: '100' }
 ]
 
-const Main = () => {
+function Main() {
     const [sen, setSen] = useAtom(senAtom)
     const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
 
@@ -23,20 +24,7 @@ const Main = () => {
             <SC.Header>SensiMouse</SC.Header>
             <SC.Content>
                 <Input.Wrapper label="Sensitivity">
-                    <SC.xSlider
-                        size="lg"
-                        marks={marks}
-                        min={0}
-                        max={100}
-                        value={sen}
-                        onChange={setSen}
-                        styles={theme => ({
-                            markLabel: {
-                                color: '#55585f',
-                                fontFamily: `var(--mono-font-family)`
-                            }
-                        })}
-                    />
+                    <SC.xSlider size="lg" marks={marks} min={0} max={100} value={sen} onChange={setSen} />
                 </Input.Wrapper>
                 <Input.Wrapper label="Acceleration">
                     <SC.xSwitch
@@ -53,21 +41,22 @@ const Main = () => {
             <SC.xDivider color="#cccccc" />
             <SC.Footer gap={8} justify="flex-end" align="center">
                 <Button
-                    variant="outline"
-                    size="xs"
-                    compact
                     onClick={() => {
-                        openWindowByLabel('preferences')
+                        getWebviewWindow('preferences').then(window =>
+                            window.match({
+                                Some: window => window.show(),
+                                None: () => {
+                                    // eslint-disable-next-line no-console
+                                    console.error('Failed to get preferences window')
+                                }
+                            })
+                        )
                     }}
                 >
                     Preferences
                 </Button>
-                <Button variant="outline" size="xs" compact>
-                    Reset
-                </Button>
-                <Button variant="outline" size="xs" compact>
-                    Quit
-                </Button>
+                <Button>Reset</Button>
+                <Button>Quit</Button>
             </SC.Footer>
         </SC.Container>
     )

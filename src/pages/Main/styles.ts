@@ -37,5 +37,6 @@ export const xDivider = styled(Divider, {
 })
 
 export const Footer = styled(Flex, {
-    fontSize: '12px'
+    fontSize: '12px',
+    opacity: '0.95'
 })

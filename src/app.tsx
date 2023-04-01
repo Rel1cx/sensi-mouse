@@ -1,4 +1,3 @@
-import { type MantineThemeOverride } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
 import { Provider } from 'jotai/react'
 import { lazy, useMemo } from 'react'
@@ -6,23 +5,11 @@ import { match } from 'ts-pattern'
 
 import { Router } from './router'
 import { store } from './store'
-import { styled } from './theme'
+import { mantineThemetheme, styled } from './theme'
 
 const Main = lazy(() => import('./pages/Main'))
 const About = lazy(() => import('./pages/About'))
 const Preferences = lazy(() => import('./pages/Preferences'))
-
-const theme: MantineThemeOverride = {
-    colorScheme: 'light',
-    fontFamily: `var(--base-font-family)`,
-    headings: {
-        fontFamily: `var(--base-font-family)`
-    },
-    colors: {
-        light: []
-    },
-    primaryColor: ''
-}
 
 const AppShellScreen = styled('main', {
     width: '100%',
@@ -35,7 +22,7 @@ const MainContent = styled('div', {
     overflow: 'hidden'
 })
 
-export const App = () => {
+export function App() {
     const route = Router.useRoute(['Main', 'About', 'Preferences'])
 
     const contentView = useMemo(
@@ -49,7 +36,7 @@ export const App = () => {
     )
 
     return (
-        <MantineProvider withGlobalStyles theme={theme}>
+        <MantineProvider withGlobalStyles theme={mantineThemetheme}>
             <AppShellScreen id="app-shell-screen">
                 <Provider store={store}>
                     <MainContent>{contentView}</MainContent>

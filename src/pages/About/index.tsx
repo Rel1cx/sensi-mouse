@@ -16,7 +16,7 @@ const Link = styled('a', {
     cursor: 'pointer'
 })
 
-const About = () => {
+function About() {
     const { value: name = '' } = useAsync(getName)
     const { value: version = '0.0.0' } = useAsync(getVersion)
 
