@@ -22,3 +22,11 @@ export function getAutoStart() {
         invoke<boolean>('plugin:auto_launch|is_enabled').then(enabled => !!enabled)
     )
 }
+
+export function getMouseCfg() {
+    return Result.fromPromise<[number, boolean], Error>(invoke<[number, boolean]>('get_mouse_cfg'))
+}
+
+export function setMouseCfg(sen: number, accEnabled: boolean) {
+    return Result.fromPromise<void, Error>(invoke('set_mouse_cfg', { sen, accEnabled }))
+}

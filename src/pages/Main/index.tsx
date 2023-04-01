@@ -1,9 +1,10 @@
 import { Input } from '@mantine/core'
+import { exit } from '@tauri-apps/api/process'
 import { useAtom } from 'jotai/react'
 
 import { Button } from '@/components/Button'
-import { getWebviewWindow } from '@/lib/tauri'
-import { accEnabledAtom, senAtom } from '@/store'
+import { getWebviewWindow } from '@/lib/app'
+import { accEnabledAtom, resetState, senAtom } from '@/store'
 
 import * as SC from './styles'
 
@@ -55,8 +56,8 @@ function Main() {
                 >
                     Preferences
                 </Button>
-                <Button>Reset</Button>
-                <Button>Quit</Button>
+                <Button onClick={resetState}>Reset</Button>
+                <Button onClick={exit}>Quit</Button>
             </SC.Footer>
         </SC.Container>
     )
