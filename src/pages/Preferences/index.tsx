@@ -1,7 +1,8 @@
-import { Flex, Input, Select, Switch } from '@mantine/core'
+import { Checkbox, Flex, Select } from '@mantine/core'
 import { useAtom, useSetAtom } from 'jotai/react'
-import { memo, Suspense } from 'react'
+import { memo } from 'react'
 
+import { Header } from '@/components/Header'
 import { autoLaunchAtom, setAutoLaunchAtom } from '@/store'
 import { styled } from '@/theme'
 
@@ -19,27 +20,16 @@ const Preferences = () => {
 
     return (
         <Container direction="column" gap={8} align="stretch">
+            <Header>Interface</Header>
             <Select
-                label="Language"
                 defaultValue="en"
                 data={[
                     { label: 'English', value: 'en' }
                     // { label: '中文', value: 'zh' }
                 ]}
             />
-            <Input.Wrapper label="Start at Login">
-                <Suspense>
-                    <Switch
-                        size="md"
-                        onLabel="ON"
-                        offLabel="OFF"
-                        checked={enabled}
-                        onChange={event => {
-                            setEnabled(event.currentTarget.checked)
-                        }}
-                    />
-                </Suspense>
-            </Input.Wrapper>
+            <Header>General</Header>
+            <Checkbox label="Start at Login" checked={enabled} onChange={e => setEnabled(e.currentTarget.checked)} />
         </Container>
     )
 }

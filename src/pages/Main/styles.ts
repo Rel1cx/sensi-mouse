@@ -32,10 +32,6 @@ export const xSwitch = styled(Switch, {
     cursor: 'pointer'
 })
 
-export const xDivider = styled(Divider, {
-    margin: '4px 0'
-})
-
 export const Footer = styled(Flex, {
     fontSize: '12px',
     opacity: '0.95'

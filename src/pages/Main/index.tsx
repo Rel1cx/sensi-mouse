@@ -3,6 +3,8 @@ import { exit } from '@tauri-apps/api/process'
 import { useAtom } from 'jotai/react'
 
 import { Button } from '@/components/Button'
+import { Divider } from '@/components/Divider'
+import { Header } from '@/components/Header'
 import { getWebviewWindow } from '@/lib/app'
 import { accEnabledAtom, resetState, senAtom } from '@/store'
 
@@ -22,7 +24,7 @@ function Main() {
 
     return (
         <SC.Container direction="column" justify="space-between">
-            <SC.Header>SensiMouse (beta)</SC.Header>
+            <Header>SensiMouse (beta)</Header>
             <SC.Content>
                 <Input.Wrapper label="Sensitivity">
                     <SC.xSlider size="lg" marks={marks} min={0} max={100} value={sen} onChange={setSen} />
@@ -39,7 +41,7 @@ function Main() {
                     />
                 </Input.Wrapper>
             </SC.Content>
-            <SC.xDivider color="#cccccc" />
+            <Divider />
             <SC.Footer gap={8} justify="flex-end" align="center">
                 <Button
                     onClick={() => {
