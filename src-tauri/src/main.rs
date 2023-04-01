@@ -6,12 +6,10 @@ use window_vibrancy::NSVisualEffectMaterial;
 
 use helper::write_mouse_cfg;
 use plugins::{BackgroundPlugin, EnvironmentPlugin};
+use tauri_plugin_autostart::MacosLauncher;
 
 mod helper;
 mod plugins;
-
-#[macro_use]
-extern crate objc;
 
 #[tauri::command]
 fn get_mouse_cfg() -> (usize, bool) {
@@ -44,7 +42,10 @@ fn main() {
         .plugin(tauri_plugin_positioner::init())
         .plugin(BackgroundPlugin)
         .plugin(EnvironmentPlugin)
-        .plugin(plugins::auto_launch::init())
+        .plugin(tauri_plugin_autostart::init(
+            MacosLauncher::LaunchAgent,
+            Some(vec![]),
+        ))
         .system_tray(system_tray())
         .on_system_tray_event(|app, event| {
             tauri_plugin_positioner::on_tray_event(app, &event);

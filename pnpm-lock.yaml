@@ -40,6 +40,9 @@ dependencies:
   ress:
     specifier: 5.0.2
     version: 5.0.2
+  tauri-plugin-autostart-api:
+    specifier: https://github.com/tauri-apps/tauri-plugin-autostart
+    version: github.com/tauri-apps/tauri-plugin-autostart/0c8e3ad92e00e7b0aed60fc8a639e77407105253
   ts-pattern:
     specifier: 4.2.2
     version: 4.2.2
@@ -5034,3 +5037,11 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  github.com/tauri-apps/tauri-plugin-autostart/0c8e3ad92e00e7b0aed60fc8a639e77407105253:
+    resolution: {tarball: https://codeload.github.com/tauri-apps/tauri-plugin-autostart/tar.gz/0c8e3ad92e00e7b0aed60fc8a639e77407105253}
+    name: tauri-plugin-autostart-api
+    version: 0.0.0
+    dependencies:
+      '@tauri-apps/api': 1.2.0
+    dev: false

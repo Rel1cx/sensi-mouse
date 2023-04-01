@@ -1,8 +1,17 @@
 import { invoke } from '@tauri-apps/api/tauri'
 import { atom, createStore } from 'jotai'
+import {
+    disable as autostartDisable,
+    enable as autostartEnable,
+    isEnabled as autostartIsEnabled
+} from 'tauri-plugin-autostart-api'
 
-import { disableAutoStart, enableAutoStart, getAutoStart, getMouseCfg, setMouseCfg } from './lib/app'
+import { getMouseCfg, setMouseCfg } from './lib/app'
 import { on } from './lib/dom'
+
+export const DEFAULT_SEN = 90
+
+export const DEFAULT_ACC_ENABLED = false
 
 export const store = createStore()
 
@@ -20,27 +29,28 @@ export const accEnabledAtom = atom(false, async (get, set, accEnabled: boolean) 
 export const autoLaunchAtom = atom(false)
 
 export const setAutoLaunchAtom = atom(null, async (_, set, enabled: boolean) => {
-    const result = enabled ? await enableAutoStart() : await disableAutoStart()
+    enabled ? await autostartEnable() : await autostartDisable()
 
-    result.match({
-        Ok: () => set(autoLaunchAtom, enabled),
-        // eslint-disable-next-line no-console
-        Error: () => console.error(`Failed to set auto launch ${enabled}`)
-    })
+    set(autoLaunchAtom, enabled)
 })
 
 export function resetState() {
-    store.set(senAtom, 90)
-    store.set(accEnabledAtom, false)
+    store.set(senAtom, DEFAULT_SEN)
+    store.set(accEnabledAtom, DEFAULT_ACC_ENABLED)
 }
 
 export async function fetchState() {
-    const [sen, accEnabled] = await invoke<[number, boolean]>('get_mouse_cfg')
-    const autoStart = await getAutoStart()
+    const ret = await getMouseCfg()
+    const [sen, accEnabled] = ret.match({
+        Ok: v => v,
+        Error: () => [DEFAULT_SEN, DEFAULT_ACC_ENABLED]
+    })
+
+    const autoStart = await autostartIsEnabled()
 
     store.set(senAtom, sen)
     store.set(accEnabledAtom, accEnabled)
-    store.set(autoLaunchAtom, autoStart.getWithDefault(false))
+    store.set(autoLaunchAtom, autoStart)
 }
 
 fetchState()

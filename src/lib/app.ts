@@ -9,20 +9,6 @@ export async function getWebviewWindow(label: string) {
     return Option.fromNullable(target)
 }
 
-export function enableAutoStart() {
-    return Result.fromPromise<void, Error>(invoke('plugin:auto_launch|enable'))
-}
-
-export function disableAutoStart() {
-    return Result.fromPromise<void, Error>(invoke('plugin:auto_launch|disable'))
-}
-
-export function getAutoStart() {
-    return Result.fromPromise<boolean, Error>(
-        invoke<boolean>('plugin:auto_launch|is_enabled').then(enabled => !!enabled)
-    )
-}
-
 export function getMouseCfg() {
     return Result.fromPromise<[number, boolean], Error>(invoke<[number, boolean]>('get_mouse_cfg'))
 }

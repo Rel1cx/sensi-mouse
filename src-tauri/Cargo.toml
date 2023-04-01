@@ -29,6 +29,7 @@ tauri = { version = "1.2.4", features = ["macos-private-api", "shell-open", "sys
 tracing = "0.1"
 tracing-subscriber = "0.3"
 tauri-plugin-positioner = { version = "1.0.4", features = ["system-tray"] }
+tauri-plugin-autostart = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "dev" }
 window-vibrancy = "0.3"
 auto-launch = "0.4"
 cocoa = "0.24.1"

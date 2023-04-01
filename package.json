@@ -29,7 +29,8 @@
     "react-dom": "18.2.0",
     "react-use": "17.4.0",
     "ress": "5.0.2",
-    "ts-pattern": "4.2.2"
+    "ts-pattern": "4.2.2",
+    "tauri-plugin-autostart-api": "https://github.com/tauri-apps/tauri-plugin-autostart"
   },
   "devDependencies": {
     "@babel/core": "7.21.4",
