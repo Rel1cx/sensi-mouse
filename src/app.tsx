@@ -13,11 +13,6 @@ const Preferences = lazy(() => import('./pages/Preferences'))
 
 const AppShellScreen = styled('main', {
     width: '100%',
-    height: '100%'
-})
-
-const MainContent = styled('div', {
-    width: '100%',
     height: '100%',
     overflow: 'hidden'
 })
@@ -37,11 +32,9 @@ export function App() {
 
     return (
         <MantineProvider withGlobalStyles theme={mantineThemetheme}>
-            <AppShellScreen id="app-shell-screen">
-                <Provider store={store}>
-                    <MainContent>{contentView}</MainContent>
-                </Provider>
-            </AppShellScreen>
+            <Provider store={store}>
+                <AppShellScreen>{contentView}</AppShellScreen>
+            </Provider>
         </MantineProvider>
     )
 }
