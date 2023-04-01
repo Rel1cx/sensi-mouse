@@ -22,7 +22,7 @@ function Main() {
 
     return (
         <SC.Container direction="column" justify="space-between">
-            <SC.Header>SensiMouse</SC.Header>
+            <SC.Header>SensiMouse (beta)</SC.Header>
             <SC.Content>
                 <Input.Wrapper label="Sensitivity">
                     <SC.xSlider size="lg" marks={marks} min={0} max={100} value={sen} onChange={setSen} />

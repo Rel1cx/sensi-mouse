@@ -39,6 +39,8 @@ jobs:
             - uses: Swatinem/rust-cache@v2
               with:
                   workspaces: src-tauri
+            - name: Update version
+              run: make update-version
             - uses: tauri-apps/tauri-action@dev
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -48,7 +50,7 @@ jobs:
                   releaseBody: 'See the assets to download this version and install.'
                   releaseDraft: false
                   prerelease: true
-                  args: --target universal-apple-darwin
+                  # args: --target universal-apple-darwin
         permissions:
             contents: write
             pull-requests: read
