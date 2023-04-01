@@ -56,8 +56,8 @@ function Main() {
                 >
                     Preferences
                 </Button>
-                <Button onClick={resetState}>Reset</Button>
-                <Button onClick={exit}>Quit</Button>
+                <Button onClick={() => resetState()}>Reset</Button>
+                <Button onClick={() => exit(0)}>Quit</Button>
             </SC.Footer>
         </SC.Container>
     )

@@ -57,6 +57,6 @@ export const mantineThemetheme: MantineThemeOverride = {
             '#282828'
         ]
     },
-    // primaryColor: 'pink',
+    primaryColor: 'blue',
     primaryShade: 0
 }
