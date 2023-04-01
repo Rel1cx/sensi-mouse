@@ -18,9 +18,14 @@ export const accEnabledAtom = atom(false, (get, set, accEnabled: boolean) => {
 
 export const autoLaunchAtom = atom(false)
 
-export const setAutoLaunchAtom = atom(null, async (get, set, enabled: boolean) => {
-    await (enabled ? enableAutoStart() : disableAutoStart())
-    set(autoLaunchAtom, enabled)
+export const setAutoLaunchAtom = atom(null, async (_, set, enabled: boolean) => {
+    const result = enabled ? await enableAutoStart() : await disableAutoStart()
+
+    result.match({
+        Ok: () => set(autoLaunchAtom, enabled),
+        // eslint-disable-next-line no-console
+        Error: () => console.error(`Failed to set auto launch ${enabled}`)
+    })
 })
 
 export const fetchState = async () => {
@@ -29,7 +34,7 @@ export const fetchState = async () => {
 
     store.set(senAtom, sen)
     store.set(accEnabledAtom, accEnabled)
-    store.set(autoLaunchAtom, autoStart)
+    store.set(autoLaunchAtom, autoStart.getWithDefault(false))
 }
 
 fetchState()

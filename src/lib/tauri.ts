@@ -10,13 +10,15 @@ export async function getWebviewWindow(label: string) {
 }
 
 export function enableAutoStart() {
-    return invoke<void>('plugin:auto_launch|enable')
+    return Result.fromPromise<void, Error>(invoke('plugin:auto_launch|enable'))
 }
 
 export function disableAutoStart() {
-    return invoke<void>('plugin:auto_launch|disable')
+    return Result.fromPromise<void, Error>(invoke('plugin:auto_launch|disable'))
 }
 
 export function getAutoStart() {
-    return invoke<boolean>('plugin:auto_launch|is_enabled').then(enabled => !!enabled)
+    return Result.fromPromise<boolean, Error>(
+        invoke<boolean>('plugin:auto_launch|is_enabled').then(enabled => !!enabled)
+    )
 }
