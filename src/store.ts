@@ -2,6 +2,7 @@ import { invoke } from '@tauri-apps/api/tauri'
 import { atom, createStore } from 'jotai'
 
 import { on } from './lib/dom'
+import { disableAutoStart, enableAutoStart, getAutoStart } from './lib/tauri'
 
 export const store = createStore()
 
@@ -15,11 +16,20 @@ export const accEnabledAtom = atom(false, (get, set, accEnabled: boolean) => {
     invoke('set_mouse_cfg', { sen: get(senAtom), accEnabled })
 })
 
+export const autoLaunchAtom = atom(false)
+
+export const setAutoLaunchAtom = atom(null, async (get, set, enabled: boolean) => {
+    await (enabled ? enableAutoStart() : disableAutoStart())
+    set(autoLaunchAtom, enabled)
+})
+
 export const fetchState = async () => {
     const [sen, accEnabled] = await invoke<[number, boolean]>('get_mouse_cfg')
+    const autoStart = await getAutoStart()
 
     store.set(senAtom, sen)
     store.set(accEnabledAtom, accEnabled)
+    store.set(autoLaunchAtom, autoStart)
 }
 
 fetchState()

@@ -1,6 +1,8 @@
 import { Flex, Input, Select, Switch } from '@mantine/core'
-import { memo } from 'react'
+import { useAtom, useSetAtom } from 'jotai/react'
+import { memo, Suspense } from 'react'
 
+import { autoLaunchAtom, setAutoLaunchAtom } from '@/store'
 import { styled } from '@/theme'
 
 type PreferenceProps = {
@@ -12,6 +14,9 @@ const Container = styled(Flex, {
 })
 
 const Preferences = () => {
+    const [enabled] = useAtom(autoLaunchAtom)
+    const setEnabled = useSetAtom(setAutoLaunchAtom)
+
     return (
         <Container direction="column" gap={8} align="stretch">
             <Select
@@ -23,14 +28,17 @@ const Preferences = () => {
                 ]}
             />
             <Input.Wrapper label="Start at Login">
-                <Switch
-                    size="md"
-                    onLabel="ON"
-                    offLabel="OFF"
-                    onChange={event => {
-                        console.log(event.target.checked)
-                    }}
-                />
+                <Suspense>
+                    <Switch
+                        size="md"
+                        onLabel="ON"
+                        offLabel="OFF"
+                        checked={enabled}
+                        onChange={event => {
+                            setEnabled(event.currentTarget.checked)
+                        }}
+                    />
+                </Suspense>
             </Input.Wrapper>
         </Container>
     )
