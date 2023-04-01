@@ -10,10 +10,10 @@ SensiMouse is a macOS app that allows you to easily change the system-wide mouse
 
 ## Benefits
 
-- Change the mouse settings globally, no matter which mouse device is connected.
-- No accessibility permission is required.
-- No taking over mouse input events.
-- Fully compatible with other mouse scrolling or gesture customization apps.
+- Modify mouse settings globally, regardless of the connected mouse device.
+- No need for accessibility permissions.
+- Does not interfere with or take over the mouse input events.
+- Compatible with other apps that customize mouse scrolling or gestures.
 
 ## Releases
 
@@ -25,7 +25,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 
-- [Tauri](https://tauri.app) - Build an optimized, secure, and frontend-independent application for multi-platform deployment.
 - [tmexclude](https://github.com/PhotonQuantum/tmexclude) - Exclude undesired files (node_modules, target, etc) from your TimeMachine backup.
 
 ## THIRD-PARTY-LICENSE
