@@ -27,7 +27,7 @@ export default defineConfig({
         // don't minify for debug builds
         minify: process.env.TAURI_DEBUG ? false : 'esbuild',
         rollupOptions: {
-            treeshake: true
+            treeshake: 'recommended'
         },
         // produce sourcemaps for debug builds
         sourcemap: !!process.env.TAURI_DEBUG
