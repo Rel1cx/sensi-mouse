@@ -18,6 +18,17 @@ const marks = [
     { value: 100, label: '100' }
 ]
 
+async function handleOpenPreferences() {
+    const window = await getWebviewWindow('preferences')
+    window.match({
+        Some: window => window.show(),
+        None: () => {
+            // eslint-disable-next-line no-console
+            console.error('Failed to get preferences window')
+        }
+    })
+}
+
 function Main() {
     const [sen, setSen] = useAtom(senAtom)
     const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
@@ -43,21 +54,7 @@ function Main() {
             </SC.Content>
             <Divider />
             <SC.Footer gap={8} justify="flex-end" align="center">
-                <Button
-                    onClick={() => {
-                        getWebviewWindow('preferences').then(window =>
-                            window.match({
-                                Some: window => window.show(),
-                                None: () => {
-                                    // eslint-disable-next-line no-console
-                                    console.error('Failed to get preferences window')
-                                }
-                            })
-                        )
-                    }}
-                >
-                    Preferences
-                </Button>
+                <Button onClick={handleOpenPreferences}>Preferences</Button>
                 <Button onClick={() => resetState()}>Reset</Button>
                 <Button onClick={() => exit(0)}>Quit</Button>
             </SC.Footer>

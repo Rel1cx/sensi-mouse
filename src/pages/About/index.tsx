@@ -11,7 +11,6 @@ const Container = styled(Flex, {
 })
 
 const Link = styled('a', {
-    color: '$primary',
     textDecoration: 'underline',
     cursor: 'pointer'
 })
