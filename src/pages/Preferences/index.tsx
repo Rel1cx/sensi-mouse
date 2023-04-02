@@ -6,6 +6,16 @@ import { Header } from '@/components/Header'
 import { autoLaunchAtom, setAutoLaunchAtom } from '@/store'
 import { styled } from '@/theme'
 
+const themes = [
+    { label: 'Light', value: 'light' }
+    // { label: 'Dark', value: 'dark' }
+]
+
+const languages = [
+    { label: 'English', value: 'en' }
+    // { label: '中文', value: 'zh' }
+]
+
 type PreferenceProps = {
     // ...
 }
@@ -20,14 +30,10 @@ const Preferences = () => {
 
     return (
         <Container direction="column" gap={8} align="stretch">
-            <Header>Interface</Header>
-            <Select
-                defaultValue="en"
-                data={[
-                    { label: 'English', value: 'en' }
-                    // { label: '中文', value: 'zh' }
-                ]}
-            />
+            <Header>Theme</Header>
+            <Select defaultValue="light" data={themes} />
+            <Header>Language</Header>
+            <Select defaultValue="en" data={languages} />
             <Header>General</Header>
             <Checkbox label="Start at Login" checked={enabled} onChange={e => setEnabled(e.currentTarget.checked)} />
         </Container>

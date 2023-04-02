@@ -42,6 +42,7 @@ fn main() {
         .plugin(tauri_plugin_positioner::init())
         .plugin(BackgroundPlugin)
         .plugin(EnvironmentPlugin)
+        .plugin(tauri_plugin_store::Builder::default().build())
         .plugin(tauri_plugin_autostart::init(
             MacosLauncher::LaunchAgent,
             Some(vec![]),

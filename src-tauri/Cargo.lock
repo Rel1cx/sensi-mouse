@@ -2352,6 +2352,7 @@ dependencies = [
  "tauri-build",
  "tauri-plugin-autostart",
  "tauri-plugin-positioner",
+ "tauri-plugin-store",
  "tracing",
  "tracing-subscriber",
  "window-vibrancy",
@@ -2860,6 +2861,18 @@ dependencies = [
  "serde_json",
  "serde_repr",
  "tauri",
+]
+
+[[package]]
+name = "tauri-plugin-store"
+version = "0.1.0"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=dev#204f61052f4b997744fb59b01aff55e6715323d4"
+dependencies = [
+ "log",
+ "serde",
+ "serde_json",
+ "tauri",
+ "thiserror",
 ]
 
 [[package]]
