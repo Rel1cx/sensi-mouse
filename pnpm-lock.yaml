@@ -34,6 +34,9 @@ dependencies:
   jotai:
     specifier: 2.0.3
     version: 2.0.3(react@18.2.0)
+  micro-memoize:
+    specifier: ^4.0.14
+    version: 4.0.14
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -90,6 +93,9 @@ devDependencies:
   sass:
     specifier: 1.60.0
     version: 1.60.0
+  typesafe-i18n:
+    specifier: 5.24.3
+    version: 5.24.3(typescript@5.0.3)
   typescript:
     specifier: 5.0.3
     version: 5.0.3
@@ -3617,6 +3623,10 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
+  /micro-memoize@4.0.14:
+    resolution: {integrity: sha512-2tzWP1w2Hh+r7kCYa4f//jpBEA6dAueiuLco38NxfjF9Py3KCCI7wVOTdCvOhmTC043t+ulclVBdl3v+s+UJIQ==}
+    dev: false
+
   /micromatch@4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
     engines: {node: '>=8.6'}
@@ -4718,6 +4728,15 @@ packages:
       call-bind: 1.0.2
       for-each: 0.3.3
       is-typed-array: 1.1.10
+    dev: true
+
+  /typesafe-i18n@5.24.3(typescript@5.0.3):
+    resolution: {integrity: sha512-VqjGbIydOqtQjO81mGo++TjuqeC8YoxxgYrO1/ikXIS/l/Q6mAcz4yrt5AvqjdFHMt3gRm7oGbVI/yLyV+VTOg==}
+    hasBin: true
+    peerDependencies:
+      typescript: '>=3.5.1'
+    dependencies:
+      typescript: 5.0.3
     dev: true
 
   /typescript@5.0.3:

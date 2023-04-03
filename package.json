@@ -13,7 +13,8 @@
     "lint:rs": "cd src-tauri && cargo clippy",
     "format": "npm run format:ts && npm run format:rs",
     "lint": "npm run lint:ts && npm run lint:rs",
-    "clean": "rm -rf dist node_modules pnpm-lock.yaml && cd src-tauri && cargo clean"
+    "clean": "rm -rf dist node_modules pnpm-lock.yaml && cd src-tauri && cargo clean",
+    "typesafe-i18n": "typesafe-i18n"
   },
   "dependencies": {
     "@mantine/core": "6.0.5",
@@ -25,6 +26,7 @@
     "@tauri-apps/api": "1.2.0",
     "@total-typescript/ts-reset": "0.4.2",
     "jotai": "2.0.3",
+    "micro-memoize": "^4.0.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-use": "17.4.0",
@@ -45,6 +47,7 @@
     "eslint-config-with-tsconfig": "1.2.5",
     "prettier": "2.8.7",
     "sass": "1.60.0",
+    "typesafe-i18n": "5.24.3",
     "typescript": "5.0.3",
     "vite": "4.2.1"
   },

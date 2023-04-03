@@ -1,6 +1,5 @@
 import { Flex, Image, Text } from '@mantine/core'
 import { getName, getVersion } from '@tauri-apps/api/app'
-import { memo } from 'react'
 import { useAsync } from 'react-use'
 
 import { styled } from '@/theme'
@@ -15,7 +14,7 @@ const Link = styled('a', {
     cursor: 'pointer'
 })
 
-function About() {
+export default function About() {
     const { value: name = '' } = useAsync(getName)
     const { value: version = '0.0.0' } = useAsync(getVersion)
 
@@ -37,5 +36,3 @@ function About() {
         </Container>
     )
 }
-
-export default memo(About)

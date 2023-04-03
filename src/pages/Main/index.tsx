@@ -29,7 +29,7 @@ async function handleOpenPreferences() {
     })
 }
 
-function Main() {
+export default function Main() {
     const [sen, setSen] = useAtom(senAtom)
     const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
 
@@ -61,5 +61,3 @@ function Main() {
         </SC.Container>
     )
 }
-
-export default Main

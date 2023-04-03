@@ -10,6 +10,12 @@
             "parserOptions": {
                 "project": "tsconfig.node.json"
             }
+        },
+        {
+            "files": ["src/i18n/i18n-*.@(ts|tsx)"],
+            "rules": {
+                "unicorn/no-abusive-eslint-disable": "off"
+            }
         }
     ]
 }
