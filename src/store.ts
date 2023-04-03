@@ -1,15 +1,12 @@
 import { invoke } from '@tauri-apps/api/tauri'
-import { atom, createStore, useAtom } from 'jotai'
+import { atom, getDefaultStore } from 'jotai'
 import * as autostart from 'tauri-plugin-autostart-api'
 
 import { DEFAULT_ACC_ENABLED, DEFAULT_LANG, DEFAULT_SEN } from './constants'
-import { type Locales } from './i18n/i18n-types'
-import { isLocale } from './i18n/i18n-util'
-import { getMouseCfg, setMouseCfg } from './lib/app'
+import { getMouseCfg, setMouseCfg } from './lib/cmd'
 import { on } from './lib/dom'
-import { getSettings, settings } from './lib/settings'
 
-export const store = createStore()
+export const store = getDefaultStore()
 
 export const langAtom = atom(DEFAULT_LANG)
 
@@ -32,18 +29,6 @@ export const setAutoLaunchAtom = atom(null, async (_, set, enabled: boolean) => 
     set(autoLaunchAtom, enabled)
 })
 
-export const useLang = () => useAtom(langAtom)
-
-export const initI18n = async () => {
-    const lang = await getSettings('locale', DEFAULT_LANG, isLocale)
-    store.set(langAtom, lang)
-}
-
-export const resetState = () => {
-    store.set(senAtom, DEFAULT_SEN)
-    store.set(accEnabledAtom, DEFAULT_ACC_ENABLED)
-}
-
 export const fetchState = async () => {
     const ret = await getMouseCfg()
     const [sen, accEnabled] = ret.match({
@@ -58,14 +43,9 @@ export const fetchState = async () => {
     store.set(autoLaunchAtom, autoStart)
 }
 
-on(window)('focus', fetchState)
+export const resetState = () => {
+    store.set(senAtom, DEFAULT_SEN)
+    store.set(accEnabledAtom, DEFAULT_ACC_ENABLED)
+}
 
-settings.onKeyChange('locale', (locale: Locales | null) => {
-    if (!locale || !isLocale(locale)) {
-        return
-    }
-    if (locale === store.get(langAtom)) {
-        return
-    }
-    store.set(langAtom, () => locale)
-})
+on(window)('focus', fetchState)

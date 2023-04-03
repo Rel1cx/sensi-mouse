@@ -5,153 +5,155 @@ import type { BaseTranslation as BaseTranslationType, LocalizedString, RequiredP
 export type BaseTranslation = BaseTranslationType
 export type BaseLocale = 'en'
 
-export type Locales = 'en' | 'zh'
+export type Locales =
+	| 'en'
+	| 'zh'
 
 export type Translation = RootTranslation
 
 export type Translations = RootTranslation
 
 type RootTranslation = {
-    /**
-     * H​i​ ​{​n​a​m​e​}​!​ ​P​l​e​a​s​e​ ​l​e​a​v​e​ ​a​ ​s​t​a​r​ ​i​f​ ​y​o​u​ ​l​i​k​e​ ​t​h​i​s​ ​p​r​o​j​e​c​t​:​ ​h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​i​v​a​n​h​o​f​e​r​/​t​y​p​e​s​a​f​e​-​i​1​8​n
-     * @param {string} name
-     */
-    HI: RequiredParams<'name'>
-    /**
-     * O​n
-     */
-    ON: string
-    /**
-     * O​f​f
-     */
-    OFF: string
-    /**
-     * T​h​e​m​e
-     */
-    THEME: string
-    /**
-     * L​i​g​h​t
-     */
-    LIGHT: string
-    /**
-     * D​a​r​k
-     */
-    DARK: string
-    /**
-     * I​n​t​e​r​f​a​c​e
-     */
-    INTERFACE: string
-    /**
-     * L​a​n​g​u​a​g​e
-     */
-    LANGUAGE: string
-    /**
-     * G​e​n​e​r​a​l
-     */
-    GENERAL: string
-    /**
-     * S​e​n​s​i​t​i​v​i​t​y
-     */
-    SENSITIVITY: string
-    /**
-     * A​c​c​e​l​e​r​a​t​i​o​n
-     */
-    ACCELERATION: string
-    /**
-     * P​r​e​f​e​r​e​n​c​e​s
-     */
-    PREFERENCES: string
-    /**
-     * R​e​s​e​t
-     */
-    RESET: string
-    /**
-     * A​b​o​u​t
-     */
-    ABOUT: string
-    /**
-     * Q​u​i​t
-     */
-    QUIT: string
-    /**
-     * S​t​a​r​t​ ​a​t​ ​l​o​g​i​n
-     */
-    START_AT_LOGIN: string
-    /**
-     * V​e​r​s​i​o​n
-     */
-    VERSION: string
+	/**
+	 * H​i​ ​{​n​a​m​e​}​!​ ​P​l​e​a​s​e​ ​l​e​a​v​e​ ​a​ ​s​t​a​r​ ​i​f​ ​y​o​u​ ​l​i​k​e​ ​t​h​i​s​ ​p​r​o​j​e​c​t​:​ ​h​t​t​p​s​:​/​/​g​i​t​h​u​b​.​c​o​m​/​i​v​a​n​h​o​f​e​r​/​t​y​p​e​s​a​f​e​-​i​1​8​n
+	 * @param {string} name
+	 */
+	HI: RequiredParams<'name'>
+	/**
+	 * O​n
+	 */
+	ON: string
+	/**
+	 * O​f​f
+	 */
+	OFF: string
+	/**
+	 * T​h​e​m​e
+	 */
+	THEME: string
+	/**
+	 * L​i​g​h​t
+	 */
+	LIGHT: string
+	/**
+	 * D​a​r​k
+	 */
+	DARK: string
+	/**
+	 * I​n​t​e​r​f​a​c​e
+	 */
+	INTERFACE: string
+	/**
+	 * L​a​n​g​u​a​g​e
+	 */
+	LANGUAGE: string
+	/**
+	 * G​e​n​e​r​a​l
+	 */
+	GENERAL: string
+	/**
+	 * S​e​n​s​i​t​i​v​i​t​y
+	 */
+	SENSITIVITY: string
+	/**
+	 * A​c​c​e​l​e​r​a​t​i​o​n
+	 */
+	ACCELERATION: string
+	/**
+	 * P​r​e​f​e​r​e​n​c​e​s
+	 */
+	PREFERENCES: string
+	/**
+	 * R​e​s​e​t
+	 */
+	RESET: string
+	/**
+	 * A​b​o​u​t
+	 */
+	ABOUT: string
+	/**
+	 * Q​u​i​t
+	 */
+	QUIT: string
+	/**
+	 * S​t​a​r​t​ ​a​t​ ​l​o​g​i​n
+	 */
+	START_AT_LOGIN: string
+	/**
+	 * V​e​r​s​i​o​n
+	 */
+	VERSION: string
 }
 
 export type TranslationFunctions = {
-    /**
-     * Hi {name}! Please leave a star if you like this project: https://github.com/ivanhofer/typesafe-i18n
-     */
-    HI: (arg: { name: string }) => LocalizedString
-    /**
-     * On
-     */
-    ON: () => LocalizedString
-    /**
-     * Off
-     */
-    OFF: () => LocalizedString
-    /**
-     * Theme
-     */
-    THEME: () => LocalizedString
-    /**
-     * Light
-     */
-    LIGHT: () => LocalizedString
-    /**
-     * Dark
-     */
-    DARK: () => LocalizedString
-    /**
-     * Interface
-     */
-    INTERFACE: () => LocalizedString
-    /**
-     * Language
-     */
-    LANGUAGE: () => LocalizedString
-    /**
-     * General
-     */
-    GENERAL: () => LocalizedString
-    /**
-     * Sensitivity
-     */
-    SENSITIVITY: () => LocalizedString
-    /**
-     * Acceleration
-     */
-    ACCELERATION: () => LocalizedString
-    /**
-     * Preferences
-     */
-    PREFERENCES: () => LocalizedString
-    /**
-     * Reset
-     */
-    RESET: () => LocalizedString
-    /**
-     * About
-     */
-    ABOUT: () => LocalizedString
-    /**
-     * Quit
-     */
-    QUIT: () => LocalizedString
-    /**
-     * Start at login
-     */
-    START_AT_LOGIN: () => LocalizedString
-    /**
-     * Version
-     */
-    VERSION: () => LocalizedString
+	/**
+	 * Hi {name}! Please leave a star if you like this project: https://github.com/ivanhofer/typesafe-i18n
+	 */
+	HI: (arg: { name: string }) => LocalizedString
+	/**
+	 * On
+	 */
+	ON: () => LocalizedString
+	/**
+	 * Off
+	 */
+	OFF: () => LocalizedString
+	/**
+	 * Theme
+	 */
+	THEME: () => LocalizedString
+	/**
+	 * Light
+	 */
+	LIGHT: () => LocalizedString
+	/**
+	 * Dark
+	 */
+	DARK: () => LocalizedString
+	/**
+	 * Interface
+	 */
+	INTERFACE: () => LocalizedString
+	/**
+	 * Language
+	 */
+	LANGUAGE: () => LocalizedString
+	/**
+	 * General
+	 */
+	GENERAL: () => LocalizedString
+	/**
+	 * Sensitivity
+	 */
+	SENSITIVITY: () => LocalizedString
+	/**
+	 * Acceleration
+	 */
+	ACCELERATION: () => LocalizedString
+	/**
+	 * Preferences
+	 */
+	PREFERENCES: () => LocalizedString
+	/**
+	 * Reset
+	 */
+	RESET: () => LocalizedString
+	/**
+	 * About
+	 */
+	ABOUT: () => LocalizedString
+	/**
+	 * Quit
+	 */
+	QUIT: () => LocalizedString
+	/**
+	 * Start at login
+	 */
+	START_AT_LOGIN: () => LocalizedString
+	/**
+	 * Version
+	 */
+	VERSION: () => LocalizedString
 }
 
 export type Formatters = {}

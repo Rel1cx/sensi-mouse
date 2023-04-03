@@ -5,7 +5,7 @@ import { useAtom } from 'jotai/react'
 import { Button } from '@/components/Button'
 import { Divider } from '@/components/Divider'
 import { Header } from '@/components/Header'
-import { useTrans } from '@/lib/i18n'
+import { useTranslation } from '@/i18n'
 import { getWebviewWindow } from '@/lib/tauri'
 import { accEnabledAtom, resetState, senAtom } from '@/store'
 
@@ -34,7 +34,7 @@ export default function Main() {
     const [sen, setSen] = useAtom(senAtom)
     const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
 
-    const T = useTrans()
+    const T = useTranslation()
 
     return (
         <SC.Container direction="column" justify="space-between">

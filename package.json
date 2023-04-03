@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "typesafe-i18n --no-watch && tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
     "format:ts": "prettier --loglevel warn --cache --write \"src/**/*.@(html|js|ts|tsx|css|scss|md)\"",
@@ -14,7 +14,7 @@
     "format": "npm run format:ts && npm run format:rs",
     "lint": "npm run lint:ts && npm run lint:rs",
     "clean": "rm -rf dist node_modules pnpm-lock.yaml && cd src-tauri && cargo clean",
-    "typesafe-i18n": "typesafe-i18n"
+    "i18n": "typesafe-i18n"
   },
   "dependencies": {
     "@mantine/core": "6.0.5",
@@ -26,7 +26,6 @@
     "@tauri-apps/api": "1.2.0",
     "@total-typescript/ts-reset": "0.4.2",
     "jotai": "2.0.3",
-    "micro-memoize": "^4.0.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-use": "17.4.0",
@@ -34,7 +33,7 @@
     "tauri-plugin-autostart-api": "https://github.com/tauri-apps/tauri-plugin-autostart",
     "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store",
     "ts-pattern": "4.2.2",
-    "valtio": "^1.10.3"
+    "valtio": "1.10.3"
   },
   "devDependencies": {
     "@babel/core": "7.21.4",

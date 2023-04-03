@@ -1,6 +1,6 @@
 import { Store } from 'tauri-plugin-store-api'
 
-import { makeAsyncGetWithDefault } from './helper'
+import { makeAsyncGetWithDefault } from './tools'
 
 export const settings = new Store('.settings.dat')
 

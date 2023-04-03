@@ -2,10 +2,10 @@ import { Checkbox, Flex, Select } from '@mantine/core'
 import { useAtom, useSetAtom } from 'jotai/react'
 
 import { Header } from '@/components/Header'
+import { useLocale, useTranslation } from '@/i18n'
 import { isLocale } from '@/i18n/i18n-util'
-import { useTrans } from '@/lib/i18n'
 import { settings } from '@/lib/settings'
-import { autoLaunchAtom, setAutoLaunchAtom, useLang } from '@/store'
+import { autoLaunchAtom, setAutoLaunchAtom } from '@/store'
 import { styled } from '@/theme'
 
 const themes = [
@@ -27,8 +27,8 @@ const Container = styled(Flex, {
 })
 
 export default function Preferences() {
-    const [lang] = useLang()
-    const T = useTrans()
+    const locale = useLocale()
+    const T = useTranslation()
 
     const [enabled] = useAtom(autoLaunchAtom)
     const setEnabled = useSetAtom(setAutoLaunchAtom)
@@ -40,7 +40,7 @@ export default function Preferences() {
             <Header>{T.LANGUAGE()}</Header>
             <Select
                 data={languages}
-                value={lang}
+                value={locale}
                 onChange={value => {
                     if (!value || !isLocale(value)) {
                         return

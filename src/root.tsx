@@ -1,24 +1,17 @@
 import { Option, Result } from '@swan-io/boxed'
-import { Provider } from 'jotai'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import { App } from './app'
-import { fetchState, initI18n, store } from './store'
 
-export async function renderApp(): Promise<Result<string, Error>> {
-    await initI18n()
-    await fetchState()
-
+export function renderApp(): Result<string, Error> {
     return Option.fromNullable(document.querySelector('#app')).match({
         Some: el => {
             const root = createRoot(el)
 
             root.render(
                 <StrictMode>
-                    <Provider store={store}>
-                        <App />
-                    </Provider>
+                    <App />
                 </StrictMode>
             )
 

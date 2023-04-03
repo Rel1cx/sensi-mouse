@@ -10,7 +10,10 @@ import type { Formatters, Locales, Translations, TranslationFunctions } from './
 
 export const baseLocale: Locales = 'en'
 
-export const locales: Locales[] = ['en', 'zh']
+export const locales: Locales[] = [
+	'en',
+	'zh'
+]
 
 export const isLocale = (locale: string): locale is Locales => locales.includes(locale as Locales)
 
@@ -20,18 +23,16 @@ export const loadedFormatters: Record<Locales, Formatters> = {} as Record<Locale
 
 export const extendDictionary = initExtendDictionary<Translations>()
 
-export const i18nString = (locale: Locales): TranslateByString =>
-    initI18nString<Locales, Formatters>(locale, loadedFormatters[locale])
+export const i18nString = (locale: Locales): TranslateByString => initI18nString<Locales, Formatters>(locale, loadedFormatters[locale])
 
 export const i18nObject = (locale: Locales): TranslationFunctions =>
-    initI18nObject<Locales, Translations, TranslationFunctions, Formatters>(
-        locale,
-        loadedLocales[locale],
-        loadedFormatters[locale]
-    )
+	initI18nObject<Locales, Translations, TranslationFunctions, Formatters>(
+		locale,
+		loadedLocales[locale],
+		loadedFormatters[locale]
+	)
 
 export const i18n = (): LocaleTranslationFunctions<Locales, Translations, TranslationFunctions> =>
-    initI18n<Locales, Translations, TranslationFunctions, Formatters>(loadedLocales, loadedFormatters)
+	initI18n<Locales, Translations, TranslationFunctions, Formatters>(loadedLocales, loadedFormatters)
 
-export const detectLocale = (...detectors: LocaleDetector[]): Locales =>
-    detectLocaleFn<Locales>(baseLocale, locales, ...detectors)
+export const detectLocale = (...detectors: LocaleDetector[]): Locales => detectLocaleFn<Locales>(baseLocale, locales, ...detectors)
