@@ -1,7 +1,7 @@
-export const on = (el: EventTarget, event: string, handler: EventListenerOrEventListenerObject) => {
-    el.addEventListener(event, handler)
+export const on = (terget: EventTarget, event: string, handler: EventListenerOrEventListenerObject) => {
+    terget.addEventListener(event, handler)
 }
 
-export const off = (el: EventTarget, event: string, handler: EventListenerOrEventListenerObject) => {
-    el.removeEventListener(event, handler)
+export const off = (terget: EventTarget, event: string, handler: EventListenerOrEventListenerObject) => {
+    terget.removeEventListener(event, handler)
 }

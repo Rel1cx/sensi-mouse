@@ -5,6 +5,7 @@ import { useAtom } from 'jotai/react'
 import { Button } from '@/components/Button'
 import { Divider } from '@/components/Divider'
 import { Header } from '@/components/Header'
+import { useI18nContext } from '@/i18n/i18n-react'
 import { getWebviewWindow } from '@/lib/tauri'
 import { accEnabledAtom, resetState, senAtom } from '@/store'
 
@@ -33,6 +34,8 @@ export default function Main() {
     const [sen, setSen] = useAtom(senAtom)
     const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
 
+    const { LL } = useI18nContext()
+
     return (
         <SC.Container direction="column" justify="space-between">
             <Header>SensiMouse (beta)</Header>
@@ -54,9 +57,9 @@ export default function Main() {
             </SC.Content>
             <Divider />
             <SC.Footer gap={8} justify="flex-end" align="center">
-                <Button onClick={handleOpenPreferences}>Preferences</Button>
-                <Button onClick={() => resetState()}>Reset</Button>
-                <Button onClick={() => exit(0)}>Quit</Button>
+                <Button onClick={handleOpenPreferences}>{LL.PREFERENCES()}</Button>
+                <Button onClick={() => resetState()}>{LL.RESET()}</Button>
+                <Button onClick={() => exit(0)}>{LL.QUIT()}</Button>
             </SC.Footer>
         </SC.Container>
     )

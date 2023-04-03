@@ -5,9 +5,11 @@ import '@total-typescript/ts-reset'
 
 import { renderApp } from './root'
 
-renderApp().match({
-    Ok: _ => {},
-    Error: error => {
-        document.write(error.message)
-    }
+renderApp().then(result => {
+    result.match({
+        Ok: _ => {},
+        Error: error => {
+            document.write(error.message)
+        }
+    })
 })

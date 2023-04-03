@@ -2,9 +2,9 @@ import { Checkbox, Flex, Select } from '@mantine/core'
 import { useAtom, useSetAtom } from 'jotai/react'
 
 import { Header } from '@/components/Header'
-import { loadLocaleMemed } from '@/i18n/helper'
 import { useI18nContext } from '@/i18n/i18n-react'
 import { isLocale } from '@/i18n/i18n-util'
+import { settings } from '@/lib/settings'
 import { autoLaunchAtom, setAutoLaunchAtom } from '@/store'
 import { styled } from '@/theme'
 
@@ -26,14 +26,8 @@ const Container = styled(Flex, {
     padding: '16px 12px'
 })
 
-// async function onLocaleSelected(locale: Locales, setLocale: (locale: Locales) => void) {
-//     localStorage.setItem('lang', locale)
-//     await loadLocaleAsync(locale)
-//     setLocale(locale)
-// }
-
 export default function Preferences() {
-    const { locale, LL, setLocale } = useI18nContext()
+    const { locale, LL } = useI18nContext()
 
     const [enabled] = useAtom(autoLaunchAtom)
     const setEnabled = useSetAtom(setAutoLaunchAtom)
@@ -51,8 +45,7 @@ export default function Preferences() {
                     if (!value || !isLocale(value)) {
                         return
                     }
-                    loadLocaleMemed(value)
-                    setLocale(value)
+                    settings.set('locale', value)
                 }}
             />
             <Header>{LL.GENERAL()}</Header>
