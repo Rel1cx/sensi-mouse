@@ -1,6 +1,6 @@
 import { type AsyncGetProtocol } from '@/types'
 
-export function makeAsyncGetWithDefault(self: AsyncGetProtocol) {
+export const makeAsyncGetWithDefault = (self: AsyncGetProtocol) => {
     return async <T>(
         key: string,
         defaultValue: T,

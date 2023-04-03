@@ -5,7 +5,7 @@ import { useAtom } from 'jotai/react'
 import { Button } from '@/components/Button'
 import { Divider } from '@/components/Divider'
 import { Header } from '@/components/Header'
-import { useI18nContext } from '@/i18n/i18n-react'
+import { useTrans } from '@/lib/i18n'
 import { getWebviewWindow } from '@/lib/tauri'
 import { accEnabledAtom, resetState, senAtom } from '@/store'
 
@@ -19,22 +19,22 @@ const marks = [
     { value: 100, label: '100' }
 ]
 
-async function handleOpenPreferences() {
+export const handleOpenPreferences = async () => {
     const window = await getWebviewWindow('preferences')
-    window.match({
-        Some: window => window.show(),
-        None: () => {
-            // eslint-disable-next-line no-console
-            console.error('Failed to get preferences window')
-        }
-    })
+
+    if (window.isSome()) {
+        window.get().show()
+        return
+    }
+    // eslint-disable-next-line no-console
+    console.error('Failed to get preferences window')
 }
 
 export default function Main() {
     const [sen, setSen] = useAtom(senAtom)
     const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
 
-    const { LL } = useI18nContext()
+    const T = useTrans()
 
     return (
         <SC.Container direction="column" justify="space-between">
@@ -57,9 +57,9 @@ export default function Main() {
             </SC.Content>
             <Divider />
             <SC.Footer gap={8} justify="flex-end" align="center">
-                <Button onClick={handleOpenPreferences}>{LL.PREFERENCES()}</Button>
-                <Button onClick={() => resetState()}>{LL.RESET()}</Button>
-                <Button onClick={() => exit(0)}>{LL.QUIT()}</Button>
+                <Button onClick={handleOpenPreferences}>{T.PREFERENCES()}</Button>
+                <Button onClick={() => resetState()}>{T.RESET()}</Button>
+                <Button onClick={() => exit(0)}>{T.QUIT()}</Button>
             </SC.Footer>
         </SC.Container>
     )

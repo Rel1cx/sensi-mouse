@@ -1,10 +1,8 @@
 import { MantineProvider } from '@mantine/core'
-import { Provider } from 'jotai/react'
 import { lazy, useMemo } from 'react'
 import { match } from 'ts-pattern'
 
 import { Router } from './router'
-import { store } from './store'
 import { mantineThemetheme, styled } from './theme'
 
 const Main = lazy(() => import('./pages/Main'))
@@ -20,21 +18,19 @@ const AppShellScreen = styled('main', {
 export function App() {
     const route = Router.useRoute(['Main', 'About', 'Preferences'])
 
-    const contentView = useMemo(
-        () =>
-            match(route)
-                .with({ name: 'Main' }, () => <Main />)
-                .with({ name: 'About' }, () => <About />)
-                .with({ name: 'Preferences' }, () => <Preferences />)
-                .otherwise(() => null),
-        [route]
-    )
-
     return (
         <MantineProvider withGlobalStyles theme={mantineThemetheme}>
-            <Provider store={store}>
-                <AppShellScreen>{contentView}</AppShellScreen>
-            </Provider>
+            <AppShellScreen>
+                {useMemo(
+                    () =>
+                        match(route)
+                            .with({ name: 'Main' }, () => <Main />)
+                            .with({ name: 'About' }, () => <About />)
+                            .with({ name: 'Preferences' }, () => <Preferences />)
+                            .otherwise(() => null),
+                    [route]
+                )}
+            </AppShellScreen>
         </MantineProvider>
     )
 }

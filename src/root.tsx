@@ -1,17 +1,14 @@
 import { Option, Result } from '@swan-io/boxed'
+import { Provider } from 'jotai'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import { App } from './app'
-import TypesafeI18n from './i18n/i18n-react'
-import { isLocale } from './i18n/i18n-util'
-import { loadLocaleAsync } from './i18n/i18n-util.async'
-import { getSettings } from './lib/settings'
+import { fetchState, initI18n, store } from './store'
 
 export async function renderApp(): Promise<Result<string, Error>> {
-    const local = await getSettings('locale', 'en', isLocale)
-
-    await loadLocaleAsync(local)
+    await initI18n()
+    await fetchState()
 
     return Option.fromNullable(document.querySelector('#app')).match({
         Some: el => {
@@ -19,13 +16,13 @@ export async function renderApp(): Promise<Result<string, Error>> {
 
             root.render(
                 <StrictMode>
-                    <TypesafeI18n locale={local}>
+                    <Provider store={store}>
                         <App />
-                    </TypesafeI18n>
+                    </Provider>
                 </StrictMode>
             )
 
-            return Result.Ok('App rendered')
+            return Result.Ok('')
         },
         None: () => {
             return Result.Error(new Error('Could not find #app element'))

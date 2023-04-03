@@ -2,10 +2,10 @@ import { Checkbox, Flex, Select } from '@mantine/core'
 import { useAtom, useSetAtom } from 'jotai/react'
 
 import { Header } from '@/components/Header'
-import { useI18nContext } from '@/i18n/i18n-react'
 import { isLocale } from '@/i18n/i18n-util'
+import { useTrans } from '@/lib/i18n'
 import { settings } from '@/lib/settings'
-import { autoLaunchAtom, setAutoLaunchAtom } from '@/store'
+import { autoLaunchAtom, setAutoLaunchAtom, useLang } from '@/store'
 import { styled } from '@/theme'
 
 const themes = [
@@ -27,20 +27,20 @@ const Container = styled(Flex, {
 })
 
 export default function Preferences() {
-    const { locale, LL } = useI18nContext()
+    const [lang] = useLang()
+    const T = useTrans()
 
     const [enabled] = useAtom(autoLaunchAtom)
     const setEnabled = useSetAtom(setAutoLaunchAtom)
 
     return (
         <Container direction="column" gap={8} align="stretch">
-            <Header>{LL.THEME()}</Header>
+            <Header>{T.THEME()}</Header>
             <Select defaultValue="light" data={themes} />
-            <Header>{LL.LANGUAGE()}</Header>
+            <Header>{T.LANGUAGE()}</Header>
             <Select
-                defaultValue="en"
                 data={languages}
-                value={locale}
+                value={lang}
                 onChange={value => {
                     if (!value || !isLocale(value)) {
                         return
@@ -48,9 +48,9 @@ export default function Preferences() {
                     settings.set('locale', value)
                 }}
             />
-            <Header>{LL.GENERAL()}</Header>
+            <Header>{T.GENERAL()}</Header>
             <Checkbox
-                label={LL.START_AT_LOGIN()}
+                label={T.START_AT_LOGIN()}
                 checked={enabled}
                 onChange={e => setEnabled(e.currentTarget.checked)}
             />
