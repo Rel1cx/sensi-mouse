@@ -46,6 +46,7 @@ export default function Preferences() {
                         return
                     }
                     settings.set('locale', value)
+                    settings.save()
                 }}
             />
             <Header>{T.GENERAL()}</Header>

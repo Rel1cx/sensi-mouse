@@ -2,13 +2,11 @@ import { invoke } from '@tauri-apps/api/tauri'
 import { atom, getDefaultStore } from 'jotai'
 import * as autostart from 'tauri-plugin-autostart-api'
 
-import { DEFAULT_ACC_ENABLED, DEFAULT_LANG, DEFAULT_SEN } from './constants'
+import { DEFAULT_ACC_ENABLED, DEFAULT_SEN } from './constants'
 import { getMouseCfg, setMouseCfg } from './lib/cmd'
 import { on } from './lib/dom'
 
 export const store = getDefaultStore()
-
-export const langAtom = atom(DEFAULT_LANG)
 
 export const senAtom = atom(0, async (get, set, sen: number) => {
     set(senAtom, sen)
