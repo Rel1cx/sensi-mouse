@@ -33,7 +33,7 @@
     "tauri-plugin-autostart-api": "https://github.com/tauri-apps/tauri-plugin-autostart",
     "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store",
     "ts-pattern": "4.2.2",
-    "valtio": "1.10.3"
+    "valtio": "1.10.4"
   },
   "devDependencies": {
     "@babel/core": "7.21.4",
