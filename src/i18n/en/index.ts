@@ -1,9 +1,6 @@
 import { type BaseTranslation } from '../i18n-types.js'
 
 const en = {
-    HI: 'Hi {name:string}! Please leave a star if you like this project: https://github.com/ivanhofer/typesafe-i18n',
-    ON: 'On',
-    OFF: 'Off',
     THEME: 'Theme',
     LIGHT: 'Light',
     DARK: 'Dark',

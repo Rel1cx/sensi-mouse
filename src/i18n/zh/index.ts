@@ -1,9 +1,6 @@
 import { type Translation } from '../i18n-types.js'
 
 const zh = {
-    HI: '你好 {name}! 如果你喜欢这个项目，请给个星星: https://github.com/ivanhofer/typesafe-i18n',
-    ON: '开',
-    OFF: '关',
     THEME: '主题',
     LIGHT: '浅色',
     DARK: '深色',
