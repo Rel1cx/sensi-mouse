@@ -1,5 +1,6 @@
 use tauri::{
     ActivationPolicy, CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu,
+    SystemTrayMenuItem,
 };
 use tauri_plugin_positioner::{Position, WindowExt};
 use window_vibrancy::NSVisualEffectMaterial;
@@ -30,7 +31,7 @@ fn system_tray() -> SystemTray {
     let tray_menu = SystemTrayMenu::new()
         .add_item(preferences)
         .add_item(about)
-        // .add_native_item(SystemTrayMenuItem::Separator)
+        .add_native_item(SystemTrayMenuItem::Separator)
         .add_item(quit);
     SystemTray::new().with_menu(tray_menu)
 }
