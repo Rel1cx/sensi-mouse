@@ -1,14 +1,14 @@
 {
     "build": {
         "beforeDevCommand": "pnpm dev",
-        "beforeBuildCommand": "pnpm build",
+        "beforeBuildCommand": "pnpm build && pnpm update-version",
         "devPath": "http://localhost:1420",
         "distDir": "../dist",
         "withGlobalTauri": false
     },
     "package": {
         "productName": "SensiMouse",
-        "version": "1.0.0"
+        "version": "1.0.2"
     },
     "tauri": {
         "allowlist": {
