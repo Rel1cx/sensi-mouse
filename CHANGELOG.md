@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Nicify/sensi-mouse/compare/v1.0.0...v1.0.1) (2023-04-06)
+
+
+### Bug Fixes
+
+* Update version number and allow opening of raw.githubusercontent.com in Tauri configuration file ([2fb7019](https://github.com/Nicify/sensi-mouse/commit/2fb70196bcc3bb79efce12a7a362078aea9209d7))
+
 ## [1.0.0](https://github.com/Nicify/sensi-mouse/compare/v0.0.11...v1.0.0) (2023-04-06)
 
 
