@@ -40,7 +40,7 @@ export default function Main() {
         <SC.Container direction="column" justify="space-between">
             <Header>SensiMouse (beta)</Header>
             <SC.Content>
-                <Input.Wrapper label={T.PREFERENCES()}>
+                <Input.Wrapper label={T.SENSITIVITY()}>
                     <SC.xSlider size="lg" marks={marks} min={0} max={100} value={sen} onChange={setSen} />
                 </Input.Wrapper>
                 <Input.Wrapper label={T.ACCELERATION()}>
