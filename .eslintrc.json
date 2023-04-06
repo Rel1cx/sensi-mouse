@@ -6,7 +6,7 @@
     },
     "overrides": [
         {
-            "files": ["vite.config.ts"],
+            "files": ["scripts/**/*.ts", "vite.config.ts"],
             "parserOptions": {
                 "project": "tsconfig.node.json"
             }

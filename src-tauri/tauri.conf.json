@@ -1,114 +1,114 @@
 {
-  "build": {
-    "beforeDevCommand": "pnpm dev",
-    "beforeBuildCommand": "pnpm build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist",
-    "withGlobalTauri": false
-  },
-  "package": {
-    "productName": "SensiMouse",
-    "version": "0.0.10"
-  },
-  "tauri": {
-    "allowlist": {
-      "window": {
-        "show": true
-      },
-      "shell": {
-        "open": "^https?://(github.com)"
-      }
+    "build": {
+        "beforeDevCommand": "pnpm dev",
+        "beforeBuildCommand": "pnpm build",
+        "devPath": "http://localhost:1420",
+        "distDir": "../dist",
+        "withGlobalTauri": false
     },
-    "bundle": {
-      "active": true,
-      "category": "Utility",
-      "copyright": "",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
-      "identifier": "me.relicx.sensi-mouse",
-      "longDescription": "",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "resources": [],
-      "shortDescription": "",
-      "targets": "all",
-      "windows": {
-        "certificateThumbprint": null,
-        "digestAlgorithm": "sha256",
-        "timestampUrl": ""
-      }
+    "package": {
+        "productName": "SensiMouse",
+        "version": "0.0.11"
     },
-    "security": {
-      "csp": null
-    },
-    "updater": {
-      "active": true,
-      "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDE5Q0JGQzE1RDlCRjc2NzMKUldSemRyL1pGZnpMR1pYYk5GQTNHM2pMWEZ2bnNRZ3oyU29YSTZvc3RTRVI2bTZTQUQ0ZWxSSHUK",
-      "endpoints": [
-        "https://github.com/Nicify/sensi-mouse/releases/latest/download/latest.json"
-      ]
-    },
-    "macOSPrivateApi": true,
-    "windows": [
-      {
-        "label": "main",
-        "title": "SensiMouse",
-        "fullscreen": false,
-        "width": 300,
-        "height": 200,
-        "resizable": false,
-        "visible": false,
-        "hiddenTitle": true,
-        "decorations": false,
-        "focus": false,
-        "transparent": true,
-        "skipTaskbar": true,
-        "alwaysOnTop": true
-      },
-      {
-        "label": "preferences",
-        "title": "Preferences",
-        "url": "/preferences",
-        "fullscreen": false,
-        "center": true,
-        "resizable": false,
-        "visible": false,
-        "width": 500,
-        "height": 296,
-        "alwaysOnTop": false
-      },
-      {
-        "label": "about",
-        "title": "About",
-        "url": "/about",
-        "fullscreen": false,
-        "center": true,
-        "resizable": false,
-        "visible": false,
-        "width": 240,
-        "height": 180,
-        "alwaysOnTop": true
-      }
-    ],
-    "systemTray": {
-      "iconPath": "icons/line.png",
-      "iconAsTemplate": true,
-      "menuOnLeftClick": false
+    "tauri": {
+        "allowlist": {
+            "window": {
+                "show": true
+            },
+            "shell": {
+                "open": "^https?://(github.com)"
+            }
+        },
+        "bundle": {
+            "active": true,
+            "category": "Utility",
+            "copyright": "",
+            "deb": {
+                "depends": []
+            },
+            "externalBin": [],
+            "icon": [
+                "icons/32x32.png",
+                "icons/128x128.png",
+                "icons/128x128@2x.png",
+                "icons/icon.icns",
+                "icons/icon.ico"
+            ],
+            "identifier": "me.relicx.sensi-mouse",
+            "longDescription": "",
+            "macOS": {
+                "entitlements": null,
+                "exceptionDomain": "",
+                "frameworks": [],
+                "providerShortName": null,
+                "signingIdentity": null
+            },
+            "resources": [],
+            "shortDescription": "",
+            "targets": "all",
+            "windows": {
+                "certificateThumbprint": null,
+                "digestAlgorithm": "sha256",
+                "timestampUrl": ""
+            }
+        },
+        "security": {
+            "csp": null
+        },
+        "updater": {
+            "active": true,
+            "dialog": true,
+            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDE5Q0JGQzE1RDlCRjc2NzMKUldSemRyL1pGZnpMR1pYYk5GQTNHM2pMWEZ2bnNRZ3oyU29YSTZvc3RTRVI2bTZTQUQ0ZWxSSHUK",
+            "endpoints": [
+                "https://github.com/Nicify/sensi-mouse/releases/latest/download/latest.json"
+            ]
+        },
+        "macOSPrivateApi": true,
+        "windows": [
+            {
+                "label": "main",
+                "title": "SensiMouse",
+                "fullscreen": false,
+                "width": 300,
+                "height": 200,
+                "resizable": false,
+                "visible": false,
+                "hiddenTitle": true,
+                "decorations": false,
+                "focus": false,
+                "transparent": true,
+                "skipTaskbar": true,
+                "alwaysOnTop": true
+            },
+            {
+                "label": "preferences",
+                "title": "Preferences",
+                "url": "/preferences",
+                "fullscreen": false,
+                "center": true,
+                "resizable": false,
+                "visible": false,
+                "width": 500,
+                "height": 296,
+                "alwaysOnTop": false
+            },
+            {
+                "label": "about",
+                "title": "About",
+                "url": "/about",
+                "fullscreen": false,
+                "center": true,
+                "resizable": false,
+                "visible": false,
+                "width": 240,
+                "height": 180,
+                "alwaysOnTop": true
+            }
+        ],
+        "systemTray": {
+            "iconPath": "icons/line.png",
+            "iconAsTemplate": true,
+            "menuOnLeftClick": false
+        }
     }
-  }
 }
