@@ -74,6 +74,7 @@ jobs:
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
+          args: --target universal-apple-darwin
           releaseId: ${{ needs.release_please.outputs.release_id }}
 
   create_update_json:
