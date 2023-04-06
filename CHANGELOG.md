@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.11](https://github.com/Nicify/sensi-mouse/compare/v0.0.10...v0.0.11) (2023-04-06)
+
+
+### Features
+
+* Add updater initial version with GitHub API integration and update file generation ([17581df](https://github.com/Nicify/sensi-mouse/commit/17581df45a28879d1a246d28c7c9d41d37b1eac9))
+
 ## [0.0.10](https://github.com/Nicify/sensi-mouse/compare/v0.0.9...v0.0.10) (2023-04-06)
 
 
