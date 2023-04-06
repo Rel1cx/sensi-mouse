@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Nicify/sensi-mouse/compare/v1.0.1...v1.0.2) (2023-04-06)
+
+
+### Bug Fixes
+
+* update header text in Main component from "SensiMouse (beta)" to "SensiMouse". ([85f21b5](https://github.com/Nicify/sensi-mouse/commit/85f21b58af1b9ae8d69724fab5f12502d19e00d1))
+
 ## [1.0.1](https://github.com/Nicify/sensi-mouse/compare/v1.0.0...v1.0.1) (2023-04-06)
 
 
