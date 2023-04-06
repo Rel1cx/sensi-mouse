@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.12](https://github.com/Nicify/sensi-mouse/compare/v0.0.11...v0.0.12) (2023-04-06)
+
+
+### Bug Fixes
+
+* use pnpm instead of make for updating the version in the release and beta workflows ([1864717](https://github.com/Nicify/sensi-mouse/commit/18647175f805017be24515ef1ac53639a7b0296c))
+
 ## [0.0.11](https://github.com/Nicify/sensi-mouse/compare/v0.0.10...v0.0.11) (2023-04-06)
 
 
