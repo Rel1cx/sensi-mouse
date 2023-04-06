@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/Nicify/sensi-mouse/compare/v0.0.11...v1.0.0) (2023-04-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add auto update
+
+### Features
+
+* Add auto update ([57866a1](https://github.com/Nicify/sensi-mouse/commit/57866a10c41554f4991429da62ce336f25e6f28a))
+
 ## [0.0.11](https://github.com/Nicify/sensi-mouse/compare/v0.0.10...v0.0.11) (2023-04-06)
 
 
