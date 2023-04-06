@@ -38,7 +38,7 @@ export default function Main() {
 
     return (
         <SC.Container direction="column" justify="space-between">
-            <Header>SensiMouse (beta)</Header>
+            <Header>SensiMouse</Header>
             <SC.Content>
                 <Input.Wrapper label={T.SENSITIVITY()}>
                     <SC.xSlider size="lg" marks={marks} min={0} max={100} value={sen} onChange={setSen} />
