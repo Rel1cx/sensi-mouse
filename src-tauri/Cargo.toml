@@ -25,7 +25,7 @@ tauri-build = { version = "1.2.1", features = [] }
 anyhow = "1.0"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive", "rc"] }
-tauri = { version = "1.2.4", features = ["macos-private-api", "shell-open", "system-tray", "window-show"] }
+tauri = { version = "1.2.4", features = ["macos-private-api", "shell-open", "system-tray", "window-show", "updater"] }
 tracing = "0.1"
 tracing-subscriber = "0.3"
 tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "dev" }
