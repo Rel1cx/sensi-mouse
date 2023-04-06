@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - release
+      - main
 jobs:
   # Job that allows the creation of the release
   release_please:
@@ -19,7 +19,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
-          default-branch: release
 
   # Job that builds the executables
   build_tauri:
