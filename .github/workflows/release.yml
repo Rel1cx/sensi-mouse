@@ -43,7 +43,7 @@ jobs:
         name: Install pnpm
         id: pnpm-install
         with:
-            version: 7
+            version: 8
             run_install: false
       - name: Get pnpm store directory
         id: pnpm-cache
@@ -67,7 +67,7 @@ jobs:
         with:
             workspaces: src-tauri
       - name: Update version
-        run: make update-version
+        run: pnpm run update-version
       - uses: tauri-apps/tauri-action@dev
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
