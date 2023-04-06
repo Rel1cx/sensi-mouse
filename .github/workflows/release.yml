@@ -1,56 +1,119 @@
 name: Release
 on:
-    push:
-        tags:
-            - 'v*'
+  push:
+    branches:
+      - release
 jobs:
-    release:
-        runs-on: macos-12
-        steps:
-            - uses: actions/checkout@v3
-            - name: Setup node
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 18
-            - uses: pnpm/action-setup@v2
-              name: Install pnpm
-              id: pnpm-install
-              with:
-                  version: 7
-                  run_install: false
-            - name: Get pnpm store directory
-              id: pnpm-cache
-              shell: bash
-              run: |
-                  echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-            - uses: actions/cache@v3
-              name: Setup pnpm cache
-              with:
-                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-                  key: ${{ runner.os }}-pnpm-store-release-${{ hashFiles('**/pnpm-lock.yaml') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pnpm-store-release-
-            - name: Install Rust stable
-              uses: dtolnay/rust-toolchain@stable
-              with:
-                  targets: aarch64-apple-darwin
-            - name: Install front-end dependencies
-              run: pnpm i
-            - uses: Swatinem/rust-cache@v2
-              with:
-                  workspaces: src-tauri
-            - name: Update version
-              run: make update-version
-            - uses: tauri-apps/tauri-action@dev
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
-                  releaseName: 'v__VERSION__'
-                  releaseBody: 'See the assets to download this version and install.'
-                  releaseDraft: false
-                  prerelease: true
-                  args: --target universal-apple-darwin
-        permissions:
-            contents: write
-            pull-requests: read
+  # Job that allows the creation of the release
+  release_please:
+    name: Release Please
+    runs-on: ubuntu-latest
+    outputs:
+      tag_name: ${{ steps.release.outputs.tag_name }}
+      release_id: ${{ steps.release.outputs.id }}
+      upload_url: ${{ steps.release.outputs.upload_url }}
+      release_created: ${{ steps.release.outputs.release_created }}
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: node
+
+  # Job that builds the executables
+  build_tauri:
+    name: "Build and upload release binaries"
+    needs: release_please
+    if: ${{ needs.release_please.outputs.release_created }}
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos-latest]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+            node-version: 18
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+            version: 7
+            run_install: false
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+            echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+            path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+            key: ${{ runner.os }}-pnpm-store-release-${{ hashFiles('**/pnpm-lock.yaml') }}
+            restore-keys: |
+                ${{ runner.os }}-pnpm-store-release-
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+            targets: aarch64-apple-darwin
+      - name: Install front-end dependencies
+        run: pnpm i
+      - uses: Swatinem/rust-cache@v2
+        with:
+            workspaces: src-tauri
+      - name: Update version
+        run: make update-version
+      - uses: tauri-apps/tauri-action@dev
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
+          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
+        with:
+          releaseId: ${{ needs.release_please.outputs.release_id }}
+
+  create_update_json:
+    name: "Create latest.json file"
+    needs: [release_please, build_tauri]
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - run: mkdir -p _output
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: updater
+
+      - name: install rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Generate update.json
+        run: cargo run > ../_output/latest.json
+        working-directory: updater
+
+      - name: remove old latest.json
+        uses: flcdrg/remove-release-asset-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ needs.release_please.outputs.release_id }}
+          asset_name: latest.json
+
+      - name: upload new latest.json
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.release_please.outputs.upload_url }}
+          asset_path: _output/latest.json
+          asset_name: latest.json
+          asset_content_type: application/json
