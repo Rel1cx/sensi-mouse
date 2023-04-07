@@ -8,7 +8,16 @@ type ButtonProps = MTButtonProps & {
 
 export const Button = memo(({ children, ...rest }: ButtonProps) => {
     return (
-        <MTButton variant="gradient" gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 35 }} size="xs" compact {...rest}>
+        <MTButton
+            variant="gradient"
+            gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 35 }}
+            size="xs"
+            compact
+            style={{
+                transition: 'all 120ms ease-out'
+            }}
+            {...rest}
+        >
             {children}
         </MTButton>
     )
