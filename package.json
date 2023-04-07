@@ -47,10 +47,10 @@
     "eslint": "8.37.0",
     "eslint-config-with-tsconfig": "1.2.6",
     "prettier": "2.8.7",
-    "sass": "1.60.0",
+    "sass": "1.61.0",
     "tsx": "3.12.6",
     "typesafe-i18n": "5.24.3",
-    "typescript": "5.0.3",
+    "typescript": "5.0.4",
     "vite": "4.2.1",
     "zx": "7.2.1"
   },
