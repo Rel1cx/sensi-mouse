@@ -1,5 +1,7 @@
+import { type ColorScheme } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
-import { lazy, useMemo } from 'react'
+import { useColorScheme } from '@mantine/hooks'
+import { lazy, useMemo, useState } from 'react'
 import { match } from 'ts-pattern'
 
 import { Router } from './router'
@@ -18,8 +20,12 @@ const AppShellScreen = styled('main', {
 export function App() {
     const route = Router.useRoute(['Main', 'About', 'Preferences'])
 
+    const preferredColorScheme = useColorScheme()
+
+    const theme = useMemo(() => mantineThemetheme(preferredColorScheme), [preferredColorScheme])
+
     return (
-        <MantineProvider withGlobalStyles theme={mantineThemetheme}>
+        <MantineProvider withGlobalStyles theme={theme}>
             <AppShellScreen>
                 {useMemo(
                     () =>
