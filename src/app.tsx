@@ -1,7 +1,6 @@
-import { type ColorScheme } from '@mantine/core'
 import { MantineProvider } from '@mantine/core'
 import { useColorScheme } from '@mantine/hooks'
-import { lazy, useMemo, useState } from 'react'
+import { lazy, useMemo } from 'react'
 import { match } from 'ts-pattern'
 
 import { Router } from './router'
