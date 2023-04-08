@@ -2,8 +2,6 @@
 
 Thin wrapper for macOS system-wide mouse settings manipulation.
 
-> (Still in active development, not recommended for production use yet)
-
 ## Todo
 
 - [x] Add CI
