@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/Nicify/sensi-mouse/compare/v1.0.2...v1.0.3) (2023-04-08)
+
+
+### Bug Fixes
+
+* fix default theme in drak mode ([1ce2e10](https://github.com/Nicify/sensi-mouse/commit/1ce2e10b9cc5bfa36affe9ef03e410c00c902c22))
+
 ## [1.0.2](https://github.com/Nicify/sensi-mouse/compare/v1.0.1...v1.0.2) (2023-04-06)
 
 
