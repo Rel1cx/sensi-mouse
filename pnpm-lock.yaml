@@ -20,8 +20,8 @@ dependencies:
     specifier: 1.2.8
     version: 1.2.8(react@18.2.0)
   '@swan-io/boxed':
-    specifier: 0.12.1
-    version: 0.12.1
+    specifier: 0.13.0
+    version: 0.13.0
   '@swan-io/chicane':
     specifier: 1.3.4
     version: 1.3.4(react@18.2.0)
@@ -1098,8 +1098,8 @@ packages:
       lodash: 4.17.21
     dev: true
 
-  /@swan-io/boxed@0.12.1:
-    resolution: {integrity: sha512-k+Ks6cqChWBEF55F0yEJUuurgLJzvWnSEEQJBeLp6tMQzVaLZwF7GAB31ElFvTuJCZC7PAOANNFolMAO0nOSog==}
+  /@swan-io/boxed@0.13.0:
+    resolution: {integrity: sha512-lsHeRnTVu2hKYg4Y5eILoppYo+j5K7GzAq7HNg1ejaRTajM0cjxCNlMacQL8T4YuDioTfCTOGB8SIAcqlNepnw==}
     dev: false
 
   /@swan-io/chicane@1.3.4(react@18.2.0):
