@@ -33,15 +33,18 @@
         "ress": "5.0.2",
         "tauri-plugin-autostart-api": "https://github.com/tauri-apps/tauri-plugin-autostart",
         "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store",
+        "throttle-debounce": "5.0.0",
         "ts-pattern": "4.2.2",
-        "valtio": "1.10.4"
+        "valtio": "1.10.4",
+        "zod": "^3.21.4"
     },
     "devDependencies": {
         "@babel/core": "7.21.4",
         "@tauri-apps/cli": "1.2.3",
         "@types/node": "18.15.11",
-        "@types/react": "18.0.33",
+        "@types/react": "18.0.34",
         "@types/react-dom": "18.0.11",
+        "@types/throttle-debounce": "5.0.0",
         "@vitejs/plugin-react": "3.1.0",
         "core-dts": "0.0.3",
         "eslint": "8.38.0",

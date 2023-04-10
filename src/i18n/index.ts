@@ -1,6 +1,6 @@
 import { proxy, useSnapshot } from 'valtio'
 
-import { DEFAULT_LANG } from '@/constants'
+import { DEFAULT_LOCALE } from '@/constants'
 
 import L from './i18n-node'
 import { type Locales } from './i18n-types'
@@ -8,7 +8,7 @@ import { type Locales } from './i18n-types'
 export const i18nConfig = proxy<{
     locale: Locales
 }>({
-    locale: DEFAULT_LANG
+    locale: DEFAULT_LOCALE
 })
 
 export const setLocale = (locale: Locales) => {

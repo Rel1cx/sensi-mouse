@@ -2,7 +2,8 @@
     "root": true,
     "extends": ["with-tsconfig"],
     "rules": {
-        "new-cap": "off"
+        "new-cap": "off",
+        "no-sequences": "off"
     },
     "overrides": [
         {
