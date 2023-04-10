@@ -12,7 +12,6 @@ export const i18nConfig = proxy<{
 })
 
 export const setLocale = (locale: Locales) => {
-    // eslint-disable-next-line functional/immutable-data
     i18nConfig.locale = locale
 }
 
