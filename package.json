@@ -57,7 +57,7 @@
         "vite": "4.2.1",
         "zx": "7.2.1"
     },
-    "packageManager": "pnpm@8.1.1",
+    "packageManager": "pnpm@8.2.0",
     "pnpm": {
         "overrides": {
             "react": "18.2.0",
