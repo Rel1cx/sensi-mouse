@@ -1,4 +1,4 @@
-import { Divider, Flex, Slider, Switch, Title } from '@mantine/core'
+import { Flex, Slider, Switch, Title } from '@mantine/core'
 
 import { styled } from '@/theme'
 

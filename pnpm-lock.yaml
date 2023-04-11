@@ -90,14 +90,11 @@ devDependencies:
     specifier: 8.38.0
     version: 8.38.0
   eslint-config-with-tsconfig:
-    specifier: 1.2.8
-    version: 1.2.8(@typescript-eslint/parser@5.56.0)(eslint@8.38.0)(tailwindcss@3.3.1)(typescript@5.0.4)
+    specifier: 1.2.9
+    version: 1.2.9(@typescript-eslint/parser@5.56.0)(eslint@8.38.0)(tailwindcss@3.3.1)(typescript@5.0.4)
   eslint-import-resolver-typescript:
     specifier: 3.5.5
     version: 3.5.5(@typescript-eslint/parser@5.56.0)(eslint-plugin-import@2.27.5)(eslint@8.38.0)
-  prettier:
-    specifier: 2.8.7
-    version: 2.8.7
   sass:
     specifier: 1.61.0
     version: 1.61.0
@@ -2365,8 +2362,8 @@ packages:
       eslint: 8.38.0
     dev: true
 
-  /eslint-config-with-tsconfig@1.2.8(@typescript-eslint/parser@5.56.0)(eslint@8.38.0)(tailwindcss@3.3.1)(typescript@5.0.4):
-    resolution: {integrity: sha512-WhSDHnWmH0tVns3HMhlNge6e+SrldLz/Npz0J0Mk1iyhst6loyc2uVZIi6hJbBNfMpAY7IIuP0FC+grPzX2Npw==}
+  /eslint-config-with-tsconfig@1.2.9(@typescript-eslint/parser@5.56.0)(eslint@8.38.0)(tailwindcss@3.3.1)(typescript@5.0.4):
+    resolution: {integrity: sha512-6u73nGy3K54DBKwPg8YmxmxvmOqlhFQATGxrgjwgnBpvV7SmrF8Ecf6jJKwIxupb1epExaE3sr5mZroXk3OYlw==}
     peerDependencies:
       eslint: '>=8.38.0'
       typescript: '>=5.0.4'
@@ -2374,7 +2371,6 @@ packages:
       '@typescript-eslint/type-utils': 5.58.0(eslint@8.38.0)(typescript@5.0.4)
       eslint: 8.38.0
       eslint-config-galex: 4.5.2(eslint@8.38.0)(tailwindcss@3.3.1)
-      eslint-config-prettier: 8.8.0(eslint@8.38.0)
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.56.0)(eslint-plugin-import@2.27.5)(eslint@8.38.0)
       eslint-plugin-functional: 5.0.7(eslint@8.38.0)(typescript@5.0.4)
       eslint-plugin-html: 7.1.0
@@ -4127,12 +4123,6 @@ packages:
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-    dev: true
-
-  /prettier@2.8.7:
-    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
     dev: true
 
   /pretty-format@27.5.1:

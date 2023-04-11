@@ -24,7 +24,7 @@ export const handleOpenPreferences = async () => {
     const window = await getWebviewWindow('preferences')
 
     if (window.isSome()) {
-        window.get().show()
+        await window.get().show()
         return
     }
     // eslint-disable-next-line no-console
@@ -49,7 +49,7 @@ export default function Main() {
                         value={config.sen}
                         onChange={async value => {
                             await setMouseCfg(value, config.accEnabled)
-                            setConfig('sen', value)
+                            await setConfig('sen', value)
                         }}
                     />
                 </Input.Wrapper>
@@ -62,24 +62,24 @@ export default function Main() {
                         onChange={async event => {
                             const { checked } = event.target
                             await setMouseCfg(config.sen, checked)
-                            setConfig('accEnabled', checked)
+                            await setConfig('accEnabled', checked)
                         }}
                     />
                 </Input.Wrapper>
             </SC.Content>
             <Divider />
             <SC.Footer gap={8} justify="flex-end" align="center">
-                <Button onClick={handleOpenPreferences}>{T.PREFERENCES()}</Button>
+                <Button onClick={() => void handleOpenPreferences()}>{T.PREFERENCES()}</Button>
                 <Button
                     onClick={async () => {
                         await setMouseCfg(DEFAULT_SEN, DEFAULT_ACC_ENABLED)
-                        setConfig('sen', DEFAULT_SEN)
-                        setConfig('accEnabled', DEFAULT_ACC_ENABLED)
+                        await setConfig('sen', DEFAULT_SEN)
+                        await setConfig('accEnabled', DEFAULT_ACC_ENABLED)
                     }}
                 >
                     {T.RESET()}
                 </Button>
-                <Button onClick={() => exit(0)}>{T.QUIT()}</Button>
+                <Button onClick={() => void exit(0)}>{T.QUIT()}</Button>
             </SC.Footer>
         </SC.Container>
     )

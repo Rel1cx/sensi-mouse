@@ -26,11 +26,11 @@ const main = async () => {
     await configManager.syncChangesToProxy()
 
     renderApp().match({
-        Ok: _ => {},
+        Ok: () => {},
         Error: error => {
             document.write(error.message)
         }
     })
 }
 
-main()
+void main()

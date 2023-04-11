@@ -3,14 +3,15 @@ import { invoke as tauriInvoke } from '@tauri-apps/api'
 import { type InvokeArgs } from '@tauri-apps/api/tauri'
 
 // eslint-disable-next-line etc/no-misused-generics
-export const invoke = <R = void>(cmd: string, payload?: InvokeArgs) => {
-    return Result.fromPromise<R, Error>(tauriInvoke<R>(cmd, payload))
+export const invoke = <T = void>(cmd: string, payload?: InvokeArgs) => {
+    return Result.fromPromise<T, Error>(tauriInvoke<T>(cmd, payload))
 }
 
 export const TauriWindowLazy = Lazy(() => import('@tauri-apps/api/window'))
 
 export const getWebviewWindow = async (label: string) => {
-    const WebviewWindow = await TauriWindowLazy.get().then(window => window.WebviewWindow)
+    const tauriWindow = await TauriWindowLazy.get()
+    const { WebviewWindow } = tauriWindow
     const target = WebviewWindow.getByLabel(label)
     return Option.fromNullable(target)
 }

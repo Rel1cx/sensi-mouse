@@ -54,4 +54,4 @@ export const configManager: ConfigManager = {
             Reflect.set(configManager[PROXY_KEY], key, value)
         })
     }
-} as const
+}
