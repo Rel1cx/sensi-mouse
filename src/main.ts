@@ -3,13 +3,26 @@ import '@/styles/global.scss'
 import '@/styles/overrides.scss'
 import '@total-typescript/ts-reset'
 
-import { initI18n } from './helper'
+import * as autostart from 'tauri-plugin-autostart-api'
+
+import { configProxy, loadConfig, resetConfig } from './config'
+import { setMouseCfg } from './lib/cmd'
 import { renderApp } from './root'
-import { fetchState } from './store'
 
 const main = async () => {
-    await initI18n()
-    await fetchState()
+    const loadResult = await loadConfig()
+    const launchAtLogin = await autostart.isEnabled()
+
+    await loadResult.match({
+        Ok: async value => {
+            Object.assign(configProxy, value)
+            configProxy.launchAtLogin = launchAtLogin
+            await setMouseCfg(value.sen, value.accEnabled)
+        },
+        Error: async () => {
+            await resetConfig()
+        }
+    })
 
     renderApp().match({
         Ok: _ => {},

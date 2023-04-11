@@ -1,13 +1,14 @@
 import { Input } from '@mantine/core'
 import { exit } from '@tauri-apps/api/process'
-import { useAtom } from 'jotai/react'
 
 import { Button } from '@/components/Button'
 import { Divider } from '@/components/Divider'
 import { Header } from '@/components/Header'
-import { useTranslation } from '@/i18n'
+import { useConfig } from '@/config'
+import { DEFAULT_ACC_ENABLED, DEFAULT_SEN } from '@/constants'
+import { useTranslation } from '@/hooks/useI18n'
+import { setMouseCfg } from '@/lib/cmd'
 import { getWebviewWindow } from '@/lib/tauri'
-import { accEnabledAtom, resetState, senAtom } from '@/store'
 
 import * as SC from './styles'
 
@@ -31,26 +32,37 @@ export const handleOpenPreferences = async () => {
 }
 
 export default function Main() {
-    const [sen, setSen] = useAtom(senAtom)
-    const [accEnabled, setAccEnabled] = useAtom(accEnabledAtom)
-
     const T = useTranslation()
+
+    const [config, setConfig] = useConfig()
 
     return (
         <SC.Container direction="column" justify="space-between">
             <Header>SensiMouse</Header>
             <SC.Content>
                 <Input.Wrapper label={T.SENSITIVITY()}>
-                    <SC.xSlider size="lg" marks={marks} min={0} max={100} value={sen} onChange={setSen} />
+                    <SC.xSlider
+                        size="lg"
+                        marks={marks}
+                        min={0}
+                        max={100}
+                        value={config.sen}
+                        onChange={async value => {
+                            await setMouseCfg(value, config.accEnabled)
+                            setConfig('sen', value)
+                        }}
+                    />
                 </Input.Wrapper>
                 <Input.Wrapper label={T.ACCELERATION()}>
                     <SC.xSwitch
                         size="md"
                         onLabel="ON"
                         offLabel="OFF"
-                        checked={accEnabled}
-                        onChange={event => {
-                            setAccEnabled(event.target.checked)
+                        checked={config.accEnabled}
+                        onChange={async event => {
+                            const { checked } = event.target
+                            await setMouseCfg(config.sen, checked)
+                            setConfig('accEnabled', checked)
                         }}
                     />
                 </Input.Wrapper>
@@ -58,7 +70,15 @@ export default function Main() {
             <Divider />
             <SC.Footer gap={8} justify="flex-end" align="center">
                 <Button onClick={handleOpenPreferences}>{T.PREFERENCES()}</Button>
-                <Button onClick={() => resetState()}>{T.RESET()}</Button>
+                <Button
+                    onClick={async () => {
+                        await setMouseCfg(DEFAULT_SEN, DEFAULT_ACC_ENABLED)
+                        setConfig('sen', DEFAULT_SEN)
+                        setConfig('accEnabled', DEFAULT_ACC_ENABLED)
+                    }}
+                >
+                    {T.RESET()}
+                </Button>
                 <Button onClick={() => exit(0)}>{T.QUIT()}</Button>
             </SC.Footer>
         </SC.Container>

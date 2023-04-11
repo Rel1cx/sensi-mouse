@@ -1,19 +1,11 @@
-import { DEFAULT_LANG } from './constants'
-import { i18nConfig, setLocale } from './i18n'
-import { type Locales } from './i18n/i18n-types'
-import { isLocale } from './i18n/i18n-util'
-import { getSettings, settings } from './lib/settings'
+import { setConfig } from './config'
+import { DEFAULT_ACC_ENABLED, DEFAULT_SEN } from './constants'
+import { getMouseCfg } from './lib/cmd'
 
-export const initI18n = async () => {
-    const locale = await getSettings<Locales>('locale')
-    setLocale(locale.getWithDefault(DEFAULT_LANG))
-    return settings.onKeyChange('locale', (locale: Locales | null) => {
-        if (!locale || !isLocale(locale)) {
-            return
-        }
-        if (locale === i18nConfig.locale) {
-            return
-        }
-        setLocale(locale)
-    })
+export const syncAppStateWithSystem = async () => {
+    const ret = await getMouseCfg()
+    const [sen, accEnabled] = ret.getWithDefault([DEFAULT_SEN, DEFAULT_ACC_ENABLED])
+
+    setConfig('sen', sen)
+    setConfig('accEnabled', accEnabled)
 }

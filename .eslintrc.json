@@ -2,13 +2,22 @@
     "root": true,
     "extends": ["with-tsconfig"],
     "rules": {
-        "new-cap": "off"
+        "new-cap": "off",
+        "no-sequences": "off"
     },
     "overrides": [
         {
             "files": ["scripts/**/*.ts", "vite.config.ts"],
             "parserOptions": {
                 "project": "tsconfig.node.json"
+            },
+            "settings": {
+                "import/resolver": {
+                    "typescript": {
+                        "alwaysTryTypes": true,
+                        "project": "tsconfig.node.json"
+                    }
+                }
             }
         },
         {

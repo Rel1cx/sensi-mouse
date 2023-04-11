@@ -1,11 +1,10 @@
 import { Checkbox, Flex, Select } from '@mantine/core'
-import { useAtom, useSetAtom } from 'jotai/react'
+import * as autostart from 'tauri-plugin-autostart-api'
 
 import { Header } from '@/components/Header'
-import { useLocale, useTranslation } from '@/i18n'
+import { useConfig } from '@/config'
+import { useLocale, useTranslation } from '@/hooks/useI18n'
 import { isLocale } from '@/i18n/i18n-util'
-import { settings } from '@/lib/settings'
-import { autoLaunchAtom, setAutoLaunchAtom } from '@/store'
 import { styled } from '@/theme'
 
 const themes = [
@@ -30,8 +29,7 @@ export default function Preferences() {
     const locale = useLocale()
     const T = useTranslation()
 
-    const [enabled] = useAtom(autoLaunchAtom)
-    const setEnabled = useSetAtom(setAutoLaunchAtom)
+    const [config, setConfig] = useConfig()
 
     return (
         <Container direction="column" gap={8} align="stretch">
@@ -45,15 +43,18 @@ export default function Preferences() {
                     if (!value || !isLocale(value)) {
                         return
                     }
-                    settings.set('locale', value)
-                    settings.save()
+                    setConfig('locale', value)
                 }}
             />
             <Header>{T.GENERAL()}</Header>
             <Checkbox
                 label={T.START_AT_LOGIN()}
-                checked={enabled}
-                onChange={e => setEnabled(e.currentTarget.checked)}
+                checked={config.launchAtLogin}
+                onChange={async event => {
+                    const { checked } = event.target
+                    checked ? await autostart.enable() : await autostart.disable()
+                    setConfig('launchAtLogin', checked)
+                }}
             />
         </Container>
     )
