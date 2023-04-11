@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.4](https://github.com/Nicify/sensi-mouse/compare/v1.0.3...v1.0.4) (2023-04-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jotai to v2.0.4 ([209f0b0](https://github.com/Nicify/sensi-mouse/commit/209f0b0eee6efe72c49e0556c894ccc60f861d7c))
+* fix default theme in drak mode ([ba28728](https://github.com/Nicify/sensi-mouse/commit/ba287282fb0dbf8c21202a5dd12999caaf4ab163))
+* fix default theme in drak mode ([8891c9c](https://github.com/Nicify/sensi-mouse/commit/8891c9cf552f1c88cfc6f1994e18162997d77a5f))
+* Save, Restore and Reapply Settings ([c533cf1](https://github.com/Nicify/sensi-mouse/commit/c533cf1d2382350fc8dbd452dad049ae43b7a314))
+
 ## [1.0.3](https://github.com/Nicify/sensi-mouse/compare/v1.0.2...v1.0.3) (2023-04-08)
 
 
