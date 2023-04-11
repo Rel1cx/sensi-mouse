@@ -4,7 +4,7 @@ import { exit } from '@tauri-apps/api/process'
 import { Button } from '@/components/Button'
 import { Divider } from '@/components/Divider'
 import { Header } from '@/components/Header'
-import { useConfig } from '@/config'
+import { configManager } from '@/config'
 import { DEFAULT_ACC_ENABLED, DEFAULT_SEN } from '@/constants'
 import { useTranslation } from '@/hooks/useI18n'
 import { setMouseCfg } from '@/lib/cmd'
@@ -34,7 +34,7 @@ export const handleOpenPreferences = async () => {
 export default function Main() {
     const T = useTranslation()
 
-    const [config, setConfig] = useConfig()
+    const [config, setConfig] = configManager.useConfig()
 
     return (
         <SC.Container direction="column" justify="space-between">

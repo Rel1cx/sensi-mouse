@@ -1,8 +1,8 @@
-import { useConfig } from '@/config'
+import { configManager } from '@/config'
 import L from '@/i18n/i18n-node'
 
 export const useLocale = () => {
-    const [config] = useConfig()
+    const [config] = configManager.useConfig()
 
     return config.locale
 }

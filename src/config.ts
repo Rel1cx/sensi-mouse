@@ -1,35 +1,57 @@
 import { Result } from '@swan-io/boxed'
+import { type UnlistenFn } from '@tauri-apps/api/event'
 import { Store } from 'tauri-plugin-store-api'
 import { proxy, useSnapshot } from 'valtio'
 
-import { type AnyObject, Config } from '@/types'
+import { Config } from '@/types'
+import { type AnyObject } from '@/types'
 
-const configStore = new Store('.config.dat')
+const STORE_KEY = Symbol('CONFIG_STORE')
+const PROXY_KEY = Symbol('CONFIG_PROXY')
 
-export const defaultConfig = Config.parse({})
+export type ConfigManager = Readonly<{
+    [STORE_KEY]: Store
+    [PROXY_KEY]: Config
 
-export const configProxy = proxy(defaultConfig)
+    parse: (config: AnyObject) => Result<Config, Error>
+    useConfig: () => [Config, ConfigManager['setConfig']]
+    setConfig: <T extends keyof Config>(key: T, value: Config[T]) => Promise<void>
+    loadConfig: () => Promise<Result<Config, Error>>
+    resetConfig: () => Promise<void>
+    syncChangesToProxy: () => Promise<UnlistenFn>
+}>
 
-export const setConfig = async <T extends keyof Config>(key: T, value: Config[T]) => {
-    await configStore.set(key, value)
-    await configStore.save()
-}
+export const defaultConfig: Readonly<Config> = Config.parse({})
 
-export const useConfig = () => [useSnapshot(configProxy), setConfig] as const
+export const configManager: ConfigManager = {
+    [STORE_KEY]: new Store('.config.dat'),
+    [PROXY_KEY]: proxy(defaultConfig),
 
-export const loadConfig: () => Promise<Result<Config, Error>> = async () => {
-    const saved = await configStore
-        .entries()
-        .then(entries => entries.reduce<AnyObject>((acc, [key, value]) => ((acc[key] = value), acc), {}))
+    parse: config => Result.fromExecution(() => Config.parse(config)),
 
-    return Result.fromExecution(() => Config.parse(saved))
-}
+    useConfig: () => [useSnapshot(configManager[PROXY_KEY]), configManager.setConfig],
 
-export const resetConfig = async () => {
-    await configStore.reset()
-    await configStore.save()
-}
+    setConfig: async (key, value) => {
+        await configManager[STORE_KEY].set(key, value)
+        await configManager[STORE_KEY].save()
+    },
 
-configStore.onChange((key, value) => {
-    Reflect.set(configProxy, key, value)
-})
+    loadConfig: async () => {
+        const saved = await configManager[STORE_KEY].entries().then(entries =>
+            entries.reduce<AnyObject>((acc, [key, value]) => ((acc[key] = value), acc), {})
+        )
+
+        return configManager.parse(saved).tapOk(config => Object.assign(configManager[PROXY_KEY], config))
+    },
+
+    resetConfig: async () => {
+        await configManager[STORE_KEY].reset()
+        await configManager[STORE_KEY].save()
+    },
+
+    syncChangesToProxy: async () => {
+        return configManager[STORE_KEY].onChange((key, value) => {
+            Reflect.set(configManager[PROXY_KEY], key, value)
+        })
+    }
+} as const

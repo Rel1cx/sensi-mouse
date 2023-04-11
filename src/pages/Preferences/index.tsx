@@ -2,7 +2,7 @@ import { Checkbox, Flex, Select } from '@mantine/core'
 import * as autostart from 'tauri-plugin-autostart-api'
 
 import { Header } from '@/components/Header'
-import { useConfig } from '@/config'
+import { configManager } from '@/config'
 import { useLocale, useTranslation } from '@/hooks/useI18n'
 import { isLocale } from '@/i18n/i18n-util'
 import { styled } from '@/theme'
@@ -29,7 +29,7 @@ export default function Preferences() {
     const locale = useLocale()
     const T = useTranslation()
 
-    const [config, setConfig] = useConfig()
+    const [config, setConfig] = configManager.useConfig()
 
     return (
         <Container direction="column" gap={8} align="stretch">
