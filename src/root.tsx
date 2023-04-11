@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 
 import { App } from './app'
 
-export function renderApp(): Result<string, Error> {
+export const renderApp = (): Result<string, Error> => {
     return Option.fromNullable(document.querySelector('#app')).match({
         Some: el => {
             const root = createRoot(el)

@@ -19,16 +19,16 @@ export default function About() {
     const { value: version = '0.0.0' } = useAsync(getVersion)
 
     return (
-        <Container direction="column" justify="space-between" align="center" gap="0">
-            <Image src="/icon.png" alt="logo" height="44px" width="auto" />
+        <Container align="center" direction="column" gap="0" justify="space-between">
+            <Image alt="logo" height="44px" src="/icon.png" width="auto" />
             <Text size={14}>{name}</Text>
             <Text size={10}>Version: {version}</Text>
-            <Text size={10} align="center">
+            <Text align="center" size={10}>
                 Copyright © 2023 Eva1ent{' | '}
                 <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
                     href="https://raw.githubusercontent.com/Nicify/sensi-mouse/main/LICENSE"
+                    rel="noopener noreferrer"
+                    target="_blank"
                 >
                     MIT License
                 </Link>

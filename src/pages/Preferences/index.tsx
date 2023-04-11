@@ -47,15 +47,15 @@ export default function Preferences() {
     )
 
     return (
-        <Container direction="column" gap={8} align="stretch">
+        <Container align="stretch" direction="column" gap={8}>
             <Header>{T.THEME()}</Header>
-            <Select defaultValue="light" data={themes} />
+            <Select data={themes} defaultValue="light" />
             <Header>{T.LANGUAGE()}</Header>
-            <Select data={languages} value={locale} onChange={handlers.handleLocaleChange} />
+            <Select data={languages} onChange={handlers.handleLocaleChange} value={locale} />
             <Header>{T.GENERAL()}</Header>
             <Checkbox
-                label={T.START_AT_LOGIN()}
                 checked={config.launchAtLogin}
+                label={T.START_AT_LOGIN()}
                 onChange={handlers.handleStartAtLoginChange}
             />
         </Container>

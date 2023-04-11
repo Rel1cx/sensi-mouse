@@ -16,7 +16,7 @@ const AppShellScreen = styled('main', {
     overflow: 'hidden'
 })
 
-export function App() {
+export const App = () => {
     const route = Router.useRoute(['Main', 'About', 'Preferences'])
 
     const preferredColorScheme = useColorScheme()
@@ -24,7 +24,7 @@ export function App() {
     const theme = useMemo(() => mantineThemetheme(preferredColorScheme), [preferredColorScheme])
 
     return (
-        <MantineProvider withGlobalStyles theme={theme}>
+        <MantineProvider theme={theme} withGlobalStyles>
             <AppShellScreen>
                 {useMemo(
                     () =>
@@ -36,6 +36,6 @@ export function App() {
                     [route]
                 )}
             </AppShellScreen>
-        </MantineProvider>
+        </MantineProvider >
     )
 }

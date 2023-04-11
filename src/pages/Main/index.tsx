@@ -42,33 +42,33 @@ export default function Main() {
             <SC.Content>
                 <Input.Wrapper label={T.SENSITIVITY()}>
                     <SC.xSlider
-                        size="lg"
                         marks={marks}
-                        min={0}
                         max={100}
-                        value={config.sen}
+                        min={0}
                         onChange={async value => {
                             await setMouseCfg(value, config.accEnabled)
                             await setConfig('sen', value)
                         }}
+                        size="lg"
+                        value={config.sen}
                     />
                 </Input.Wrapper>
                 <Input.Wrapper label={T.ACCELERATION()}>
                     <SC.xSwitch
-                        size="md"
-                        onLabel="ON"
-                        offLabel="OFF"
                         checked={config.accEnabled}
+                        offLabel="OFF"
                         onChange={async event => {
                             const { checked } = event.target
                             await setMouseCfg(config.sen, checked)
                             await setConfig('accEnabled', checked)
                         }}
+                        onLabel="ON"
+                        size="md"
                     />
                 </Input.Wrapper>
             </SC.Content>
             <Divider />
-            <SC.Footer gap={8} justify="flex-end" align="center">
+            <SC.Footer align="center" gap={8} justify="flex-end">
                 <Button onClick={() => void handleOpenPreferences()}>{T.PREFERENCES()}</Button>
                 <Button
                     onClick={async () => {
