@@ -1,11 +1,11 @@
 import { Checkbox, Flex, Select } from '@mantine/core'
 import { useAtom, useSetAtom } from 'jotai/react'
 
+import { autoLaunchAtom, setAutoLaunchAtom } from '@/atoms'
 import { Header } from '@/components/Header'
 import { useLocale, useTranslation } from '@/i18n'
 import { isLocale } from '@/i18n/i18n-util'
-import { settings } from '@/lib/settings'
-import { autoLaunchAtom, setAutoLaunchAtom } from '@/store'
+import { settings } from '@/settings'
 import { styled } from '@/theme'
 
 const themes = [
@@ -36,7 +36,17 @@ export default function Preferences() {
     return (
         <Container direction="column" gap={8} align="stretch">
             <Header>{T.THEME()}</Header>
-            <Select defaultValue="light" data={themes} />
+            <Select
+                defaultValue="light"
+                data={themes}
+                onChange={value => {
+                    if (!value) {
+                        return
+                    }
+                    settings.set('theme', value)
+                    settings.save()
+                }}
+            />
             <Header>{T.LANGUAGE()}</Header>
             <Select
                 data={languages}
@@ -53,7 +63,9 @@ export default function Preferences() {
             <Checkbox
                 label={T.START_AT_LOGIN()}
                 checked={enabled}
-                onChange={e => setEnabled(e.currentTarget.checked)}
+                onChange={e => {
+                    setEnabled(e.currentTarget.checked)
+                }}
             />
         </Container>
     )
