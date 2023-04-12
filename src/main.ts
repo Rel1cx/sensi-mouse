@@ -26,7 +26,11 @@ const main = async () => {
     await configManager.syncChangesToProxy()
 
     renderApp().match({
-        Ok: () => {},
+        Ok: () => {
+            document.addEventListener('contextmenu', event => event.preventDefault(), {
+                capture: true
+            });
+        },
         Error: error => {
             document.write(error.message)
         }
