@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/Nicify/sensi-mouse/compare/v1.0.4...v1.0.5) (2023-04-12)
+
+
+### Bug Fixes
+
+* window not focus after open ([e344b27](https://github.com/Nicify/sensi-mouse/commit/e344b2792c4bd497a2bcc55a84b5745090b71a50))
+
 ## [1.0.4](https://github.com/Nicify/sensi-mouse/compare/v1.0.3...v1.0.4) (2023-04-11)
 
 
