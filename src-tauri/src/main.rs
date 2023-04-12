@@ -88,10 +88,12 @@ fn main() {
                     "about" => {
                         let about_window = app.get_window("about").unwrap();
                         about_window.show().unwrap();
+                        about_window.set_focus().unwrap();
                     }
                     "preferences" => {
                         let preferences_window = app.get_window("preferences").unwrap();
                         preferences_window.show().unwrap();
+                        preferences_window.set_focus().unwrap();
                     }
                     _ => {}
                 },

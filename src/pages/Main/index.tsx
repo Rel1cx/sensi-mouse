@@ -25,6 +25,7 @@ export const handleOpenPreferences = async () => {
 
     if (window.isSome()) {
         await window.get().show()
+        await window.get().setFocus()
         return
     }
     // eslint-disable-next-line no-console
