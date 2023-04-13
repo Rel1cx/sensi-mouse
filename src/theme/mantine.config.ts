@@ -1,5 +1,4 @@
-import { type ColorScheme } from '@mantine/core'
-import { type MantineThemeOverride } from '@mantine/core'
+import { type ColorScheme , type MantineThemeOverride } from '@mantine/core'
 
 import { colors } from './theme'
 

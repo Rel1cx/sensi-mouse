@@ -4,8 +4,8 @@ import { createRoot } from 'react-dom/client'
 
 import { App } from './app'
 
-export const renderApp = (): Result<string, Error> => {
-    return Option.fromNullable(document.querySelector('#app')).match({
+export const renderApp = (sel: string): Result<string, Error> => {
+    return Option.fromNullable(document.querySelector(sel)).match({
         Some: el => {
             const root = createRoot(el)
 
@@ -18,7 +18,7 @@ export const renderApp = (): Result<string, Error> => {
             return Result.Ok('')
         },
         None: () => {
-            return Result.Error(new Error('Could not find #app element'))
+            return Result.Error(new Error(`Could not find ${sel} element`))
         }
     })
 }
