@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/Nicify/sensi-mouse/compare/v1.0.5...v1.0.6) (2023-04-14)
+
+
+### Features
+
+* add more i18n languages ([3d119ec](https://github.com/Nicify/sensi-mouse/commit/3d119ecafbf495b046a8bd5315185bf13ff75019))
+
 ## [1.0.5](https://github.com/Nicify/sensi-mouse/compare/v1.0.4...v1.0.5) (2023-04-12)
 
 
