@@ -7,7 +7,7 @@
         "build": "typesafe-i18n --no-watch && tsc && vite build",
         "preview": "vite preview",
         "tauri": "tauri",
-        "lint:ts": "eslint src",
+        "lint:ts": "tsc --noEmit && eslint src",
         "format:rs": "cd src-tauri && cargo fmt",
         "lint:rs": "cd src-tauri && cargo clippy",
         "lint": "pnpm run lint:ts --fix && pnpm run lint:rs",

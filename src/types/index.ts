@@ -8,7 +8,7 @@ export type Theme = 'dark' | 'light'
 
 export const Config = z.object({
     locale: z
-        .union([z.literal('en'), z.literal('zh')])
+        .string()
         .default('en')
         .describe('Language'),
     theme: z

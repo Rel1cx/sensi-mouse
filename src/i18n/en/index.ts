@@ -1,6 +1,6 @@
 import { type BaseTranslation } from '../i18n-types.js'
 
-const en = {
+export default {
     THEME: 'Theme',
     LIGHT: 'Light',
     DARK: 'Dark',
@@ -16,5 +16,3 @@ const en = {
     START_AT_LOGIN: 'Start at login',
     VERSION: 'Version'
 } satisfies BaseTranslation
-
-export default en
