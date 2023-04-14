@@ -4,7 +4,7 @@ export type AnyObject = {
     [key: string]: unknown
 }
 
-export type Theme = 'light' | 'dark'
+export type Theme = 'dark' | 'light'
 
 export const Config = z.object({
     locale: z

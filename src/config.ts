@@ -10,15 +10,14 @@ const STORE_KEY = Symbol('CONFIG_STORE')
 const PROXY_KEY = Symbol('CONFIG_PROXY')
 
 export type ConfigManager = Readonly<{
-    [PROXY_KEY]: Config,
     [STORE_KEY]: Store,
-
-    loadConfig: () => Promise<Result<Config, Error>>,
+    [PROXY_KEY]: Config,
     parse: (config: AnyObject) => Result<Config, Error>,
-    resetConfig: () => Promise<void>,
     setConfig: <T extends keyof Config>(key: T, value: Config[T]) => Promise<void>,
-    syncChangesToProxy: () => Promise<UnlistenFn>,
     useConfig: () => [Config, ConfigManager['setConfig']]
+    loadConfig: () => Promise<Result<Config, Error>>,
+    resetConfig: () => Promise<void>,
+    syncChangesToProxy: () => Promise<UnlistenFn>,
 }>
 
 export const defaultConfig: Readonly<Config> = Config.parse({})
