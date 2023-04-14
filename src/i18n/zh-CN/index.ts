@@ -1,6 +1,6 @@
 import { type Translation } from '../i18n-types.js'
 
-const zh = {
+export default {
     THEME: '主题',
     LIGHT: '浅色',
     DARK: '深色',
@@ -16,5 +16,3 @@ const zh = {
     START_AT_LOGIN: '开机启动',
     VERSION: '版本'
 } satisfies Translation
-
-export default zh
