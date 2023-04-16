@@ -1,5 +1,5 @@
 import { Result } from '@swan-io/boxed'
-import { type UnlistenFn } from '@tauri-apps/api/event'
+import  { type UnlistenFn } from '@tauri-apps/api/event'
 import { Store } from 'tauri-plugin-store-api'
 import { proxy, useSnapshot } from 'valtio'
 
@@ -12,12 +12,13 @@ const PROXY_KEY = Symbol('CONFIG_PROXY')
 export type ConfigManager = Readonly<{
     [STORE_KEY]: Store,
     [PROXY_KEY]: Config,
+
     parse: (config: AnyObject) => Result<Config, Error>,
     setConfig: <T extends keyof Config>(key: T, value: Config[T]) => Promise<void>,
     useConfig: () => [Config, ConfigManager['setConfig']]
     loadConfig: () => Promise<Result<Config, Error>>,
     resetConfig: () => Promise<void>,
-    syncChangesToProxy: () => Promise<UnlistenFn>,
+    beginSyncConfig: () => Promise<UnlistenFn>
 }>
 
 export const defaultConfig: Readonly<Config> = Config.parse({})
@@ -31,6 +32,7 @@ export const configManager: ConfigManager = {
     useConfig: () => [useSnapshot(configManager[PROXY_KEY]), configManager.setConfig],
 
     setConfig: async (key, value) => {
+        configManager[PROXY_KEY][key] = value
         await configManager[STORE_KEY].set(key, value)
         await configManager[STORE_KEY].save()
     },
@@ -45,11 +47,13 @@ export const configManager: ConfigManager = {
 
     resetConfig: async () => {
         await configManager[STORE_KEY].reset()
-        await configManager[STORE_KEY].save()
     },
 
-    syncChangesToProxy: async () => {
+    beginSyncConfig: async () => {
         return configManager[STORE_KEY].onChange((key, value) => {
+            if (Reflect.get(configManager[PROXY_KEY], key) === value) {
+                return
+            }
             Reflect.set(configManager[PROXY_KEY], key, value)
         })
     }

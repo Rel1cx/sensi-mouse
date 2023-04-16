@@ -23,11 +23,14 @@ const main = async () => {
         }
     })
 
-    await configManager.syncChangesToProxy()
-
+    await configManager.beginSyncConfig()
+    
     renderApp('#app').match({
         Ok: () => {
-            document.addEventListener('contextmenu', event => { event.preventDefault(); }, {
+            if (import.meta.env.DEV) {
+                return
+            }
+            document.addEventListener('contextmenu', event => void event.preventDefault(), {
                 capture: true
             });
         },

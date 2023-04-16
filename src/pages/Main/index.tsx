@@ -1,5 +1,6 @@
 import { Input } from '@mantine/core'
 import { exit } from '@tauri-apps/api/process'
+import { debounce } from 'throttle-debounce'
 
 import { Button } from '@/components/Button'
 import { Divider } from '@/components/Divider'
@@ -20,7 +21,7 @@ const marks = [
     { value: 100, label: '100' }
 ]
 
-export const handleOpenPreferences = async () => {
+const handleOpenPreferences = async () => {
     const window = await getWebviewWindow('preferences')
 
     if (window.isSome()) {
@@ -31,6 +32,10 @@ export const handleOpenPreferences = async () => {
     // eslint-disable-next-line no-console
     console.error('Failed to get preferences window')
 }
+
+const dSetMouseCfg = debounce(50, setMouseCfg, {
+    atBegin: false
+})
 
 export default function Main() {
     const T = useTranslation()
@@ -46,9 +51,9 @@ export default function Main() {
                         marks={marks}
                         max={100}
                         min={0}
-                        onChange={async value => {
-                            await setMouseCfg(value, config.accEnabled)
-                            await setConfig('sen', value)
+                        onChange={value => {
+                            void setConfig('sen', value)
+                            dSetMouseCfg(value, config.accEnabled)
                         }}
                         size="lg"
                         value={config.sen}
@@ -58,10 +63,10 @@ export default function Main() {
                     <SC.xSwitch
                         checked={config.accEnabled}
                         offLabel="OFF"
-                        onChange={async event => {
+                        onChange={event => {
                             const { checked } = event.target
-                            await setMouseCfg(config.sen, checked)
-                            await setConfig('accEnabled', checked)
+                            void setConfig('accEnabled', checked)
+                            dSetMouseCfg(config.sen, checked)
                         }}
                         onLabel="ON"
                         size="md"
