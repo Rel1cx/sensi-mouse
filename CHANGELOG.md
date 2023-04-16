@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/Nicify/sensi-mouse/compare/v1.0.6...v1.0.7) (2023-04-16)
+
+
+### Bug Fixes
+
+* refactor configManager to improve synchronization with store ([50aee98](https://github.com/Nicify/sensi-mouse/commit/50aee98cfd056aaa264fb9b810d6bc13f57dcf9d))
+
 ## [1.0.6](https://github.com/Nicify/sensi-mouse/compare/v1.0.5...v1.0.6) (2023-04-14)
 
 
