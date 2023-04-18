@@ -7,17 +7,14 @@ export type AnyObject = {
 export type Theme = 'dark' | 'light'
 
 export const Config = z.object({
-    locale: z
-        .string()
-        .default('en')
-        .describe('Language'),
+    accEnabled: z.boolean().default(false).describe('Acceleration enabled'),
+    launchAtLogin: z.boolean().default(false).describe('Launch at login'),
+    locale: z.string().default('en').describe('Language'),
+    sen: z.number().min(0).max(100).default(90).describe('Sensitivity'),
     theme: z
         .union([z.literal('light'), z.literal('dark')])
         .default('light')
-        .describe('Theme'),
-    sen: z.number().min(0).max(100).default(90).describe('Sensitivity'),
-    accEnabled: z.boolean().default(false).describe('Acceleration enabled'),
-    launchAtLogin: z.boolean().default(false).describe('Launch at login')
+        .describe('Theme')
 })
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare

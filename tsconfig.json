@@ -3,8 +3,15 @@
     "compilerOptions": {
         "target": "ESNext",
         "useDefineForClassFields": true,
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "types": ["core-dts", "vite/client"],
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
+        "types": [
+            "core-dts",
+            "vite/client"
+        ],
         "skipLibCheck": true,
         "esModuleInterop": false,
         "allowSyntheticDefaultImports": true,
@@ -14,14 +21,19 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
-        // "jsx": "preserve",
-        // "jsxFactory": "h",
-        // "jsxFragmentFactory": "Fragment",
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": [
+                "./src/*"
+            ]
         }
     },
-    "include": ["src"],
-    "references": [{ "path": "./tsconfig.node.json" }]
+    "include": [
+        "src"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
 }

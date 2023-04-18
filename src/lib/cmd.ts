@@ -5,5 +5,5 @@ export const getMouseCfg = () => {
 }
 
 export const setMouseCfg = (sen: number, accEnabled: boolean) => {
-    return invoke('set_mouse_cfg', { sen, accEnabled })
+    return invoke('set_mouse_cfg', { accEnabled, sen })
 }

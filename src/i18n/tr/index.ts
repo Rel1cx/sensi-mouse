@@ -1,18 +1,18 @@
-import  { type Translation } from '../i18n-types';
+import { type Translation } from '../i18n-types'
 
 export default {
-    THEME: 'Tema',
-    LIGHT: 'Açık',
+    ABOUT: 'Hakkında',
+    ACCELERATION: 'Hızlandırma',
     DARK: 'Karanlık',
+    GENERAL: 'Genel',
     INTERFACE: 'Arayüz',
     LANGUAGE: 'Dil',
-    GENERAL: 'Genel',
-    SENSITIVITY: 'Hassasiyet',
-    ACCELERATION: 'Hızlandırma',
+    LIGHT: 'Açık',
     PREFERENCES: 'Tercihler',
-    RESET: 'Sıfırla',
-    ABOUT: 'Hakkında',
     QUIT: 'Çıkış',
+    RESET: 'Sıfırla',
+    SENSITIVITY: 'Hassasiyet',
     START_AT_LOGIN: 'Girişte başlat',
+    THEME: 'Tema',
     VERSION: 'Sürüm'
 } satisfies Translation

@@ -1,18 +1,18 @@
 import { type Translation } from '../i18n-types.js'
 
 export default {
-    THEME: 'Tema',
-    LIGHT: 'Claro',
+    ABOUT: 'Acerca de',
+    ACCELERATION: 'Aceleración',
     DARK: 'Oscuro',
+    GENERAL: 'General',
     INTERFACE: 'Interfaz',
     LANGUAGE: 'Idioma',
-    GENERAL: 'General',
-    SENSITIVITY: 'Sensibilidad',
-    ACCELERATION: 'Aceleración',
+    LIGHT: 'Claro',
     PREFERENCES: 'Preferencias',
-    RESET: 'Restablecer',
-    ABOUT: 'Acerca de',
     QUIT: 'Salir',
+    RESET: 'Restablecer',
+    SENSITIVITY: 'Sensibilidad',
     START_AT_LOGIN: 'Iniciar sesión',
+    THEME: 'Tema',
     VERSION: 'Versión'
 } satisfies Translation

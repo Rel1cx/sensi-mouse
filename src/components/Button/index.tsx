@@ -10,7 +10,7 @@ export const Button = memo(({ children, ...rest }: ButtonProps) => {
     return (
         <MTButton
             compact
-            gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 35 }}
+            gradient={{ deg: 35, from: '#ed6ea0', to: '#ec8c69' }}
             size="xs"
             style={{
                 transition: 'all 120ms ease-out'

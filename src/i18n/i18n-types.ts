@@ -25,17 +25,21 @@ export type Translations = RootTranslation
 
 type RootTranslation = {
 	/**
-	 * T​h​e​m​e
+	 * A​b​o​u​t
 	 */
-	THEME: string
+	ABOUT: string
 	/**
-	 * L​i​g​h​t
+	 * A​c​c​e​l​e​r​a​t​i​o​n
 	 */
-	LIGHT: string
+	ACCELERATION: string
 	/**
 	 * D​a​r​k
 	 */
 	DARK: string
+	/**
+	 * G​e​n​e​r​a​l
+	 */
+	GENERAL: string
 	/**
 	 * I​n​t​e​r​f​a​c​e
 	 */
@@ -45,37 +49,33 @@ type RootTranslation = {
 	 */
 	LANGUAGE: string
 	/**
-	 * G​e​n​e​r​a​l
+	 * L​i​g​h​t
 	 */
-	GENERAL: string
-	/**
-	 * S​e​n​s​i​t​i​v​i​t​y
-	 */
-	SENSITIVITY: string
-	/**
-	 * A​c​c​e​l​e​r​a​t​i​o​n
-	 */
-	ACCELERATION: string
+	LIGHT: string
 	/**
 	 * P​r​e​f​e​r​e​n​c​e​s
 	 */
 	PREFERENCES: string
 	/**
-	 * R​e​s​e​t
-	 */
-	RESET: string
-	/**
-	 * A​b​o​u​t
-	 */
-	ABOUT: string
-	/**
 	 * Q​u​i​t
 	 */
 	QUIT: string
 	/**
+	 * R​e​s​e​t
+	 */
+	RESET: string
+	/**
+	 * S​e​n​s​i​t​i​v​i​t​y
+	 */
+	SENSITIVITY: string
+	/**
 	 * S​t​a​r​t​ ​a​t​ ​l​o​g​i​n
 	 */
 	START_AT_LOGIN: string
+	/**
+	 * T​h​e​m​e
+	 */
+	THEME: string
 	/**
 	 * V​e​r​s​i​o​n
 	 */
@@ -84,17 +84,21 @@ type RootTranslation = {
 
 export type TranslationFunctions = {
 	/**
-	 * Theme
+	 * About
 	 */
-	THEME: () => LocalizedString
+	ABOUT: () => LocalizedString
 	/**
-	 * Light
+	 * Acceleration
 	 */
-	LIGHT: () => LocalizedString
+	ACCELERATION: () => LocalizedString
 	/**
 	 * Dark
 	 */
 	DARK: () => LocalizedString
+	/**
+	 * General
+	 */
+	GENERAL: () => LocalizedString
 	/**
 	 * Interface
 	 */
@@ -104,37 +108,33 @@ export type TranslationFunctions = {
 	 */
 	LANGUAGE: () => LocalizedString
 	/**
-	 * General
+	 * Light
 	 */
-	GENERAL: () => LocalizedString
-	/**
-	 * Sensitivity
-	 */
-	SENSITIVITY: () => LocalizedString
-	/**
-	 * Acceleration
-	 */
-	ACCELERATION: () => LocalizedString
+	LIGHT: () => LocalizedString
 	/**
 	 * Preferences
 	 */
 	PREFERENCES: () => LocalizedString
 	/**
-	 * Reset
-	 */
-	RESET: () => LocalizedString
-	/**
-	 * About
-	 */
-	ABOUT: () => LocalizedString
-	/**
 	 * Quit
 	 */
 	QUIT: () => LocalizedString
 	/**
+	 * Reset
+	 */
+	RESET: () => LocalizedString
+	/**
+	 * Sensitivity
+	 */
+	SENSITIVITY: () => LocalizedString
+	/**
 	 * Start at login
 	 */
 	START_AT_LOGIN: () => LocalizedString
+	/**
+	 * Theme
+	 */
+	THEME: () => LocalizedString
 	/**
 	 * Version
 	 */
