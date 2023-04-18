@@ -4,9 +4,7 @@
   <img src="./public/icon.png" height="128" />
 </p>
 
-## What is SensiMouse?
-
-SensiMouse is a macOS app that allows you to easily change the system-wide mouse sensitivity and acceleration settings without requiring accessibility permission.
+> Easily change macOS system-wide mouse sensitivity and acceleration settings
 
 ## Benefits
 

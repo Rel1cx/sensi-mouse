@@ -3,9 +3,18 @@
     "compilerOptions": {
         "composite": true,
         "module": "ESNext",
-        "lib": ["ESNext"],
+        "lib": [
+            "ESNext"
+        ],
         "moduleResolution": "Node",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "types": [
+            "@types/node",
+        ]
     },
-    "include": ["scripts/**/*.ts", "vite.config.ts"]
+    "include": [
+        "scripts/**/*.ts",
+        "svelte.config.js",
+        "vite.config.ts"
+    ]
 }

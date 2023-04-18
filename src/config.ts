@@ -1,5 +1,5 @@
 import { Result } from '@swan-io/boxed'
-import  { type UnlistenFn } from '@tauri-apps/api/event'
+import { type UnlistenFn } from '@tauri-apps/api/event'
 import { Store } from 'tauri-plugin-store-api'
 import { proxy, useSnapshot } from 'valtio'
 
