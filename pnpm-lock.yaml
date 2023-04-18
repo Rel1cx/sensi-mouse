@@ -14,8 +14,8 @@ dependencies:
     specifier: 6.0.7
     version: 6.0.7(react@18.2.0)
   '@mantine/utils':
-    specifier: 6.0.7
-    version: 6.0.7(react@18.2.0)
+    specifier: 6.0.8
+    version: 6.0.8(react@18.2.0)
   '@stitches/react':
     specifier: 1.2.8
     version: 1.2.8(react@18.2.0)
@@ -911,6 +911,14 @@ packages:
 
   /@mantine/utils@6.0.7(react@18.2.0):
     resolution: {integrity: sha512-XMm66GNn9hXnc9s/twXzL9iqhzM8HLVOyuKDo4WUn/ZM6NEJYJJVcTTlSIXOPq9AWo8bI76vbAHkIry1aEbgmg==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /@mantine/utils@6.0.8(react@18.2.0):
+    resolution: {integrity: sha512-G7omM5XjnGzXLiFU/r2yOJrixDFnY2pUkqD38cV9e/Qa6KFEErp4mNb+rhkSHafCnvfwBiNcdryZwEhJTtuC+Q==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
