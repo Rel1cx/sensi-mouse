@@ -1,18 +1,18 @@
 import { type BaseTranslation } from '../i18n-types.js'
 
 export default {
-    THEME: 'Theme',
-    LIGHT: 'Light',
+    ABOUT: 'About',
+    ACCELERATION: 'Acceleration',
     DARK: 'Dark',
+    GENERAL: 'General',
     INTERFACE: 'Interface',
     LANGUAGE: 'Language',
-    GENERAL: 'General',
-    SENSITIVITY: 'Sensitivity',
-    ACCELERATION: 'Acceleration',
+    LIGHT: 'Light',
     PREFERENCES: 'Preferences',
-    RESET: 'Reset',
-    ABOUT: 'About',
     QUIT: 'Quit',
+    RESET: 'Reset',
+    SENSITIVITY: 'Sensitivity',
     START_AT_LOGIN: 'Start at login',
+    THEME: 'Theme',
     VERSION: 'Version'
 } satisfies BaseTranslation

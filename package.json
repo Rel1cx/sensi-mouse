@@ -3,14 +3,16 @@
     "version": "1.0.7",
     "type": "module",
     "scripts": {
+        "preinstall": "npx only-allow pnpm",
         "build": "typesafe-i18n --no-watch && tsc && vite build",
         "clean": "rm -rf dist node_modules pnpm-lock.yaml && cd src-tauri && cargo clean",
         "dev": "vite",
+        "format:ts": "prettier --cache --write \"src/**/*.@(html|js|ts|tsx|css|scss|md)\"",
         "format:rs": "cd src-tauri && cargo fmt",
         "i18n": "typesafe-i18n",
-        "lint": "pnpm run lint:ts --fix && pnpm run lint:rs",
+        "lint": "pnpm run lint:ts && pnpm run lint:rs",
         "lint:rs": "cd src-tauri && cargo clippy",
-        "lint:ts": "tsc --noEmit && eslint src",
+        "lint:ts": "tsc --noEmit && eslint src --fix",
         "preview": "vite preview",
         "tauri": "tauri",
         "update-version": "tsx ./scripts/update_version.ts"
@@ -38,7 +40,7 @@
     "devDependencies": {
         "@babel/core": "7.21.4",
         "@tauri-apps/cli": "1.2.3",
-        "@types/node": "18.15.11",
+        "@types/node": "18.15.12",
         "@types/react": "18.0.37",
         "@types/react-dom": "18.0.11",
         "@types/throttle-debounce": "5.0.0",
@@ -46,14 +48,14 @@
         "core-dts": "0.0.3",
         "eslint": "8.38.0",
         "eslint-config-with-tsconfig": "1.3.7",
+        "prettier": "2.8.7",
         "sass": "1.62.0",
         "tsx": "3.12.6",
         "typesafe-i18n": "5.24.3",
         "typescript": "5.1.0-beta",
-        "vite": "4.2.2",
+        "vite": "4.3.0",
         "zx": "7.2.1"
     },
-    "packageManager": "pnpm@8.3.0",
     "pnpm": {
         "overrides": {
             "react": "18.2.0",

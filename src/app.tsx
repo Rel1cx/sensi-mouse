@@ -36,6 +36,6 @@ export const App = () => {
                     [route]
                 )}
             </AppShellScreen>
-        </MantineProvider >
+        </MantineProvider>
     )
 }

@@ -1,18 +1,18 @@
 import { type Translation } from '../i18n-types.js'
 
 export default {
-    THEME: 'Tema',
-    LIGHT: 'Terang',
+    ABOUT: 'Tentang',
+    ACCELERATION: 'Akselerasi',
     DARK: 'Gelap',
+    GENERAL: 'Umum',
     INTERFACE: 'Antarmuka',
     LANGUAGE: 'Bahasa',
-    GENERAL: 'Umum',
-    SENSITIVITY: 'Sensitivitas',
-    ACCELERATION: 'Akselerasi',
+    LIGHT: 'Terang',
     PREFERENCES: 'Preferensi',
-    RESET: 'Reset',
-    ABOUT: 'Tentang',
     QUIT: 'Keluar',
+    RESET: 'Reset',
+    SENSITIVITY: 'Sensitivitas',
     START_AT_LOGIN: 'Mulai saat masuk',
+    THEME: 'Tema',
     VERSION: 'Versi'
 } satisfies Translation

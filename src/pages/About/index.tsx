@@ -5,13 +5,13 @@ import { useAsync } from 'react-use'
 import { styled } from '@/theme'
 
 const Container = styled(Flex, {
-    height: '100%',
-    padding: '16px'
+    padding: '16px',
+    height: '100%'
 })
 
 const Link = styled('a', {
-    textDecoration: 'underline',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    textDecoration: 'underline'
 })
 
 export default function About() {

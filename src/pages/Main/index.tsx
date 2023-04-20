@@ -14,11 +14,11 @@ import { getWebviewWindow } from '@/lib/tauri'
 import * as SC from './styles'
 
 const marks = [
-    { value: 0, label: '0' },
-    { value: 25, label: '25' },
-    { value: 50, label: '50' },
-    { value: 75, label: '75' },
-    { value: 100, label: '100' }
+    { label: '0', value: 0 },
+    { label: '25', value: 25 },
+    { label: '50', value: 50 },
+    { label: '75', value: 75 },
+    { label: '100', value: 100 }
 ]
 
 const handleOpenPreferences = async () => {
@@ -40,7 +40,7 @@ const dSetMouseCfg = debounce(50, setMouseCfg, {
 export default function Main() {
     const T = useTranslation()
 
-    const [config, setConfig] = configManager.useConfig()
+    const config = configManager.useConfig()
 
     return (
         <SC.Container direction="column" justify="space-between">
@@ -52,7 +52,7 @@ export default function Main() {
                         max={100}
                         min={0}
                         onChange={value => {
-                            void setConfig('sen', value)
+                            void configManager.setConfig('sen', value)
                             dSetMouseCfg(value, config.accEnabled)
                         }}
                         size="lg"
@@ -65,7 +65,7 @@ export default function Main() {
                         offLabel="OFF"
                         onChange={event => {
                             const { checked } = event.target
-                            void setConfig('accEnabled', checked)
+                            void configManager.setConfig('accEnabled', checked)
                             dSetMouseCfg(config.sen, checked)
                         }}
                         onLabel="ON"
@@ -79,8 +79,8 @@ export default function Main() {
                 <Button
                     onClick={async () => {
                         await setMouseCfg(DEFAULT_SEN, DEFAULT_ACC_ENABLED)
-                        await setConfig('sen', DEFAULT_SEN)
-                        await setConfig('accEnabled', DEFAULT_ACC_ENABLED)
+                        await configManager.setConfig('sen', DEFAULT_SEN)
+                        await configManager.setConfig('accEnabled', DEFAULT_ACC_ENABLED)
                     }}
                 >
                     {T.RESET()}

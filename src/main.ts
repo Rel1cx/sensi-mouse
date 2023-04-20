@@ -14,28 +14,28 @@ const main = async () => {
     const launchAtLogin = await autostart.isEnabled()
 
     await loadResult.match({
+        Error: async () => {
+            await configManager.resetConfig()
+        },
         Ok: async value => {
             await setMouseCfg(value.sen, value.accEnabled)
             await configManager.setConfig('launchAtLogin', launchAtLogin)
-        },
-        Error: async () => {
-            await configManager.resetConfig()
         }
     })
 
     await configManager.beginSyncConfig()
-    
+
     renderApp('#app').match({
+        Error: error => {
+            document.write(error.message)
+        },
         Ok: () => {
             if (import.meta.env.DEV) {
                 return
             }
             document.addEventListener('contextmenu', event => void event.preventDefault(), {
                 capture: true
-            });
-        },
-        Error: error => {
-            document.write(error.message)
+            })
         }
     })
 }

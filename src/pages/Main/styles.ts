@@ -3,24 +3,24 @@ import { Flex, Slider, Switch, Title } from '@mantine/core'
 import { styled } from '@/theme'
 
 export const Container = styled(Flex, {
+    padding: '8px 16px 6px 16px',
     width: '100%',
-    height: '100%',
-    padding: '8px 16px 6px 16px'
+    height: '100%'
 })
 
 export const Header = styled(Title, {
-    color: 'rgb(18, 18, 18)',
-    fontSize: '15px',
     margin: '0',
     padding: '0',
+    color: 'rgb(18, 18, 18)',
+    fontSize: '15px',
     fontWeight: '500'
 })
 
 export const Content = styled('div', {
+    padding: '8px 0',
     display: 'flex',
     flexDirection: 'column',
-    gap: '8px',
-    padding: '8px 0'
+    gap: '8px'
 })
 
 export const xSlider = styled(Slider, {
