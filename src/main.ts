@@ -5,8 +5,8 @@ import '@total-typescript/ts-reset'
 
 import * as autostart from 'tauri-plugin-autostart-api'
 
+import { setMouseCfg } from './cmd'
 import { configManager } from './config'
-import { setMouseCfg } from './lib/cmd'
 import { renderApp } from './root'
 
 const main = async () => {

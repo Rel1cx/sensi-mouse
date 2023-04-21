@@ -1,4 +1,4 @@
-import { invoke } from './tauri'
+import { invoke } from './lib/tauri'
 
 export const getMouseCfg = () => {
     return invoke<[number, boolean]>('get_mouse_cfg')

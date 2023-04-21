@@ -10,7 +10,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let response: Root = client
         .get("https://api.github.com/repos/Nicify/sensi-mouse/releases/latest")
-        .header("user-agent", "updater/0.0.1")
         .send()
         .await?
         .json()
@@ -47,21 +46,21 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         if darwin_sig.is_match(&asset.name) {
             let signature_bytes = client
                 .get(asset.browser_download_url.clone())
-                .header("user-agent", "updater/0.0.1")
                 .send()
                 .await?
                 .bytes()
                 .await?;
 
-            update_file.platforms.darwin_x86_64.signature = String::from_utf8_lossy(&signature_bytes).to_string();
-            update_file.platforms.darwin_aarch64.signature = String::from_utf8_lossy(&signature_bytes).to_string();
+            update_file.platforms.darwin_x86_64.signature =
+                String::from_utf8_lossy(&signature_bytes).to_string();
+            update_file.platforms.darwin_aarch64.signature =
+                String::from_utf8_lossy(&signature_bytes).to_string();
 
             continue;
         }
         // if windows_sig.is_match(&asset.name) {
         //     let signature_bytes = client
         //         .get(asset.browser_download_url.clone())
-        //         .header("user-agent", "updater/0.0.1")
         //         .send()
         //         .await?
         //         .bytes()
@@ -73,7 +72,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // if appimage_sig.is_match(&asset.name) {
         //     let signature_bytes = client
         //         .get(asset.browser_download_url.clone())
-        //         .header("user-agent", "updater/0.0.1")
         //         .send()
         //         .await?
         //         .bytes()
