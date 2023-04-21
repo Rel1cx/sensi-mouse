@@ -33,8 +33,8 @@ const handleOpenPreferences = async () => {
     console.error('Failed to get preferences window')
 }
 
-const dSetMouseCfg = debounce(50, setMouseCfg, {
-    atBegin: false
+const dSetMouseCfg = debounce(16, setMouseCfg, {
+    atBegin: true
 })
 
 export default function Main() {
