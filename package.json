@@ -46,7 +46,7 @@
         "@types/throttle-debounce": "5.0.0",
         "@vitejs/plugin-react": "4.0.0",
         "core-dts": "0.0.3",
-        "eslint": "8.38.0",
+        "eslint": "8.39.0",
         "eslint-config-with-tsconfig": "1.3.7",
         "prettier": "2.8.7",
         "sass": "1.62.0",
