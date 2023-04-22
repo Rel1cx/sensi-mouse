@@ -2,12 +2,12 @@ import { Result } from '@swan-io/boxed'
 import { Store } from 'tauri-plugin-store-api'
 import { proxy, useSnapshot } from 'valtio'
 
-import { type AnyObject } from '@/types'
+import { type UnknownObject } from '@/types'
 
-export const ConfigManager = <T extends object = AnyObject>(
+export const ConfigManager = <T extends UnknownObject>(
     name: string,
     defaultValue: T,
-    parse: (data: AnyObject) => T
+    parse: (data: UnknownObject) => T
 ) => {
     const configProxy: T = proxy<T>(defaultValue)
     const configStore = new Store(name)
@@ -15,7 +15,7 @@ export const ConfigManager = <T extends object = AnyObject>(
     return {
         loadConfig: async () => {
             const saved = await configStore.entries().then(entries => {
-                return entries.reduce<AnyObject>((acc, [key, value]) => ((acc[key] = value), acc), {})
+                return entries.reduce<UnknownObject>((acc, [key, value]) => ((acc[key] = value), acc), {})
             })
 
             return Result.fromExecution(() => parse(saved)).tapOk(value => Object.assign(configProxy, value))
