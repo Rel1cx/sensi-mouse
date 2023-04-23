@@ -27,7 +27,7 @@ const main = async () => {
 
     renderApp('#app').match({
         Error: error => {
-            document.write(error.message)
+            document.textContent = JSON.stringify(error, null, 2)
         },
         Ok: () => {
             if (import.meta.env.DEV) {
