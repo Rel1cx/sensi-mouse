@@ -60,7 +60,7 @@
             "dialog": true,
             "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDE5Q0JGQzE1RDlCRjc2NzMKUldSemRyL1pGZnpMR1pYYk5GQTNHM2pMWEZ2bnNRZ3oyU29YSTZvc3RTRVI2bTZTQUQ0ZWxSSHUK",
             "endpoints": [
-                "https://github.com/Nicify/sensi-mouse/releases/latest/download/latest.json"
+                "https://github.com/Rel1cx/sensi-mouse/releases/latest/download/latest.json"
             ]
         },
         "macOSPrivateApi": true,

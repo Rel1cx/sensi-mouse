@@ -39,8 +39,8 @@
         "@babel/core": "7.21.4",
         "@tauri-apps/cli": "1.2.3",
         "@types/node": "18.16.0",
-        "@types/react": "18.0.38",
-        "@types/react-dom": "18.0.11",
+        "@types/react": "18.2.0",
+        "@types/react-dom": "18.2.0",
         "@types/throttle-debounce": "5.0.0",
         "@vitejs/plugin-react-swc": "3.3.0",
         "core-dts": "0.0.3",
@@ -52,7 +52,7 @@
         "tsx": "3.12.6",
         "typesafe-i18n": "5.24.3",
         "typescript": "5.1.0-dev.20230425",
-        "vite": "4.3.1",
+        "vite": "4.3.2",
         "zx": "7.2.1"
     },
     "pnpm": {

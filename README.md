@@ -15,7 +15,7 @@
 
 ## Releases
 
-Download the latest release from [here](https://github.com/Nicify/sensi-mouse/releases)
+Download the latest release from [here](https://github.com/Rel1cx/sensi-mouse/releases)
 
 ## License
 
