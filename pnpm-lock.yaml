@@ -94,8 +94,8 @@ devDependencies:
     specifier: 8.39.0
     version: 8.39.0
   eslint-config-with-tsconfig:
-    specifier: 1.4.0
-    version: 1.4.0(@typescript-eslint/parser@5.59.0)(eslint@8.39.0)(tailwindcss@3.3.1)(typescript@5.1.0-dev.20230425)
+    specifier: 1.3.9
+    version: 1.3.9(@typescript-eslint/parser@5.59.0)(eslint@8.39.0)(tailwindcss@3.3.1)(typescript@5.1.0-dev.20230425)
   prettier:
     specifier: 2.8.8
     version: 2.8.8
@@ -2444,8 +2444,8 @@ packages:
       eslint: 8.39.0
     dev: true
 
-  /eslint-config-with-tsconfig@1.4.0(@typescript-eslint/parser@5.59.0)(eslint@8.39.0)(tailwindcss@3.3.1)(typescript@5.1.0-dev.20230425):
-    resolution: {integrity: sha512-b8v7YR/U5lcKCe0n+CARRs7+YjbaG/8RpqqKAXo/9TvNeqNs5v8wxh15LCSheIZ1z7NfR8hXCwi9tuQX65rBeA==}
+  /eslint-config-with-tsconfig@1.3.9(@typescript-eslint/parser@5.59.0)(eslint@8.39.0)(tailwindcss@3.3.1)(typescript@5.1.0-dev.20230425):
+    resolution: {integrity: sha512-wwmVHK1D++x6wPpuAFT3XgwNsO1UeVZLAF0F2akSHVm9twNPLZQbproAYykY+uYAnxEVH9WXea1doTuNxML4/g==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
       eslint: '>=8.39.0'
@@ -2456,6 +2456,7 @@ packages:
       eslint: 8.39.0
       eslint-config-galex: 4.5.2(eslint@8.39.0)(tailwindcss@3.3.1)
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.59.0)(eslint-plugin-import@2.27.5)(eslint@8.39.0)
+      eslint-plugin-filenames: 1.3.2(eslint@8.39.0)
       eslint-plugin-functional: 5.0.8(eslint@8.39.0)(typescript@5.1.0-dev.20230425)
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.59.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.39.0)
       eslint-plugin-security: 1.7.1
@@ -2628,6 +2629,18 @@ packages:
       typescript: 5.1.0-dev.20230425
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /eslint-plugin-filenames@1.3.2(eslint@8.39.0):
+    resolution: {integrity: sha512-tqxJTiEM5a0JmRCUYQmxw23vtTxrb2+a3Q2mMOPhFxvt7ZQQJmdiuMby9B/vUAuVMghyP7oET+nIf6EO6CBd/w==}
+    peerDependencies:
+      eslint: '*'
+    dependencies:
+      eslint: 8.39.0
+      lodash.camelcase: 4.3.0
+      lodash.kebabcase: 4.1.1
+      lodash.snakecase: 4.1.1
+      lodash.upperfirst: 4.3.1
     dev: true
 
   /eslint-plugin-functional@5.0.8(eslint@8.39.0)(typescript@5.1.0-dev.20230425):
@@ -3831,8 +3844,24 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash.camelcase@4.3.0:
+    resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
+    dev: true
+
+  /lodash.kebabcase@4.1.1:
+    resolution: {integrity: sha512-N8XRTIMMqqDgSy4VLKPnJ/+hpGZN+PHQiJnSenYqPaVV/NCqEogTnAdZLQiGKhxX+JCs8waWq2t1XHWKOmlY8g==}
+    dev: true
+
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+    dev: true
+
+  /lodash.snakecase@4.1.1:
+    resolution: {integrity: sha512-QZ1d4xoBHYUeuouhEq3lk3Uq7ldgyFXGBhg04+oRLnIz8o9T65Eh+8YdroUwn846zchkA9yDsDl5CVVaV2nqYw==}
+    dev: true
+
+  /lodash.upperfirst@4.3.1:
+    resolution: {integrity: sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==}
     dev: true
 
   /lodash@4.17.21:
