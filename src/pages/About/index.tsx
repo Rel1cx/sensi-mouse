@@ -26,7 +26,7 @@ export default function About() {
             <Text align="center" size={10}>
                 Copyright © 2023 Eva1ent{' | '}
                 <Link
-                    href="https://raw.githubusercontent.com/Nicify/sensi-mouse/main/LICENSE"
+                    href="https://raw.githubusercontent.com/Rel1cx/sensi-mouse/main/LICENSE"
                     rel="noopener noreferrer"
                     target="_blank"
                 >

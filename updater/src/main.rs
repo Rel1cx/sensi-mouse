@@ -9,8 +9,7 @@ mod updatefile;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let response: Root = client
-        .get("https://api.github.com/repos/Nicify/sensi-mouse/releases/latest")
-        .header("user-agent", "updater/0.0.1")
+        .get("https://api.github.com/repos/Rel1cx/sensi-mouse/releases/latest")
         .send()
         .await?
         .json()
@@ -53,8 +52,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .bytes()
                 .await?;
 
-            update_file.platforms.darwin_x86_64.signature = String::from_utf8_lossy(&signature_bytes).to_string();
-            update_file.platforms.darwin_aarch64.signature = String::from_utf8_lossy(&signature_bytes).to_string();
+            update_file.platforms.darwin_x86_64.signature =
+                String::from_utf8_lossy(&signature_bytes).to_string();
+            update_file.platforms.darwin_aarch64.signature =
+                String::from_utf8_lossy(&signature_bytes).to_string();
 
             continue;
         }

@@ -5,8 +5,8 @@ authors = ["Eva1ent <let@ik.me>"]
 description = "Thin wrapper for macOS system-wide mouse settings manipulation."
 edition = "2021"
 
-homepage = "https://github.com/Nicify/mac-mouse-sys"
-repository = "https://github.com/Nicify/mac-mouse-sys"
+homepage = "https://github.com/Rel1cx/mac-mouse-sys"
+repository = "https://github.com/Rel1cx/mac-mouse-sys"
 # documentation = ""
 
 license = "MIT"
