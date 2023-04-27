@@ -7,11 +7,11 @@ import { useLocale, useTranslation } from '@/hooks/useI18n'
 import { type Locales } from '@/i18n/i18n-types'
 import { isLocale } from '@/i18n/i18n-util'
 import { styled } from '@/theme'
-import { type Theme } from '@/types'
+import { isTheme, Theme } from '@/types'
 
 const themes: { label: string; value: Theme }[] = [
-    { label: 'Light', value: 'light' }
-    // { label: 'Dark', value: 'dark' }
+    { label: 'Light', value: Theme.light },
+    { label: 'Dark', value: Theme.dark }
 ]
 
 const languages: { label: string; value: Locales }[] = [
@@ -32,6 +32,14 @@ const languages: { label: string; value: Locales }[] = [
 const Container = styled(Flex, {
     padding: '16px 12px'
 })
+
+const handleThemeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target
+    if (!value || !isTheme(value)) {
+        return
+    }
+    void configManager.setConfig('theme', value)
+}
 
 const handleLocaleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target
@@ -56,7 +64,7 @@ export default function Preferences() {
     return (
         <Container align="stretch" direction="column" gap={8}>
             <Header>{T.THEME()}</Header>
-            <NativeSelect data={themes} defaultValue="light" />
+            <NativeSelect data={themes} defaultValue="light" onChange={handleThemeChange} />
             <Header>{T.LANGUAGE()}</Header>
             <NativeSelect data={languages} onChange={handleLocaleChange} value={locale} />
             <Header>{T.GENERAL()}</Header>

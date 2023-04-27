@@ -2,7 +2,7 @@ import { Result } from '@swan-io/boxed'
 import { Store } from 'tauri-plugin-store-api'
 import { proxy, useSnapshot } from 'valtio'
 
-import { type UnknownObject } from '@/types'
+import { type UnknownObject } from '@/lib/types'
 
 export const ConfigManager = <T extends UnknownObject>(
     name: string,
