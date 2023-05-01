@@ -53,7 +53,7 @@
         "typesafe-i18n": "5.24.3",
         "typescript": "5.1.0-dev.20230425",
         "vite": "4.3.3",
-        "zx": "7.2.1"
+        "zx": "7.2.2"
     },
     "pnpm": {
         "overrides": {
