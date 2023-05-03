@@ -10,6 +10,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
     let response: Root = client
         .get("https://api.github.com/repos/Rel1cx/sensi-mouse/releases/latest")
+        .header("user-agent", "updater/0.0.1")
         .send()
         .await?
         .json()
