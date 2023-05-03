@@ -25,7 +25,7 @@ tauri-build = { version = "1.2.1", features = [] }
 anyhow = "1.0"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive", "rc"] }
-tauri = { version = "1.2.4", features = [
+tauri = { version = "1.2.5", features = [
     "macos-private-api",
     "shell-open",
     "system-tray",
