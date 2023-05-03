@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.7...v1.0.8) (2023-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate mac-mouse-sys to 0.0.9 ([a0ddf81](https://github.com/Rel1cx/sensi-mouse/commit/a0ddf81f1525f02d0ffe0023885e2a4a2f8be1a1))
+
 ## [1.0.7](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.6...v1.0.7) (2023-04-16)
 
 
