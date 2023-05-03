@@ -38,7 +38,7 @@ tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", 
 tauri-plugin-positioner = { version = "1.0.4", features = ["system-tray"] }
 tauri-plugin-autostart = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "dev" }
 window-vibrancy = "0.3"
-mac-mouse-sys = "0.0.8"
+mac-mouse-sys = "0.0.9"
 
 [features]
 # by default Tauri runs in production mode
