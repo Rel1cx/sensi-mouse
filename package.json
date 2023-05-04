@@ -32,7 +32,7 @@
         "throttle-debounce": "5.0.0",
         "tiny-invariant": "1.3.1",
         "ts-pattern": "4.2.2",
-        "valtio": "1.10.4",
+        "valtio": "1.10.5",
         "zod": "3.21.4"
     },
     "devDependencies": {
