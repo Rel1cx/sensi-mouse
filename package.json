@@ -45,7 +45,7 @@
         "@vitejs/plugin-react-swc": "3.3.0",
         "core-dts": "0.0.3",
         "eslint": "8.40.0",
-        "eslint-config-with-tsconfig": "1.4.4",
+        "eslint-config-with-tsconfig": "1.4.5",
         "prettier": "2.8.8",
         "sass": "1.62.1",
         "ts-essentials": "9.3.2",
