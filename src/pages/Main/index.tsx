@@ -75,7 +75,7 @@ export default function Main() {
             </SC.Content>
             <Divider />
             <SC.Footer align="center" gap={8} justify="flex-end">
-                <Button onClick={() => void handleOpenPreferences()}>{T.PREFERENCES()}</Button>
+                <Button onClick={handleOpenPreferences}>{T.PREFERENCES()}</Button>
                 <Button
                     onClick={async () => {
                         await setMouseCfg(DEFAULT_SEN, DEFAULT_ACC_ENABLED)
@@ -85,7 +85,7 @@ export default function Main() {
                 >
                     {T.RESET()}
                 </Button>
-                <Button onClick={() => void exit(0)}>{T.QUIT()}</Button>
+                <Button onClick={() => exit(0)}>{T.QUIT()}</Button>
             </SC.Footer>
         </SC.Container>
     )
