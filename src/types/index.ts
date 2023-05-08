@@ -5,7 +5,6 @@ import { Enum, isKeyOfEnum } from '@/lib/types'
 
 export const Config = z.object({
     accEnabled: z.boolean().default(false).describe('Acceleration enabled'),
-    launchAtLogin: z.boolean().default(false).describe('Launch at login'),
     locale: z.string().default('en').describe('Language'),
     sen: z.number().min(0).max(100).default(90).describe('Sensitivity'),
     theme: z

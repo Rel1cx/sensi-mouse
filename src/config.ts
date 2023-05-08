@@ -1,7 +1,15 @@
 import { Config } from '@/types'
 
+import { type Locales } from './i18n/i18n-types'
 import { ConfigManager } from './lib/config'
 
-export const defaultConfig: Readonly<Config> = Config.parse({})
+export const defaultConfig: Config & {
+    locale: Locales
+} = {
+    sen: 90,
+    accEnabled: false,
+    locale: 'en',
+    theme: 'light'
+}
 
-export const configManager = ConfigManager('.config.dat', defaultConfig, data => Config.parse(data))
+export const configManager = ConfigManager('.config.dat', data => Config.parse(data))
