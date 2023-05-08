@@ -1,12 +1,13 @@
 use crate::ghdata::Root;
 use crate::updatefile::UpdateFile;
 use regex::Regex;
+use std::error::Error;
 
 mod ghdata;
 mod updatefile;
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
+async fn main() -> Result<(), Box<dyn Error>> {
     let client = reqwest::Client::new();
     let response: Root = client
         .get("https://api.github.com/repos/Rel1cx/sensi-mouse/releases/latest")
