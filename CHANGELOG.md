@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.9](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.8...v1.0.9) (2023-05-08)
+
+
+### Bug Fixes
+
+* optimize code and simplify multi-window state synchronization. ([567a5ea](https://github.com/Rel1cx/sensi-mouse/commit/567a5ea1cfe0cbcb6af453b1ad4791a877867a7e))
+
 ## [1.0.8](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.7...v1.0.8) (2023-05-03)
 
 
