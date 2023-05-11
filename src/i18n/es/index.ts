@@ -14,5 +14,5 @@ export default {
     SENSITIVITY: 'Sensibilidad',
     START_AT_LOGIN: 'Iniciar sesión',
     THEME: 'Tema',
-    VERSION: 'Versión'
+    VERSION: 'Versión',
 } satisfies Translation

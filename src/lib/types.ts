@@ -12,9 +12,9 @@ export const Enum: <T extends string[]>(...args: T) => Readonly<{ [P in UnionFro
         args.reduce((acc, next) => {
             return {
                 ...acc,
-                [next]: next
+                [next]: next,
             } as Ret
-        }, Object.create(null)) as Ret
+        }, Object.create(null)) as Ret,
     )
 }
 

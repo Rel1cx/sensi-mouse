@@ -13,7 +13,7 @@ const Preferences = lazy(() => import('./pages/Preferences'))
 const AppShellScreen = styled('main', {
     width: '100%',
     height: '100%',
-    overflow: 'hidden'
+    overflow: 'hidden',
 })
 
 export const App = () => {
@@ -33,7 +33,7 @@ export const App = () => {
                             .with({ name: 'About' }, () => <About />)
                             .with({ name: 'Preferences' }, () => <Preferences />)
                             .otherwise(() => null),
-                    [route]
+                    [route],
                 )}
             </AppShellScreen>
         </MantineProvider>

@@ -14,5 +14,5 @@ export default {
     SENSITIVITY: '靈敏度',
     START_AT_LOGIN: '開機自動啟動',
     THEME: '主題',
-    VERSION: '版本'
+    VERSION: '版本',
 } satisfies Translation

@@ -14,5 +14,5 @@ export default {
     SENSITIVITY: 'Sensitivity',
     START_AT_LOGIN: 'Start at login',
     THEME: 'Theme',
-    VERSION: 'Version'
+    VERSION: 'Version',
 } satisfies BaseTranslation

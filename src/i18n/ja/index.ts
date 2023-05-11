@@ -14,5 +14,5 @@ export default {
     SENSITIVITY: '感度',
     START_AT_LOGIN: 'ログイン時に開始',
     THEME: 'テーマ',
-    VERSION: 'バージョン'
+    VERSION: 'バージョン',
 } satisfies Translation

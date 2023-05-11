@@ -43,7 +43,7 @@ export const setLaunchAtLoginAtom = atom(null, async (get, set, launchAtLogin: b
     set(launchAtLoginAtom, launchAtLogin)
 })
 
-export const loadConfigAtom = async () => {
+export const loadConfigToAtom = async () => {
     const config = await configManager.loadConfig()
     const launchAtLogin = await autostart.isEnabled()
     if (config.isOk()) {
@@ -57,7 +57,7 @@ export const loadConfigAtom = async () => {
     }
 }
 
-export const resetConfigAtom = async () => {
+export const loadDefaultConfigToAtom = async () => {
     await configManager.resetConfig()
     store.set(senAtom, defaultConfig.sen)
     store.set(accEnabledAtom, defaultConfig.accEnabled)

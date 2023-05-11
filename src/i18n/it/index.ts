@@ -14,5 +14,5 @@ export default {
     SENSITIVITY: 'Sensitivitas',
     START_AT_LOGIN: 'Mulai saat masuk',
     THEME: 'Tema',
-    VERSION: 'Versi'
+    VERSION: 'Versi',
 } satisfies Translation

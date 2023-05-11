@@ -3,25 +3,39 @@ import '@/styles/global.scss'
 import '@/styles/overrides.scss'
 import '@total-typescript/ts-reset'
 
+import { Result } from '@swan-io/boxed'
+import { enableMapSet, setAutoFreeze, setUseStrictShallowCopy } from 'immer'
+
+import { loadConfigToAtom, loadDefaultConfigToAtom } from './atoms'
+import { configManager } from './config'
 import { renderApp } from './root'
-import { loadConfigAtom } from './store'
+
+enableMapSet()
+setAutoFreeze(true)
+setUseStrictShallowCopy(true)
 
 const main = async () => {
-    window.addEventListener('focus', loadConfigAtom)
-    await loadConfigAtom()
+    await Result.fromPromise(loadConfigToAtom()).then(r => {
+        r.match({
+            Ok: () => {},
+            Error: async () => {
+                await configManager.resetConfig()
+                await loadDefaultConfigToAtom()
+            },
+        })
+    })
 
     renderApp('#app').match({
-        Error: error => {
-            document.textContent = JSON.stringify(error, null, 2)
-        },
         Ok: () => {
+            window.addEventListener('focus', loadConfigToAtom)
             if (import.meta.env.DEV) {
                 return
             }
             document.addEventListener('contextmenu', event => void event.preventDefault(), {
-                capture: true
+                capture: true,
             })
-        }
+        },
+        Error: console.error,
     })
 }
 

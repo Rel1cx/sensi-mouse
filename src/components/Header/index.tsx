@@ -10,6 +10,6 @@ export const Header = styled(MTTitle, {
     fontWeight: '500',
 
     '@media (prefers-color-scheme: dark)': {
-        color: 'rgb(240, 240, 240)'
-    }
+        color: 'rgb(240, 240, 240)',
+    },
 })

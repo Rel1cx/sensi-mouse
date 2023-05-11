@@ -9,7 +9,7 @@ export const defaultConfig: Config & {
     sen: 90,
     accEnabled: false,
     locale: 'en',
-    theme: 'light'
+    theme: 'light',
 }
 
 export const configManager = ConfigManager('.config.dat', data => Config.parse(data))

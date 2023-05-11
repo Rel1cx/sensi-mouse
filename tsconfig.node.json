@@ -10,7 +10,7 @@
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "types": [
-            "@types/node",
+            "@types/node"
         ]
     },
     "include": [

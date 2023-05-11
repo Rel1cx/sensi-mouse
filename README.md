@@ -17,6 +17,10 @@
 
 Download the latest release from [here](https://github.com/Rel1cx/sensi-mouse/releases)
 
+## CLI Version
+
+[sensi-mouse-cli](https://github.com/Rel1cx/sensi-mouse-cli)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

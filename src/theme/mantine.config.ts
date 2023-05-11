@@ -6,9 +6,9 @@ export const mantineThemetheme: (colorScheme: ColorScheme) => MantineThemeOverri
     colorScheme,
     fontFamily: `var(--base-font-family)`,
     headings: {
-        fontFamily: `var(--base-font-family)`
+        fontFamily: `var(--base-font-family)`,
     },
     colors,
     primaryColor: 'blue',
-    primaryShade: 0
+    primaryShade: 0,
 })

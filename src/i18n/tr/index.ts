@@ -14,5 +14,5 @@ export default {
     SENSITIVITY: 'Hassasiyet',
     START_AT_LOGIN: 'Girişte başlat',
     THEME: 'Tema',
-    VERSION: 'Sürüm'
+    VERSION: 'Sürüm',
 } satisfies Translation

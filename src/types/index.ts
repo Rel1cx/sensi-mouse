@@ -10,7 +10,7 @@ export const Config = z.object({
     theme: z
         .union([z.literal('light'), z.literal('dark')])
         .default('light')
-        .describe('Theme')
+        .describe('Theme'),
 })
 
 export type Config = z.infer<typeof Config>

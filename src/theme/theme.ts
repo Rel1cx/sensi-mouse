@@ -12,7 +12,7 @@ export const colors = {
         '#FF174E',
         '#FF063D',
         '#FF002C',
-        '#FF001B'
+        '#FF001B',
     ],
     blue: [
         '#00B8FF',
@@ -24,7 +24,7 @@ export const colors = {
         '#0052FF',
         '#0041FF',
         '#0030FF',
-        '#001FFF'
+        '#001FFF',
     ],
     purple: [
         '#654ea3',
@@ -36,7 +36,7 @@ export const colors = {
         '#412069',
         '#3b1857',
         '#350f46',
-        '#2f0634'
+        '#2f0634',
     ],
     lightgray: [
         '#959595',
@@ -48,6 +48,6 @@ export const colors = {
         '#5f5f5f',
         '#565656',
         '#4d4d4d',
-        '#444444'
-    ]
+        '#444444',
+    ],
 } satisfies MantineThemeOverride['colors']

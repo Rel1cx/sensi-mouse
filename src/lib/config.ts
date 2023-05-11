@@ -22,6 +22,6 @@ export const ConfigManager = <T extends UnknownObject>(name: string, parse: (dat
         setConfig: async <K extends Extract<keyof T, string>>(key: K, value: T[K]) => {
             await configStore.set(key, value)
             await configStore.save()
-        }
+        },
     }
 }
