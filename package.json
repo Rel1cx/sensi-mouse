@@ -53,7 +53,7 @@
         "ts-essentials": "9.3.2",
         "tsx": "3.12.7",
         "typesafe-i18n": "5.24.3",
-        "typescript": "5.1.0-dev.20230513",
+        "typescript": "5.1.0-dev.20230514",
         "vite": "4.3.5",
         "zx": "7.2.2"
     },
