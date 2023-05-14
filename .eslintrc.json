@@ -1,31 +1,33 @@
 {
     "root": true,
-    "extends": ["with-tsconfig"],
+    "extends": [
+        "with-tsconfig"
+    ],
     "rules": {
-        "quotes": ["error", "double"],
+        "quotes": [
+            "error",
+            "double"
+        ],
         "new-cap": "off"
     },
     "overrides": [
         {
-            "files": ["scripts/**/*.ts", "vite.config.ts"],
+            "files": [
+                "scripts/**/*.ts",
+                "vite.config.ts"
+            ],
             "parserOptions": {
                 "project": "tsconfig.node.json"
             },
             "rules": {
                 "@typescript-eslint/no-unsafe-assignment": "off",
                 "@typescript-eslint/no-unsafe-member-access": "off"
-            },
-            "settings": {
-                "import/resolver": {
-                    "typescript": {
-                        "alwaysTryTypes": true,
-                        "project": "tsconfig.node.json"
-                    }
-                }
             }
         },
         {
-            "files": ["src/i18n/i18n-*.@(ts|tsx)"],
+            "files": [
+                "src/i18n/i18n-*.@(ts|tsx)"
+            ],
             "rules": {
                 "unicorn/no-abusive-eslint-disable": "off"
             }
