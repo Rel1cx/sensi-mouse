@@ -1,12 +1,12 @@
-import { atom, getDefaultStore } from 'jotai'
-import * as autostart from 'tauri-plugin-autostart-api'
+import { atom, getDefaultStore } from "jotai"
+import * as autostart from "tauri-plugin-autostart-api"
 
-import { type Locales } from '@/i18n/i18n-types'
+import { type Locales } from "@/i18n/i18n-types"
 
-import { configManager, defaultConfig } from './config'
-import { isLocale } from './i18n/i18n-util'
-import { setMouseCfg } from './lib/cmd'
-import { type Theme } from './types'
+import { configManager, defaultConfig } from "./config"
+import { isLocale } from "./i18n/i18n-util"
+import { setMouseCfg } from "./lib/cmd"
+import { type Theme } from "./types"
 
 const store = getDefaultStore()
 
@@ -17,23 +17,23 @@ export const accEnabledAtom = atom(defaultConfig.accEnabled)
 export const setSenAtom = atom(null, async (get, set, sen: number) => {
     set(senAtom, sen)
     await setMouseCfg(sen, get(accEnabledAtom))
-    await configManager.setConfig('sen', sen)
+    await configManager.setConfig("sen", sen)
 })
 
 export const setAccEnabledAtom = atom(null, async (get, set, accEnabled: boolean) => {
     set(accEnabledAtom, accEnabled)
     await setMouseCfg(get(senAtom), accEnabled)
-    await configManager.setConfig('accEnabled', accEnabled)
+    await configManager.setConfig("accEnabled", accEnabled)
 })
 
 export const localeAtom = atom(defaultConfig.locale, (get, set, locale: Locales) => {
     set(localeAtom, locale)
-    void configManager.setConfig('locale', locale)
+    void configManager.setConfig("locale", locale)
 })
 
 export const themeAtom = atom(defaultConfig.theme, (get, set, theme: Theme) => {
     set(themeAtom, theme)
-    void configManager.setConfig('theme', theme)
+    void configManager.setConfig("theme", theme)
 })
 
 export const launchAtLoginAtom = atom(false)

@@ -1,7 +1,7 @@
-import { Divider as MTDivider } from '@mantine/core'
+import { Divider as MTDivider } from "@mantine/core"
 
-import { styled } from '@/theme'
+import { styled } from "@/theme"
 
 export const Divider = styled(MTDivider, {
-    margin: '4px 0',
+    margin: "4px 0",
 })

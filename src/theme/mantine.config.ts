@@ -1,14 +1,14 @@
-import { type ColorScheme, type MantineThemeOverride } from '@mantine/core'
+import { type ColorScheme, type MantineThemeOverride } from "@mantine/core"
 
-import { colors } from './theme'
+import { colors } from "./theme"
 
-export const mantineThemetheme: (colorScheme: ColorScheme) => MantineThemeOverride = (colorScheme = 'light') => ({
+export const mantineThemetheme: (colorScheme: ColorScheme) => MantineThemeOverride = (colorScheme = "light") => ({
     colorScheme,
-    fontFamily: `var(--base-font-family)`,
+    fontFamily: "var(--base-font-family)",
     headings: {
-        fontFamily: `var(--base-font-family)`,
+        fontFamily: "var(--base-font-family)",
     },
     colors,
-    primaryColor: 'blue',
+    primaryColor: "blue",
     primaryShade: 0,
 })

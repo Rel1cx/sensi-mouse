@@ -1,18 +1,13 @@
 {
     "root": true,
-    "extends": [
-        "with-tsconfig"
-    ],
+    "extends": ["with-tsconfig"],
     "rules": {
-        "new-cap": "off",
-        "no-sequences": "off"
+        "quotes": ["error", "double"],
+        "new-cap": "off"
     },
     "overrides": [
         {
-            "files": [
-                "scripts/**/*.ts",
-                "vite.config.ts"
-            ],
+            "files": ["scripts/**/*.ts", "vite.config.ts"],
             "parserOptions": {
                 "project": "tsconfig.node.json"
             },
@@ -30,9 +25,7 @@
             }
         },
         {
-            "files": [
-                "src/i18n/i18n-*.@(ts|tsx)"
-            ],
+            "files": ["src/i18n/i18n-*.@(ts|tsx)"],
             "rules": {
                 "unicorn/no-abusive-eslint-disable": "off"
             }

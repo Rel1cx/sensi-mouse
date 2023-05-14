@@ -1,2 +1,2 @@
-export * from './mantine.config'
-export * from './stitches.config'
+export * from "./mantine.config"
+export * from "./stitches.config"

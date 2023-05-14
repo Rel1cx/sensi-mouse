@@ -1,26 +1,26 @@
-import { Input } from '@mantine/core'
-import { exit } from '@tauri-apps/api/process'
-import { useAtom, useSetAtom } from 'jotai'
+import { Input } from "@mantine/core"
+import { exit } from "@tauri-apps/api/process"
+import { useAtom, useSetAtom } from "jotai"
 
-import { accEnabledAtom, loadDefaultConfigToAtom, senAtom, setAccEnabledAtom, setSenAtom } from '@/atoms'
-import { Button } from '@/components/Button'
-import { Divider } from '@/components/Divider'
-import { Header } from '@/components/Header'
-import { useTranslation } from '@/hooks/useTranslation'
-import { getWebviewWindow } from '@/lib/tauri'
+import { accEnabledAtom, loadDefaultConfigToAtom, senAtom, setAccEnabledAtom, setSenAtom } from "@/atoms"
+import { Button } from "@/components/Button"
+import { Divider } from "@/components/Divider"
+import { Header } from "@/components/Header"
+import { useTranslation } from "@/hooks/useTranslation"
+import { getWebviewWindow } from "@/lib/tauri"
 
-import * as SC from './styles'
+import * as SC from "./styles"
 
 const marks = [
-    { label: '0', value: 0 },
-    { label: '25', value: 25 },
-    { label: '50', value: 50 },
-    { label: '75', value: 75 },
-    { label: '100', value: 100 },
+    { label: "0", value: 0 },
+    { label: "25", value: 25 },
+    { label: "50", value: 50 },
+    { label: "75", value: 75 },
+    { label: "100", value: 100 },
 ]
 
 const handleOpenPreferences = async () => {
-    const window = await getWebviewWindow('preferences')
+    const window = await getWebviewWindow("preferences")
 
     if (window.isSome()) {
         await window.get().show()
@@ -28,7 +28,7 @@ const handleOpenPreferences = async () => {
         return
     }
     // eslint-disable-next-line no-console
-    console.error('Failed to get preferences window')
+    console.error("Failed to get preferences window")
 }
 
 export default function Main() {
@@ -41,27 +41,27 @@ export default function Main() {
     const setAccEnabled = useSetAtom(setAccEnabledAtom)
 
     return (
-        <SC.Container direction='column' justify='space-between'>
+        <SC.Container direction="column" justify="space-between">
             <Header>SensiMouse</Header>
             <SC.Content>
                 <Input.Wrapper label={T.SENSITIVITY()}>
-                    <SC.xSlider marks={marks} max={100} min={0} onChange={setSen} size='lg' value={sen} />
+                    <SC.xSlider marks={marks} max={100} min={0} onChange={setSen} size="lg" value={sen} />
                 </Input.Wrapper>
                 <Input.Wrapper label={T.ACCELERATION()}>
                     <SC.xSwitch
                         checked={accEnabled}
-                        offLabel='OFF'
-                        onChange={async event => {
+                        offLabel="OFF"
+                        onChange={async (event) => {
                             const { checked } = event.target
                             await setAccEnabled(checked)
                         }}
-                        onLabel='ON'
-                        size='md'
+                        onLabel="ON"
+                        size="md"
                     />
                 </Input.Wrapper>
             </SC.Content>
             <Divider />
-            <SC.Footer align='center' gap={8} justify='flex-end'>
+            <SC.Footer align="center" gap={8} justify="flex-end">
                 <Button onClick={handleOpenPreferences}>{T.PREFERENCES()}</Button>
                 <Button onClick={loadDefaultConfigToAtom}>{T.RESET()}</Button>
                 <Button onClick={() => exit(0)}>{T.QUIT()}</Button>
