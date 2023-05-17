@@ -28,7 +28,8 @@
             "**/dist",
             "**/public",
             "**/node_modules",
-            "**/*-lock.json"
+            "**/*-lock.json",
+            "pnpm-lock.yaml"
         ]
     }
 }
