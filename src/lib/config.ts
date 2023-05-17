@@ -1,30 +1,39 @@
-import { Result } from "@swan-io/boxed"
+/* eslint-disable promise/prefer-await-to-then */
+import { Option, Result } from "@swan-io/boxed"
 import { Store } from "tauri-plugin-store-api"
 
-import { type UnknownObject } from "@/lib/types"
+export type ConfigManagerProps<T> = {
+    name: string
+    parse: (data: unknown) => T
+}
 
-export const ConfigManager = <T extends UnknownObject>(name: string, parse: (data: UnknownObject) => T) => {
-    const store = new Store(name)
+export class ConfigManager<T> {
+    parse: (data: unknown) => T
 
-    return {
-        loadConfig: async () => {
-            const saved = await store.entries().then((entries) => {
-                return entries.reduce<UnknownObject>((acc, [key, value]) => {
-                    acc[key] = value
-                    return acc
-                }, {})
-            })
+    #store: Store
 
-            return Result.fromExecution(() => parse(saved))
-        },
+    private constructor({ name, parse }: ConfigManagerProps<T>) {
+        this.#store = new Store(name)
+        this.parse = parse
+    }
 
-        resetConfig: async () => {
-            await store.reset()
-        },
+    static make<T>(props: ConfigManagerProps<T>) {
+        return new ConfigManager<T>(props)
+    }
 
-        setConfig: async <K extends Extract<keyof T, string>>(key: K, value: T[K]) => {
-            await store.set(key, value)
-            await store.save()
-        },
+    async loadConfig() {
+        return Result.fromPromise(this.#store.entries().then(Object.fromEntries).then(this.parse))
+    }
+
+    resetConfig() {
+        return Result.fromPromise(this.#store.reset())
+    }
+
+    setConfig<K extends Extract<keyof T, string>>(key: K, value: T[K]) {
+        return Result.fromPromise(this.#store.set(key, value).then(() => this.#store.save()))
+    }
+
+    async getConfig<K extends Extract<keyof T, string>>(key: K) {
+        return Option.fromNullable(await this.#store.get<T[K]>(key))
     }
 }
