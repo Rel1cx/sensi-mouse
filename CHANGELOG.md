@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.10](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.9...v1.0.10) (2023-05-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-pattern to v4.3.0 ([3881c9f](https://github.com/Rel1cx/sensi-mouse/commit/3881c9f0bedad53823b7d834bd7ff1b9973841cf))
+* **deps:** update rust crate tokio to 1.28.1 ([16f44c2](https://github.com/Rel1cx/sensi-mouse/commit/16f44c241725d17b832ba74afd8d32d2c1db163f))
+
 ## [1.0.9](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.8...v1.0.9) (2023-05-08)
 
 ### Bug Fixes
