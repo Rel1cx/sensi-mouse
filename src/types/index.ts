@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from "zod"
 
-import { Enum, isKeyOfEnum } from "@/lib/types"
+import { Enum, isKeyOfEnum } from "@/lib/enum"
 
 export const Config = z.object({
     accEnabled: z.boolean().default(false).describe("Acceleration enabled"),

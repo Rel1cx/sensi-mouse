@@ -2,7 +2,7 @@ import { Flex, Image, Text } from "@mantine/core"
 import { getName, getVersion } from "@tauri-apps/api/app"
 import { useAsync } from "react-use"
 
-import { styled } from "@/theme"
+import { styled } from "@/theme/stitches.config"
 
 const Container = styled(Flex, {
     padding: "16px",

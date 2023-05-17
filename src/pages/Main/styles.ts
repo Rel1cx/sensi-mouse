@@ -1,6 +1,6 @@
 import { Flex, Slider, Switch, Title } from "@mantine/core"
 
-import { styled } from "@/theme"
+import { styled } from "@/theme/stitches.config"
 
 export const Container = styled(Flex, {
     padding: "8px 16px 6px 16px",

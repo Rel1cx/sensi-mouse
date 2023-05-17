@@ -1,4 +1,4 @@
-/* eslint-disable promise/prefer-await-to-then */
+/* eslint-disable @typescript-eslint/no-invalid-void-type, promise/prefer-await-to-then */
 import { Option, Result } from "@swan-io/boxed"
 import { Store } from "tauri-plugin-store-api"
 
@@ -21,16 +21,16 @@ export class ConfigManager<T> {
         return new ConfigManager<T>(props)
     }
 
-    async loadConfig() {
-        return Result.fromPromise(this.#store.entries().then(Object.fromEntries).then(this.parse))
+    loadConfig() {
+        return Result.fromPromise<T, Error>(this.#store.entries().then(Object.fromEntries).then(this.parse))
     }
 
     resetConfig() {
-        return Result.fromPromise(this.#store.reset())
+        return Result.fromPromise<void, Error>(this.#store.reset())
     }
 
     setConfig<K extends Extract<keyof T, string>>(key: K, value: T[K]) {
-        return Result.fromPromise(this.#store.set(key, value).then(() => this.#store.save()))
+        return Result.fromPromise<void, Error>(this.#store.set(key, value).then(() => this.#store.save()))
     }
 
     async getConfig<K extends Extract<keyof T, string>>(key: K) {

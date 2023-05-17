@@ -4,7 +4,8 @@ import { lazy, useMemo } from "react"
 import { match } from "ts-pattern"
 
 import { Router } from "./router"
-import { mantineThemetheme, styled } from "./theme"
+import { mantineThemetheme } from "./theme/mantine.config"
+import { styled } from "./theme/stitches.config"
 
 const Main = lazy(() => import("./pages/Main"))
 const About = lazy(() => import("./pages/About"))

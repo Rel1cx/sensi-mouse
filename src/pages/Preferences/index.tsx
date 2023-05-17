@@ -6,7 +6,7 @@ import { Header } from "@/components/Header"
 import { useTranslation } from "@/hooks/useTranslation"
 import { type Locales } from "@/i18n/i18n-types"
 import { isLocale } from "@/i18n/i18n-util"
-import { styled } from "@/theme"
+import { styled } from "@/theme/stitches.config"
 import { Theme } from "@/types"
 
 const themes: { label: string; value: Theme }[] = [

@@ -1,6 +1,6 @@
 import { Title as MTTitle } from "@mantine/core"
 
-import { styled } from "@/theme"
+import { styled } from "@/theme/stitches.config"
 
 export const Header = styled(MTTitle, {
     margin: "0",
