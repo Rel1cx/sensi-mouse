@@ -48,7 +48,7 @@
         "core-dts": "0.0.3",
         "eslint": "8.40.0",
         "eslint-config-with-tsconfig": "1.4.8",
-        "rome": "12.1.1",
+        "rome": "12.1.2",
         "sass": "1.62.1",
         "ts-essentials": "9.3.2",
         "tsx": "3.12.7",
