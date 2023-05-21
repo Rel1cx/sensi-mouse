@@ -1,21 +1,20 @@
-import "ress/ress.css"
-import "@/styles/global.scss"
-import "@/styles/overrides.scss"
 import "@total-typescript/ts-reset"
 
-import { Result } from "@swan-io/boxed"
+import { Option as O, Result as R } from "@swan-io/boxed"
 import { enableMapSet, setAutoFreeze, setUseStrictShallowCopy } from "immer"
+import React from "react"
+import { createRoot } from "react-dom/client"
 
 import { loadConfigToAtom, loadDefaultConfigToAtom } from "./atoms"
 import { configManager } from "./config"
-import { renderApp } from "./root"
+import { Root } from "./root"
 
 enableMapSet()
 setAutoFreeze(true)
 setUseStrictShallowCopy(true)
 
 const main = async () => {
-    await Result.fromPromise(loadConfigToAtom()).then((r) => {
+    await R.fromPromise(loadConfigToAtom()).then((r) => {
         r.match({
             Ok: () => {},
             Error: async () => {
@@ -25,18 +24,25 @@ const main = async () => {
         })
     })
 
-    renderApp("#app").match({
-        Ok: () => {
-            window.addEventListener("focus", loadConfigToAtom)
-            if (import.meta.env.DEV) {
-                return
-            }
-            document.addEventListener("contextmenu", (event) => void event.preventDefault(), {
-                capture: true,
-            })
-        },
-        Error: console.error,
-    })
+    O.fromNullable(document.querySelector("#root"))
+        .map(createRoot)
+        .map((root) => {
+            root.render(React.createElement(Root))
+        })
+        .toResult(new Error("Could not find element with selector: #root"))
+        .match({
+            Ok: () => {
+                // window.addEventListener("focus", loadConfigToAtom)
+                // if (import.meta.env.DEV) {
+                //     return
+                // }
+                // document.addEventListener("contextmenu", (event) => void event.preventDefault(), {
+                //     capture: true,
+                // })
+            },
+            // eslint-disable-next-line no-console
+            Error: console.error,
+        })
 }
 
 void main()

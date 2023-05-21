@@ -1,15 +1,14 @@
-import { Input } from "@mantine/core"
+import { Divider, Input, Slider, Switch } from "@mantine/core"
 import { exit } from "@tauri-apps/api/process"
 import { useAtom, useSetAtom } from "jotai"
 
 import { accEnabledAtom, loadDefaultConfigToAtom, senAtom, setAccEnabledAtom, setSenAtom } from "@/atoms"
-import { Button } from "@/components/Button"
-import { Divider } from "@/components/Divider"
-import { Header } from "@/components/Header"
+import { Button } from "@/components/Button/Button"
+import { Title } from "@/components/Title/Title"
 import { useTranslation } from "@/hooks/useTranslation"
 import { getWebviewWindow } from "@/lib/tauri"
 
-import * as SC from "./styles"
+import * as css from "./styles.css"
 
 const marks = [
     { label: "0", value: 0 },
@@ -41,14 +40,23 @@ export default function Main() {
     const setAccEnabled = useSetAtom(setAccEnabledAtom)
 
     return (
-        <SC.Container direction="column" justify="space-between">
-            <Header>SensiMouse</Header>
-            <SC.Content>
+        <main className={css.container}>
+            <Title>SensiMouse</Title>
+            <div className={css.content}>
                 <Input.Wrapper label={T.SENSITIVITY()}>
-                    <SC.xSlider marks={marks} max={100} min={0} onChange={setSen} size="lg" value={sen} />
+                    <Slider
+                        className={css.xSlider}
+                        marks={marks}
+                        max={100}
+                        min={0}
+                        onChange={setSen}
+                        size="lg"
+                        value={sen}
+                    />
                 </Input.Wrapper>
                 <Input.Wrapper label={T.ACCELERATION()}>
-                    <SC.xSwitch
+                    <Switch
+                        className={css.xSwitch}
                         checked={accEnabled}
                         offLabel="OFF"
                         onChange={async (event) => {
@@ -59,13 +67,13 @@ export default function Main() {
                         size="md"
                     />
                 </Input.Wrapper>
-            </SC.Content>
-            <Divider />
-            <SC.Footer align="center" gap={8} justify="flex-end">
+            </div>
+            <Divider my={4} />
+            <footer className={css.footer}>
                 <Button onClick={handleOpenPreferences}>{T.PREFERENCES()}</Button>
                 <Button onClick={loadDefaultConfigToAtom}>{T.RESET()}</Button>
                 <Button onClick={() => exit(0)}>{T.QUIT()}</Button>
-            </SC.Footer>
-        </SC.Container>
+            </footer>
+        </main>
     )
 }

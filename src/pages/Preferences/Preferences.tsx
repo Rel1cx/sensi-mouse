@@ -1,13 +1,14 @@
-import { Checkbox, Flex, NativeSelect } from "@mantine/core"
+import { Checkbox, NativeSelect } from "@mantine/core"
 import { useAtom, useSetAtom } from "jotai"
 
 import { launchAtLoginAtom, localeAtom } from "@/atoms"
-import { Header } from "@/components/Header"
+import { Title } from "@/components/Title/Title"
 import { useTranslation } from "@/hooks/useTranslation"
 import { type Locales } from "@/i18n/i18n-types"
 import { isLocale } from "@/i18n/i18n-util"
-import { styled } from "@/theme/stitches.config"
 import { Theme } from "@/types"
+
+import * as css from "./styles.css"
 
 const themes: { label: string; value: Theme }[] = [
     { label: "Light", value: Theme.light },
@@ -29,10 +30,6 @@ const languages: { label: string; value: Locales }[] = [
     { label: "繁體中文", value: "zh-TW" },
 ]
 
-const Container = styled(Flex, {
-    padding: "16px 12px",
-})
-
 export default function Preferences() {
     const T = useTranslation()
 
@@ -42,10 +39,10 @@ export default function Preferences() {
     const setLaunchAtLogin = useSetAtom(launchAtLoginAtom)
 
     return (
-        <Container align="stretch" direction="column" gap={8}>
-            <Header>{T.THEME()}</Header>
+        <main className={css.container}>
+            <Title>{T.THEME()}</Title>
             <NativeSelect data={themes} defaultValue="light" />
-            <Header>{T.LANGUAGE()}</Header>
+            <Title>{T.LANGUAGE()}</Title>
             <NativeSelect
                 data={languages}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -57,7 +54,7 @@ export default function Preferences() {
                 }}
                 value={locale}
             />
-            <Header>{T.GENERAL()}</Header>
+            <Title>{T.GENERAL()}</Title>
             <Checkbox
                 checked={launchAtLogin}
                 label={T.START_AT_LOGIN()}
@@ -65,6 +62,6 @@ export default function Preferences() {
                     setLaunchAtLogin(e.target.checked)
                 }}
             />
-        </Container>
+        </main>
     )
 }

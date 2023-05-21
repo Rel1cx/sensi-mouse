@@ -1,20 +1,24 @@
-import { Option } from "@swan-io/boxed"
-import { StrictMode } from "react"
-import { createRoot } from "react-dom/client"
+import "ress/ress.css"
+import "@/styles/global.scss"
+import "@/styles/overrides.scss"
 
-import { App } from "./app"
+import { MantineProvider } from "@mantine/core"
+import { useColorScheme } from "@mantine/hooks"
+import { StrictMode, useMemo } from "react"
 
-export const renderApp = (sel: string) => {
-    const el = document.querySelector(sel)
+import { App } from "./pages/App"
+import { mantineTheme } from "./theme/mantine.config"
 
-    return Option.fromNullable(el)
-        .map(createRoot)
-        .map((root) => {
-            root.render(
-                <StrictMode>
-                    <App />
-                </StrictMode>,
-            )
-        })
-        .toResult(new Error(`Could not find element with selector: ${sel}`))
+export const Root = () => {
+    const preferredColorScheme = useColorScheme()
+
+    const theme = useMemo(() => ({ ...mantineTheme, colorScheme: preferredColorScheme }), [preferredColorScheme])
+
+    return (
+        <StrictMode>
+            <MantineProvider theme={theme} withGlobalStyles>
+                <App />
+            </MantineProvider>
+        </StrictMode>
+    )
 }
