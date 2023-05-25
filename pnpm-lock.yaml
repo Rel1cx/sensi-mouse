@@ -24,8 +24,8 @@ dependencies:
     specifier: 1.0.2
     version: 1.0.2
   '@swan-io/chicane':
-    specifier: 1.3.4
-    version: 1.3.4(react@18.2.0)
+    specifier: 1.4.0
+    version: 1.4.0(react@18.2.0)
   '@tauri-apps/api':
     specifier: 1.3.0
     version: 1.3.0
@@ -512,6 +512,7 @@ packages:
 
   /@emotion/hash@0.9.0:
     resolution: {integrity: sha512-14FtKiHhy2QoPIzdTcvh//8OyBlknNs2nXRwIhG904opCby3l+9Xaf/wuPvICBF0rc1ZCNBd3nKe9cd2mecVkQ==}
+    dev: true
 
   /@emotion/hash@0.9.1:
     resolution: {integrity: sha512-gJB6HLm5rYwSLI6PQa+X1t5CFGrv1J1TWG+sOyMCeKz2ojaj6Fnl/rZEspogG+cvqbt4AE/2eIyD2QfLKTBNlQ==}
@@ -1199,12 +1200,12 @@ packages:
     resolution: {integrity: sha512-Mm7qV+62BUIgOL4/RvBx+hKIij07pAfDsvbuftEqTwbAZidHKta0q8b6Sddgf69vubwPM5K86cY61WMqqUfm8Q==}
     dev: false
 
-  /@swan-io/chicane@1.3.4(react@18.2.0):
-    resolution: {integrity: sha512-vX2+VLTOJ9GZ1T0YcaG51tbm64Y8xGWN3jxB44ihX9uodQLmGgmJd0yvNWUF0UyQCfXwb3ZD5unfg+eCS5Fe/g==}
+  /@swan-io/chicane@1.4.0(react@18.2.0):
+    resolution: {integrity: sha512-y6irXvVnqEV94MlDhXGkC+vcGZ/Q0LZDr9J/wQLB9lAXfBGVhxxO+sBynuum6gwoH0cy7bQ4E32XJDT8zLQmhw==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
-      '@emotion/hash': 0.9.0
+      '@emotion/hash': 0.9.1
       history: 5.3.0
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
