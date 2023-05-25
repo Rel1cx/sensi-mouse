@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-invalid-void-type, promise/prefer-await-to-then */
+/* eslint-disable @typescript-eslint/no-invalid-void-type */
 import { Option, Result } from "@swan-io/boxed"
 import { Store } from "tauri-plugin-store-api"
 

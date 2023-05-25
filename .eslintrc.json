@@ -2,7 +2,6 @@
     "root": true,
     "extends": ["with-tsconfig"],
     "rules": {
-        "quotes": ["error", "double"],
         "new-cap": "off"
     },
     "overrides": [
