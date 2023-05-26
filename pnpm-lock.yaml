@@ -93,10 +93,10 @@ devDependencies:
     version: 1.11.0
   '@vanilla-extract/vite-plugin':
     specifier: 3.8.2
-    version: 3.8.2(@types/node@20.2.4)(sass@1.62.1)(vite@4.3.8)
+    version: 3.8.2(@types/node@20.2.4)(sass@1.62.1)(vite@4.3.9)
   '@vitejs/plugin-react-swc':
     specifier: 3.3.1
-    version: 3.3.1(vite@4.3.8)
+    version: 3.3.1(vite@4.3.9)
   core-dts:
     specifier: 0.0.3
     version: 0.0.3
@@ -125,8 +125,8 @@ devDependencies:
     specifier: 5.0.4
     version: 5.0.4
   vite:
-    specifier: 4.3.8
-    version: 4.3.8(@types/node@20.2.4)(sass@1.62.1)
+    specifier: 4.3.9
+    version: 4.3.9(@types/node@20.2.4)(sass@1.62.1)
   zx:
     specifier: 7.2.2
     version: 7.2.2
@@ -1924,7 +1924,7 @@ packages:
       lodash: 4.17.21
       mlly: 1.2.1
       outdent: 0.8.0
-      vite: 4.3.8(@types/node@20.2.4)(sass@1.62.1)
+      vite: 4.3.9(@types/node@20.2.4)(sass@1.62.1)
       vite-node: 0.28.5(@types/node@20.2.4)(sass@1.62.1)
     transitivePeerDependencies:
       - '@types/node'
@@ -1940,7 +1940,7 @@ packages:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
     dev: true
 
-  /@vanilla-extract/vite-plugin@3.8.2(@types/node@20.2.4)(sass@1.62.1)(vite@4.3.8):
+  /@vanilla-extract/vite-plugin@3.8.2(@types/node@20.2.4)(sass@1.62.1)(vite@4.3.9):
     resolution: {integrity: sha512-i0vpuBUoh10Obl0hJr0dWQa6M3Udu/irm4tnsg1lUze8DXTbv3ctHmVu/wrRZHKw1EzzW/v+nLoJJRvisApspQ==}
     peerDependencies:
       vite: ^2.2.3 || ^3.0.0 || ^4.0.3
@@ -1949,7 +1949,7 @@ packages:
       outdent: 0.8.0
       postcss: 8.4.23
       postcss-load-config: 3.1.4(postcss@8.4.23)
-      vite: 4.3.8(@types/node@20.2.4)(sass@1.62.1)
+      vite: 4.3.9(@types/node@20.2.4)(sass@1.62.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -1961,13 +1961,13 @@ packages:
       - ts-node
     dev: true
 
-  /@vitejs/plugin-react-swc@3.3.1(vite@4.3.8):
+  /@vitejs/plugin-react-swc@3.3.1(vite@4.3.9):
     resolution: {integrity: sha512-ZoYjGxMniXP7X+5ry/W1tpY7w0OeLUEsBF5RHFPmAhpgwwNWie8OF4056MRXRi9QgvYYoZPDzdOXGK3wlCoTfQ==}
     peerDependencies:
       vite: ^4
     dependencies:
       '@swc/core': 1.3.56
-      vite: 4.3.8(@types/node@20.2.4)(sass@1.62.1)
+      vite: 4.3.9(@types/node@20.2.4)(sass@1.62.1)
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
@@ -5927,7 +5927,7 @@ packages:
       picocolors: 1.0.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.3.8(@types/node@20.2.4)(sass@1.62.1)
+      vite: 4.3.9(@types/node@20.2.4)(sass@1.62.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5938,8 +5938,8 @@ packages:
       - terser
     dev: true
 
-  /vite@4.3.8(@types/node@20.2.4)(sass@1.62.1):
-    resolution: {integrity: sha512-uYB8PwN7hbMrf4j1xzGDk/lqjsZvCDbt/JC5dyfxc19Pg8kRm14LinK/uq+HSLNswZEoKmweGdtpbnxRtrAXiQ==}
+  /vite@4.3.9(@types/node@20.2.4)(sass@1.62.1):
+    resolution: {integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
