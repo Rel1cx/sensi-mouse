@@ -104,8 +104,8 @@ devDependencies:
     specifier: 8.41.0
     version: 8.41.0
   eslint-config-with-tsconfig:
-    specifier: 1.5.3
-    version: 1.5.3(@typescript-eslint/parser@5.56.0)(eslint@8.41.0)(tailwindcss@3.3.2)(typescript@5.0.4)
+    specifier: 1.5.4
+    version: 1.5.4(@typescript-eslint/parser@5.56.0)(eslint@8.41.0)(tailwindcss@3.3.2)(typescript@5.0.4)
   rome:
     specifier: 12.1.2
     version: 12.1.2
@@ -2714,8 +2714,8 @@ packages:
       eslint: 8.41.0
     dev: true
 
-  /eslint-config-with-tsconfig@1.5.3(@typescript-eslint/parser@5.56.0)(eslint@8.41.0)(tailwindcss@3.3.2)(typescript@5.0.4):
-    resolution: {integrity: sha512-e+qUKLTWwjAC/nE3LsHEd7NcU8LYmkoDyto4V+2nplgxs27X6B0MJmNshFHPt3LB7PLPLqDCJq12HjhBgkX/Bg==}
+  /eslint-config-with-tsconfig@1.5.4(@typescript-eslint/parser@5.56.0)(eslint@8.41.0)(tailwindcss@3.3.2)(typescript@5.0.4):
+    resolution: {integrity: sha512-BjJT/bKVZVf695jaw5RBSl7IYwwsAF5FkyLWZ6wucq6DzpnjPYyMuCafO6wEFnHgmzy9noh+zoiyjfTZJWSGcA==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -2729,7 +2729,6 @@ packages:
       eslint-define-config: 1.20.0
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.56.0)(eslint-plugin-import@2.27.5)(eslint@8.41.0)
       eslint-plugin-case-police: 0.6.1(eslint@8.41.0)(typescript@5.0.4)
-      eslint-plugin-deprecation: 1.4.1(eslint@8.41.0)(typescript@5.0.4)
       eslint-plugin-functional: 5.0.8(eslint@8.41.0)(typescript@5.0.4)
       eslint-plugin-github: 4.7.0(eslint-import-resolver-typescript@3.5.5)(eslint@8.41.0)(typescript@5.0.4)
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.56.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.41.0)
@@ -2903,21 +2902,6 @@ packages:
       - eslint
       - supports-color
       - typescript
-    dev: true
-
-  /eslint-plugin-deprecation@1.4.1(eslint@8.41.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-4vxTghWzxsBukPJVQupi6xlTuDc8Pyi1QlRCrFiLgwLPMJQW3cJCNaehJUKQqQFvuue5m4W27e179Y3Qjzeghg==}
-    peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-      typescript: ^3.7.5 || ^4.0.0 || ^5.0.0
-    dependencies:
-      '@typescript-eslint/utils': 5.59.7(eslint@8.41.0)(typescript@5.0.4)
-      eslint: 8.41.0
-      tslib: 2.5.0
-      tsutils: 3.21.0(typescript@5.0.4)
-      typescript: 5.0.4
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /eslint-plugin-escompat@3.4.0(eslint@8.41.0):

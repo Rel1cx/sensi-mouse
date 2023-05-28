@@ -4,7 +4,7 @@ import { useAsync } from "react-use"
 
 import * as css from "./styles.css"
 
-export default function About() {
+const About = () => {
     const { value: name = "" } = useAsync(getName)
     const { value: version = "0.0.0" } = useAsync(getVersion)
 
@@ -27,3 +27,5 @@ export default function About() {
         </div>
     )
 }
+
+export default About

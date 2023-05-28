@@ -30,7 +30,7 @@ const languages: { label: string; value: Locales }[] = [
     { label: "繁體中文", value: "zh-TW" },
 ]
 
-export default function Preferences() {
+const Preferences = () => {
     const T = useTranslation()
 
     const [locale, setLocale] = useAtom(localeAtom)
@@ -65,3 +65,5 @@ export default function Preferences() {
         </main>
     )
 }
+
+export default Preferences

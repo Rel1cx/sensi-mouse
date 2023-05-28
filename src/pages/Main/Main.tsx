@@ -30,7 +30,7 @@ const handleOpenPreferences = async () => {
     console.error("Failed to get preferences window")
 }
 
-export default function Main() {
+const Main = () => {
     const T = useTranslation()
 
     const [sen] = useAtom(senAtom)
@@ -77,3 +77,5 @@ export default function Main() {
         </main>
     )
 }
+
+export default Main
