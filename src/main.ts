@@ -1,12 +1,11 @@
 import "@total-typescript/ts-reset"
 
-import { Option as O, Result as R } from "@swan-io/boxed"
+import { Option as O, Task } from "ftld"
 import { enableMapSet, setAutoFreeze, setUseStrictShallowCopy } from "immer"
 import React from "react"
 import { createRoot } from "react-dom/client"
 
 import { loadConfigToAtom, loadDefaultConfigToAtom } from "./atoms"
-import { configManager } from "./config"
 import { Root } from "./root"
 
 enableMapSet()
@@ -14,35 +13,17 @@ setAutoFreeze(true)
 setUseStrictShallowCopy(true)
 
 const main = async () => {
-    await R.fromPromise(loadConfigToAtom()).then((r) => {
-        r.match({
-            Ok: () => {},
-            Error: async () => {
-                await configManager.resetConfig()
-                await loadDefaultConfigToAtom()
-            },
-        })
-    })
+    const load = Task.from(loadConfigToAtom).tapErr(loadDefaultConfigToAtom)
 
-    O.fromNullable(document.querySelector("#root"))
+    await load.run()
+
+    O.from(document.querySelector("#root"))
+        .result()
         .map(createRoot)
-        .map((root) => {
+        .tap((root) => {
             root.render(React.createElement(Root))
         })
-        .toResult(new Error("Could not find element with selector: #root"))
-        .match({
-            Ok: () => {
-                // window.addEventListener("focus", loadConfigToAtom)
-                // if (import.meta.env.DEV) {
-                //     return
-                // }
-                // document.addEventListener("contextmenu", (event) => void event.preventDefault(), {
-                //     capture: true,
-                // })
-            },
-            // eslint-disable-next-line no-console
-            Error: console.error,
-        })
+        .tapErr(console.error)
 }
 
 void main()

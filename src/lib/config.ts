@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-invalid-void-type */
-import { Option, Result } from "@swan-io/boxed"
+import { Option, Task } from "ftld"
 import { Store } from "tauri-plugin-store-api"
 
 export type ConfigManagerProps<T> = {
@@ -22,18 +21,23 @@ export class ConfigManager<T> {
     }
 
     loadConfig() {
-        return Result.fromPromise<T, Error>(this.#store.entries().then(Object.fromEntries).then(this.parse))
+        return Task.from(() => this.#store.entries())
+            .map(Object.fromEntries)
+            .map(this.parse)
+            .run()
     }
 
     resetConfig() {
-        return Result.fromPromise<void, Error>(this.#store.reset())
+        return Task.from(() => this.#store.reset()).run()
     }
 
     setConfig<K extends Extract<keyof T, string>>(key: K, value: T[K]) {
-        return Result.fromPromise<void, Error>(this.#store.set(key, value).then(() => this.#store.save()))
+        return Task.from(() => this.#store.set(key, value))
+            .tap(() => this.#store.save())
+            .run()
     }
 
     async getConfig<K extends Extract<keyof T, string>>(key: K) {
-        return Option.fromNullable(await this.#store.get<T[K]>(key))
+        return Option.from(await this.#store.get<T[K]>(key))
     }
 }

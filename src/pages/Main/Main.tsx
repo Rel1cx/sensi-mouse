@@ -1,12 +1,12 @@
 import { Divider, Input, Slider, Switch } from "@mantine/core"
 import { exit } from "@tauri-apps/api/process"
+import { WebviewWindow } from "@tauri-apps/api/window"
 import { useAtom, useSetAtom } from "jotai"
 
 import { accEnabledAtom, loadDefaultConfigToAtom, senAtom, setAccEnabledAtom, setSenAtom } from "@/atoms"
 import { Button } from "@/components/Button/Button"
 import { Title } from "@/components/Title/Title"
 import { useTranslation } from "@/hooks/useTranslation"
-import { getWebviewWindow } from "@/lib/tauri"
 
 import * as css from "./styles.css"
 
@@ -19,11 +19,11 @@ const marks = [
 ]
 
 const handleOpenPreferences = async () => {
-    const window = await getWebviewWindow("preferences")
+    const window = WebviewWindow.getByLabel("preferences")
 
-    if (window.isSome()) {
-        await window.get().show()
-        await window.get().setFocus()
+    if (window) {
+        await window.show()
+        await window.setFocus()
         return
     }
     // eslint-disable-next-line no-console
