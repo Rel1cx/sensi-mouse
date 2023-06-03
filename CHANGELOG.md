@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.10...v1.0.11) (2023-06-03)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate regex to 1.8.3 ([04f513c](https://github.com/Rel1cx/sensi-mouse/commit/04f513c93f0af3dd9ec79eb151de8a2c0afdd0ba))
+
 ## [1.0.10](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.9...v1.0.10) (2023-05-17)
 
 
