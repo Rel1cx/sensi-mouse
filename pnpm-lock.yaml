@@ -34,8 +34,8 @@ dependencies:
     specifier: 0.4.2
     version: 0.4.2
   ftld:
-    specifier: 0.57.14
-    version: 0.57.14
+    specifier: 0.58.2
+    version: 0.58.2
   immer:
     specifier: 10.0.2
     version: 10.0.2
@@ -3723,8 +3723,8 @@ packages:
     dev: true
     optional: true
 
-  /ftld@0.57.14:
-    resolution: {integrity: sha512-fDyEcN1dCB7fJrahS2VSYKQxBoCSXpqCSubS05fT1ROOHCCFAkRwkABEQs4nLKWRwFScFz4r6eQEsns/xVF99g==}
+  /ftld@0.58.2:
+    resolution: {integrity: sha512-gyMrE8dUgMufbOlBnCprNHwE+lFXA3VPvfiEcH2yS6jTjSLBB0Am7FALnzpwhxRjAjiQXjWtD53bnPql3zLw0g==}
     dev: false
 
   /function-bind@1.1.1:
