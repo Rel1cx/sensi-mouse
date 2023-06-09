@@ -1,4 +1,4 @@
-import { Option, Task } from "ftld"
+import { Option as O, Result as R } from "@swan-io/boxed"
 import { Store } from "tauri-plugin-store-api"
 
 export type ConfigManagerProps<T> = {
@@ -20,24 +20,22 @@ export class ConfigManager<T> {
         return new ConfigManager<T>(props)
     }
 
-    loadConfig() {
-        return Task.from(() => this.#store.entries())
-            .map(Object.fromEntries)
-            .map(this.parse)
-            .run()
+    async loadConfig() {
+        const result = await R.fromPromise(this.#store.entries())
+        return result.map(Object.fromEntries).map(this.parse)
     }
 
     resetConfig() {
-        return Task.from(() => this.#store.reset()).run()
+        return R.fromPromise(this.#store.reset())
     }
 
-    setConfig<K extends Extract<keyof T, string>>(key: K, value: T[K]) {
-        return Task.from(() => this.#store.set(key, value))
-            .tap(() => this.#store.save())
-            .run()
+    async setConfig<K extends Extract<keyof T, string>>(key: K, value: T[K]) {
+        const result = await R.fromPromise(this.#store.set(key, value))
+        result.tap(() => this.#store.save())
+        return result
     }
 
     async getConfig<K extends Extract<keyof T, string>>(key: K) {
-        return Option.from(await this.#store.get<T[K]>(key))
+        return O.fromNullable(await this.#store.get<T[K]>(key))
     }
 }

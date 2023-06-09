@@ -47,7 +47,7 @@ export const loadConfigToAtom = async () => {
     const config = await configManager.loadConfig()
     const launchAtLogin = await autostart.isEnabled()
     if (config.isOk()) {
-        const { accEnabled, locale, sen, theme } = config.unwrap()
+        const { accEnabled, locale, sen, theme } = config.get()
         store.set(senAtom, sen)
         store.set(accEnabledAtom, accEnabled)
         store.set(localeAtom, isLocale(locale) ? locale : defaultConfig.locale)

@@ -70,9 +70,9 @@ const Main = () => {
             </div>
             <Divider my={4} />
             <footer className={css.footer}>
-                <Button onClick={handleOpenPreferences}>{T.PREFERENCES()}</Button>
-                <Button onClick={loadDefaultConfigToAtom}>{T.RESET()}</Button>
-                <Button onClick={() => exit(0)}>{T.QUIT()}</Button>
+                <Button onClick={() => void handleOpenPreferences()}>{T.PREFERENCES()}</Button>
+                <Button onClick={() => void loadDefaultConfigToAtom()}>{T.RESET()}</Button>
+                <Button onClick={() => void exit(0)}>{T.QUIT()}</Button>
             </footer>
         </main>
     )
