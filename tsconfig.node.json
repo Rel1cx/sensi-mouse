@@ -2,6 +2,7 @@
     "extends": "eslint-config-with-tsconfig/tsconfig.base.json",
     "compilerOptions": {
         "composite": true,
+        "target": "ES2022",
         "module": "ESNext",
         "lib": ["ESNext"],
         "moduleResolution": "Node",
