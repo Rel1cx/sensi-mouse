@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.13](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.12...v1.0.13) (2023-06-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ftld to v0.58.3 ([7e57910](https://github.com/Rel1cx/sensi-mouse/commit/7e57910e2d9a57f246b09699715cd9ee2f444e63))
+* **deps:** update rust crate regex to 1.8.4 ([2127722](https://github.com/Rel1cx/sensi-mouse/commit/2127722d3f26d0da984036ce92c73e966a200db1))
+
 ## [1.0.12](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.11...v1.0.12) (2023-06-05)
 
 
