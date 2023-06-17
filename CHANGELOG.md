@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.14](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.13...v1.0.14) (2023-06-17)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate tauri to 1.4.1 ([a5c1c43](https://github.com/Rel1cx/sensi-mouse/commit/a5c1c43b89d3286c5a032181876bb0e05b6c94e4))
+
 ## [1.0.13](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.12...v1.0.13) (2023-06-10)
 
 
