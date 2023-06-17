@@ -26,7 +26,7 @@ anyhow = "1.0"
 typeshare = "1.0"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive", "rc"] }
-tauri = { version = "1.4.0", features = [
+tauri = { version = "1.4.1", features = [
     "macos-private-api",
     "shell-open",
     "system-tray",
