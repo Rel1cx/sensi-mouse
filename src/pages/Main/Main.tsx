@@ -3,7 +3,7 @@ import { exit } from "@tauri-apps/api/process"
 import { WebviewWindow } from "@tauri-apps/api/window"
 import { useAtom, useSetAtom } from "jotai"
 
-import { accEnabledAtom, loadDefaultConfigToAtom, senAtom, setAccEnabledAtom, setSenAtom } from "@/atoms"
+import { accEnabledAtom, loadDefaultConfig, senAtom, setAccEnabledAtom, setSenAtom } from "@/atoms"
 import { Button } from "@/components/Button/Button"
 import { Title } from "@/components/Title/Title"
 import { useTranslation } from "@/hooks/useTranslation"
@@ -71,7 +71,7 @@ const Main = () => {
             <Divider my={4} />
             <footer className={css.footer}>
                 <Button onClick={() => void handleOpenPreferences()}>{T.PREFERENCES()}</Button>
-                <Button onClick={() => void loadDefaultConfigToAtom()}>{T.RESET()}</Button>
+                <Button onClick={() => void loadDefaultConfig()}>{T.RESET()}</Button>
                 <Button onClick={() => void exit(0)}>{T.QUIT()}</Button>
             </footer>
         </main>

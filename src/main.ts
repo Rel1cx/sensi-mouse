@@ -1,22 +1,21 @@
 import "@total-typescript/ts-reset"
 
-import { enableMapSet, setAutoFreeze, setUseStrictShallowCopy } from "immer"
+import { enableMapSet, setAutoFreeze } from "immer"
 import React from "react"
 import { createRoot } from "react-dom/client"
 
-import { loadConfigToAtom, loadDefaultConfigToAtom } from "./atoms"
+import { loadConfig, loadDefaultConfig } from "./atoms"
 import { Root } from "./root"
 
 enableMapSet()
 setAutoFreeze(true)
-setUseStrictShallowCopy(true)
 
 const main = async () => {
-    await loadConfigToAtom().catch(loadDefaultConfigToAtom)
+    await loadConfig().catch(loadDefaultConfig)
 
     const root = document.querySelector("#root")
 
-    if (root === null) {
+    if (!root) {
         throw new Error("Root element not found")
     }
 
