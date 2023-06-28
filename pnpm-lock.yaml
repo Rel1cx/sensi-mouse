@@ -28,8 +28,8 @@ dependencies:
     specifier: 1.0.2
     version: 1.0.2
   '@swan-io/chicane':
-    specifier: 1.4.0
-    version: 1.4.0(react@18.2.0)
+    specifier: 1.4.1
+    version: 1.4.1(react@18.2.0)
   '@tauri-apps/api':
     specifier: 1.4.0
     version: 1.4.0
@@ -1202,8 +1202,8 @@ packages:
     resolution: {integrity: sha512-Mm7qV+62BUIgOL4/RvBx+hKIij07pAfDsvbuftEqTwbAZidHKta0q8b6Sddgf69vubwPM5K86cY61WMqqUfm8Q==}
     dev: false
 
-  /@swan-io/chicane@1.4.0(react@18.2.0):
-    resolution: {integrity: sha512-y6irXvVnqEV94MlDhXGkC+vcGZ/Q0LZDr9J/wQLB9lAXfBGVhxxO+sBynuum6gwoH0cy7bQ4E32XJDT8zLQmhw==}
+  /@swan-io/chicane@1.4.1(react@18.2.0):
+    resolution: {integrity: sha512-VAP0WMdh/k4pprmj/vLdQYRg9MXMH0l1UiPugaWygZCMHv+6ISy+UJQGjM/MwjqF7FdhcJ4X7BYAAPB5nczBmg==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:

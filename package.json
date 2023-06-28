@@ -20,7 +20,7 @@
         "@mantine/hooks": "6.0.14",
         "@mantine/utils": "6.0.14",
         "@swan-io/boxed": "1.0.2",
-        "@swan-io/chicane": "1.4.0",
+        "@swan-io/chicane": "1.4.1",
         "@tauri-apps/api": "1.4.0",
         "@total-typescript/ts-reset": "0.4.2",
         "immer": "10.0.2",
