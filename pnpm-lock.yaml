@@ -93,8 +93,8 @@ devDependencies:
     specifier: 5.0.0
     version: 5.0.0
   '@vanilla-extract/css':
-    specifier: 1.11.1
-    version: 1.11.1
+    specifier: 1.12.0
+    version: 1.12.0
   '@vanilla-extract/vite-plugin':
     specifier: 3.8.2
     version: 3.8.2(@types/node@20.3.1)(sass@1.63.6)(vite@4.3.9)
@@ -1844,8 +1844,8 @@ packages:
       - supports-color
     dev: true
 
-  /@vanilla-extract/css@1.11.1:
-    resolution: {integrity: sha512-iLalh4K4sXgkfzsiFUsiek4IY1/N4jtJKdr1ubpyszPE7W7G2v+DAl8KcmKkRA6vS7k5mFNW34e4fNki6T2cbQ==}
+  /@vanilla-extract/css@1.12.0:
+    resolution: {integrity: sha512-TEttZfnqTRtwgVYiBWQSGGUiVaYWReHp59DsavITEvh4TpJNifZFGhBznHx4wQFEsyio6xA513jps4tmqR6zmw==}
     dependencies:
       '@emotion/hash': 0.9.1
       '@vanilla-extract/private': 1.0.3
@@ -1866,7 +1866,7 @@ packages:
       '@babel/core': 7.21.8
       '@babel/plugin-syntax-typescript': 7.21.4(@babel/core@7.21.8)
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.3
-      '@vanilla-extract/css': 1.11.1
+      '@vanilla-extract/css': 1.12.0
       esbuild: 0.17.17
       eval: 0.1.6
       find-up: 5.0.0
