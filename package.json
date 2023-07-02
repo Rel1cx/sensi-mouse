@@ -62,9 +62,10 @@
     "//": "dedupe packages for pnpm",
     "pnpm": {
         "overrides": {
-            "react": "latest",
-            "react-dom": "latest",
-            "typescript": "latest"
+            "react": "18.2.0",
+            "react-dom": "18.2.0",
+            "typescript": "latest",
+            "eslint-plugin-import": "npm:eslint-plugin-i@latest"
         }
     }
 }
