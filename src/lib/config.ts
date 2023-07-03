@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
+ 
 import { Option as O, Result as R } from "@swan-io/boxed"
 import { Store } from "tauri-plugin-store-api"
 
