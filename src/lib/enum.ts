@@ -1,16 +1,16 @@
-import type { UnionFromTuple } from "./types"
+import type { UnionFromTuple } from "./utils"
 
 export const Enum: <T extends string[]>(...args: T) => Readonly<{ [P in UnionFromTuple<T>]: P }> = <T extends string[]>(
     ...args: T
 ) => {
     type Ret = { [P in UnionFromTuple<typeof args>]: P }
     return Object.freeze(
-        args.reduce((acc, next) => {
+        args.reduce<Ret>((acc, next) => {
             return {
                 ...acc,
                 [next]: next,
-            } as Ret
-        }, Object.create(null)) as Ret,
+            }
+        }, Object.create(null)),
     )
 }
 

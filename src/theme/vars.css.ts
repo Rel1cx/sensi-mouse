@@ -1,11 +1,6 @@
-import { createGlobalTheme, createVar } from "@vanilla-extract/css"
-
-export const desktopBreakpoint = createVar()
-export const lineHeightRelaxed = createVar()
+import { createGlobalTheme } from "@vanilla-extract/css"
 
 export const vars = createGlobalTheme(":root", {
-    contentWidth: "1024px",
-    contentPaddingX: "1rem",
     colors: {
         primary: "#00B8FF",
         secondary: "#654ea3",
