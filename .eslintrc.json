@@ -6,10 +6,15 @@
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "functional/no-expression-statements": "off",
         "functional/functional-parameters": "off",
+        "functional/immutable-data": "off",
         "functional/prefer-immutable-types": "off",
         "functional/no-return-void": "off",
         "functional/no-mixed-types": "off",
-        "functional/no-classes": "off"
+        "functional/no-classes": "off",
+        "functional/no-let": "off",
+        "functional/no-try-statements": "off",
+        "functional/no-loop-statements": "off",
+        "functional/no-throw-statements": "off"
     },
     "overrides": [
         {
