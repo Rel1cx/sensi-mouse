@@ -24,7 +24,7 @@
         "@tauri-apps/api": "1.4.0",
         "@total-typescript/ts-reset": "0.4.2",
         "immer": "10.0.2",
-        "jotai": "2.2.1",
+        "jotai": "2.2.2",
         "jotai-immer": "0.2.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
