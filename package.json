@@ -1,6 +1,6 @@
 {
     "name": "sensi-mouse",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "type": "module",
     "scripts": {
         "build": "typesafe-i18n --no-watch && tsc && vite build",
