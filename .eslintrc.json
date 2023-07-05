@@ -2,7 +2,14 @@
     "root": true,
     "extends": ["with-tsconfig"],
     "rules": {
-        "new-cap": "off"
+        "new-cap": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "functional/no-expression-statements": "off",
+        "functional/functional-parameters": "off",
+        "functional/prefer-immutable-types": "off",
+        "functional/no-return-void": "off",
+        "functional/no-mixed-types": "off",
+        "functional/no-classes": "off"
     },
     "overrides": [
         {

@@ -46,15 +46,18 @@ export const setLaunchAtLoginAtom = atom(null, async (get, set, launchAtLogin: b
 export const loadConfig = async () => {
     const config = await configManager.loadConfig()
     const launchAtLogin = await autostart.isEnabled()
-    if (config.isOk()) {
-        const { accEnabled, locale, sen, theme } = config.get()
-        store.set(senAtom, sen)
-        store.set(accEnabledAtom, accEnabled)
-        store.set(localeAtom, isLocale(locale) ? locale : defaultConfig.locale)
-        store.set(themeAtom, theme)
-        store.set(launchAtLoginAtom, launchAtLogin)
-        await setMouseCfg(sen, accEnabled)
+
+    if (!config.isOk()) {
+        return
     }
+
+    const { accEnabled, locale, sen, theme } = config.get()
+    store.set(senAtom, sen)
+    store.set(accEnabledAtom, accEnabled)
+    store.set(localeAtom, isLocale(locale) ? locale : defaultConfig.locale)
+    store.set(themeAtom, theme)
+    store.set(launchAtLoginAtom, launchAtLogin)
+    await setMouseCfg(sen, accEnabled)
 }
 
 export const loadDefaultConfig = async () => {
