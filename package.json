@@ -57,7 +57,7 @@
         "typesafe-i18n": "5.24.3",
         "typescript": "5.1.6",
         "vite": "4.3.9",
-        "zx": "7.2.2"
+        "zx": "7.2.3"
     },
     "//": "dedupe packages for pnpm",
     "pnpm": {
