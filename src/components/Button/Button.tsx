@@ -1,12 +1,12 @@
 import { Button as MTButton, type ButtonProps as MTButtonProps } from "@mantine/core"
-import { memo } from "react"
+import * as React from "react"
 
 type ButtonProps = MTButtonProps &
     React.PropsWithChildren & {
         onClick?: () => void
     }
 
-export const Button = memo(({ children, ...rest }: ButtonProps) => {
+export const Button = React.memo(({ children, ...rest }: ButtonProps) => {
     return (
         <MTButton
             compact

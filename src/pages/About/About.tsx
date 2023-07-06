@@ -1,10 +1,11 @@
 import { Text } from "@mantine/core"
 import { getName, getVersion } from "@tauri-apps/api/app"
+import * as React from "react"
 import { useAsync } from "react-use"
 
 import * as css from "./styles.css"
 
-const About = () => {
+const About = React.memo(() => {
     const { value: name = "" } = useAsync(getName)
     const { value: version = "0.0.0" } = useAsync(getVersion)
 
@@ -26,6 +27,6 @@ const About = () => {
             </Text>
         </div>
     )
-}
+})
 
 export default About

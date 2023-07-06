@@ -1,5 +1,6 @@
 import { Checkbox, NativeSelect } from "@mantine/core"
 import { useAtom, useSetAtom } from "jotai"
+import * as React from "react"
 
 import { launchAtLoginAtom, localeAtom } from "@/atoms"
 import { Title } from "@/components/Title/Title"
@@ -30,7 +31,7 @@ const languages: { label: string; value: Locales }[] = [
     { label: "繁體中文", value: "zh-TW" },
 ]
 
-const Preferences = () => {
+const Preferences = React.memo(() => {
     const T = useTranslation()
 
     const [locale, setLocale] = useAtom(localeAtom)
@@ -64,6 +65,6 @@ const Preferences = () => {
             />
         </main>
     )
-}
+})
 
 export default Preferences

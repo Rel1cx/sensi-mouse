@@ -1,4 +1,5 @@
 import { lazy, Suspense, useMemo } from "react"
+import * as React from "react"
 import { match } from "ts-pattern"
 
 import { Router } from "@/router"
@@ -9,7 +10,7 @@ const Main = lazy(() => import("./Main/Main"))
 const About = lazy(() => import("./About/About"))
 const Preferences = lazy(() => import("./Preferences/Preferences"))
 
-export const App = () => {
+export const App = React.memo(() => {
     const route = Router.useRoute(["Main", "About", "Preferences"])
 
     return (
@@ -27,4 +28,4 @@ export const App = () => {
             </Suspense>
         </main>
     )
-}
+})
