@@ -96,10 +96,10 @@ devDependencies:
     version: 1.12.0
   '@vanilla-extract/vite-plugin':
     specifier: 3.8.2
-    version: 3.8.2(@types/node@20.4.0)(sass@1.63.6)(vite@4.4.1)
+    version: 3.8.2(@types/node@20.4.0)(sass@1.63.6)(vite@4.4.2)
   '@vitejs/plugin-react-swc':
     specifier: 3.3.2
-    version: 3.3.2(vite@4.4.1)
+    version: 3.3.2(vite@4.4.2)
   core-dts:
     specifier: 0.0.3
     version: 0.0.3
@@ -110,8 +110,8 @@ devDependencies:
     specifier: 8.44.0
     version: 8.44.0
   eslint-config-with-tsconfig:
-    specifier: 1.7.0
-    version: 1.7.0(@typescript-eslint/eslint-plugin@5.61.0)(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(tailwindcss@3.3.2)(typescript@5.1.6)
+    specifier: 1.8.0
+    version: 1.8.0(@typescript-eslint/eslint-plugin@5.61.0)(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(tailwindcss@3.3.2)(typescript@5.1.6)
   rome:
     specifier: 12.1.3
     version: 12.1.3
@@ -131,8 +131,8 @@ devDependencies:
     specifier: latest
     version: 5.1.6
   vite:
-    specifier: 4.4.1
-    version: 4.4.1(@types/node@20.4.0)(sass@1.63.6)
+    specifier: 4.4.2
+    version: 4.4.2(@types/node@20.4.0)(sass@1.63.6)
   zx:
     specifier: 7.2.3
     version: 7.2.3
@@ -1410,8 +1410,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@next/eslint-plugin-next@13.4.8:
-    resolution: {integrity: sha512-cmfVHpxWjjcETFt2WHnoFU6EmY69QcPJRlRNAooQlNe53Ke90vg1Ci/dkPffryJZaxxiRziP9bQrV8lDVCn3Fw==}
+  /@next/eslint-plugin-next@13.4.9:
+    resolution: {integrity: sha512-nDtGpa992tNyAkT/KmSMy7QkHfNZmGCBYhHtafU97DubqxzNdvLsqRtliQ4FU04CysRCtvP2hg8rRC1sAKUTUA==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -2142,7 +2142,7 @@ packages:
       lodash: 4.17.21
       mlly: 1.4.0
       outdent: 0.8.0
-      vite: 4.4.1(@types/node@20.4.0)(sass@1.63.6)
+      vite: 4.4.2(@types/node@20.4.0)(sass@1.63.6)
       vite-node: 0.28.5(@types/node@20.4.0)(sass@1.63.6)
     transitivePeerDependencies:
       - '@types/node'
@@ -2159,7 +2159,7 @@ packages:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
     dev: true
 
-  /@vanilla-extract/vite-plugin@3.8.2(@types/node@20.4.0)(sass@1.63.6)(vite@4.4.1):
+  /@vanilla-extract/vite-plugin@3.8.2(@types/node@20.4.0)(sass@1.63.6)(vite@4.4.2):
     resolution: {integrity: sha512-i0vpuBUoh10Obl0hJr0dWQa6M3Udu/irm4tnsg1lUze8DXTbv3ctHmVu/wrRZHKw1EzzW/v+nLoJJRvisApspQ==}
     peerDependencies:
       vite: ^2.2.3 || ^3.0.0 || ^4.0.3
@@ -2168,7 +2168,7 @@ packages:
       outdent: 0.8.0
       postcss: 8.4.24
       postcss-load-config: 3.1.4(postcss@8.4.24)
-      vite: 4.4.1(@types/node@20.4.0)(sass@1.63.6)
+      vite: 4.4.2(@types/node@20.4.0)(sass@1.63.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -2181,13 +2181,13 @@ packages:
       - ts-node
     dev: true
 
-  /@vitejs/plugin-react-swc@3.3.2(vite@4.4.1):
+  /@vitejs/plugin-react-swc@3.3.2(vite@4.4.2):
     resolution: {integrity: sha512-VJFWY5sfoZerQRvJrh518h3AcQt6f/yTuWn4/TRB+dqmYU0NX1qz7qM5Wfd+gOQqUzQW4gxKqKN3KpE/P3+zrA==}
     peerDependencies:
       vite: ^4
     dependencies:
       '@swc/core': 1.3.68
-      vite: 4.4.1(@types/node@20.4.0)(sass@1.63.6)
+      vite: 4.4.2(@types/node@20.4.0)(sass@1.63.6)
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
@@ -2991,8 +2991,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  /eslint-config-relicx@0.1.0(eslint-plugin-i@2.27.5-4)(eslint@8.44.0)(tailwindcss@3.3.2):
-    resolution: {integrity: sha512-qLTwLF2tx8EvuV5TxATM9jc5TaDotbiHbK+Cfm2fF7WeLFAlSAVGkPCXU66uolLvJIlVecYZBFWd6TMstrAdpA==}
+  /eslint-config-relicx@0.2.0(eslint-plugin-i@2.27.5-4)(eslint@8.44.0)(tailwindcss@3.3.2):
+    resolution: {integrity: sha512-BWHxLU72MAKlHNE0oltpkf75Csyp6KKmyM5Qa/aA4R/0A77G8pPcByoQQ/5WtdKAYN0rcAhRGADOjNETBp5KCg==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
       eslint: '>=8.43.0'
@@ -3000,7 +3000,7 @@ packages:
       '@babel/core': 7.22.8
       '@babel/eslint-parser': 7.22.7(@babel/core@7.22.8)(eslint@8.44.0)
       '@babel/preset-react': 7.22.5(@babel/core@7.22.8)
-      '@next/eslint-plugin-next': 13.4.8
+      '@next/eslint-plugin-next': 13.4.9
       '@rizzzse/bimap': 1.2.1
       '@swan-io/boxed': 1.0.2
       '@typescript-eslint/eslint-plugin': 5.61.0(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(typescript@5.1.6)
@@ -3053,8 +3053,8 @@ packages:
       typescript: 5.1.6
     dev: true
 
-  /eslint-config-with-tsconfig@1.7.0(@typescript-eslint/eslint-plugin@5.61.0)(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(tailwindcss@3.3.2)(typescript@5.1.6):
-    resolution: {integrity: sha512-cYGAq2ASq06Qm4XO+3gmgws1VVrMmoy1/2Ne82QZkXFdpIVBdVq/umIo+oQDWchUxLSQi5pYS/hBhTda4DYUwQ==}
+  /eslint-config-with-tsconfig@1.8.0(@typescript-eslint/eslint-plugin@5.61.0)(@typescript-eslint/parser@5.61.0)(eslint@8.44.0)(tailwindcss@3.3.2)(typescript@5.1.6):
+    resolution: {integrity: sha512-GBIBdWkuTiM4ih9vs/kG5TGykoc/VzeDtQ3IccPehtapX4jee73rQuQJkLA6tYHmGxuv3fVJDR5nK09WtM/c6w==}
     engines: {node: '>=18.16.0'}
     peerDependencies:
       eslint: '>=8.43.0'
@@ -3062,7 +3062,7 @@ packages:
     dependencies:
       consola: 3.2.3
       eslint: 8.44.0
-      eslint-config-relicx: 0.1.0(eslint-plugin-i@2.27.5-4)(eslint@8.44.0)(tailwindcss@3.3.2)
+      eslint-config-relicx: 0.2.0(eslint-plugin-i@2.27.5-4)(eslint@8.44.0)(tailwindcss@3.3.2)
       eslint-config-typed-fp: 5.1.0(@typescript-eslint/eslint-plugin@5.61.0)(@typescript-eslint/parser@5.61.0)(eslint-plugin-functional@5.0.8)(eslint-plugin-total-functions@7.0.7)(eslint@8.44.0)(typescript@5.1.6)
       eslint-plugin-case-police: 0.6.1(eslint@8.44.0)(typescript@5.1.6)
       eslint-plugin-expect-type: 0.2.3(eslint@8.44.0)(typescript@5.1.6)
@@ -5339,8 +5339,8 @@ packages:
     resolution: {integrity: sha512-omv1DIv5z1kV+zDAEjaDjWSkx8w5TbFp5NZoPwUipwzYVcor/4So9ZU3bUyQ1c8lxY5Q0Es/ztWW7PGjY7to0Q==}
     hasBin: true
     dependencies:
-      '@babel/parser': 7.22.6
-      '@babel/traverse': 7.22.6
+      '@babel/parser': 7.22.7
+      '@babel/traverse': 7.22.8
       '@babel/types': 7.22.5
       bent: 7.3.12
       chalk: 4.1.2
@@ -6014,7 +6014,7 @@ packages:
       picocolors: 1.0.0
       source-map: 0.6.1
       source-map-support: 0.5.21
-      vite: 4.4.1(@types/node@20.4.0)(sass@1.63.6)
+      vite: 4.4.2(@types/node@20.4.0)(sass@1.63.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6026,8 +6026,8 @@ packages:
       - terser
     dev: true
 
-  /vite@4.4.1(@types/node@20.4.0)(sass@1.63.6):
-    resolution: {integrity: sha512-8mmwPlsy7t+ZcTme7vdbVGuZ3Tri+lrLXr6hsF5UHdyYyARPPPMtM16QlqC9TZuCd5j3NmWs1rwka3cVSRHZTw==}
+  /vite@4.4.2(@types/node@20.4.0)(sass@1.63.6):
+    resolution: {integrity: sha512-zUcsJN+UvdSyHhYa277UHhiJ3iq4hUBwHavOpsNUGsTgjBeoBlK8eDt+iT09pBq0h9/knhG/SPrZiM7cGmg7NA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
