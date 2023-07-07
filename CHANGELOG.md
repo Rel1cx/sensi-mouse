@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.15](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.14...v1.0.15) (2023-07-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jotai to v2.2.2 ([90f64c5](https://github.com/Rel1cx/sensi-mouse/commit/90f64c57278bdac29e0b59f5ee464eba20a7b306))
+* **deps:** update rust crate regex to 1.9.0 ([a8d93ab](https://github.com/Rel1cx/sensi-mouse/commit/a8d93aba68f20bc80556d9dc134c55ef0d942482))
+
 ## [1.0.14](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.13...v1.0.14) (2023-06-17)
 
 
