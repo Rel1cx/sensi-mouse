@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.16](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.15...v1.0.16) (2023-07-09)
+
+
+### Bug Fixes
+
+* **deps:** update rust crate regex to 1.9.1 ([f93b7e9](https://github.com/Rel1cx/sensi-mouse/commit/f93b7e9cd67da5087cdc4200b1ef26a694fbc717))
+* **deps:** update rust crate window-vibrancy to 0.4 ([a109781](https://github.com/Rel1cx/sensi-mouse/commit/a109781fdb129ce05a66c95c7b65f13c9ddaf30c))
+
 ## [1.0.15](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.14...v1.0.15) (2023-07-06)
 
 
