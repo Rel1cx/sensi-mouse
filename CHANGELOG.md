@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.17](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.16...v1.0.17) (2023-07-09)
+
+
+### Bug Fixes
+
+* Remove ipad-cursor ([7c3c4d7](https://github.com/Rel1cx/sensi-mouse/commit/7c3c4d7495b3d02b8d6c97d30005fd3db4c59fd4))
+
 ## [1.0.16](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.15...v1.0.16) (2023-07-09)
 
 
