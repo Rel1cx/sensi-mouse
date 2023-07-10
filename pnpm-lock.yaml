@@ -125,8 +125,8 @@ devDependencies:
     specifier: 3.12.7
     version: 3.12.7
   typesafe-i18n:
-    specifier: 5.24.3
-    version: 5.24.3(typescript@5.1.6)
+    specifier: 5.24.4
+    version: 5.24.4(typescript@5.1.6)
   typescript:
     specifier: latest
     version: 5.1.6
@@ -5847,8 +5847,8 @@ packages:
       is-typed-array: 1.1.10
     dev: true
 
-  /typesafe-i18n@5.24.3(typescript@5.1.6):
-    resolution: {integrity: sha512-VqjGbIydOqtQjO81mGo++TjuqeC8YoxxgYrO1/ikXIS/l/Q6mAcz4yrt5AvqjdFHMt3gRm7oGbVI/yLyV+VTOg==}
+  /typesafe-i18n@5.24.4(typescript@5.1.6):
+    resolution: {integrity: sha512-52x8oo1afNqf1THHB/G+fOtno3bAE/q0WMeGC3bSDcE2NHx7A7mHa6ZfHMahy8JFF39HESMzdQV1JKwcza5MHQ==}
     hasBin: true
     peerDependencies:
       typescript: '>=3.5.1'
