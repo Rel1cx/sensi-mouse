@@ -1,19 +1,21 @@
 import { Text } from "@mantine/core"
 import { getName, getVersion } from "@tauri-apps/api/app"
 import * as React from "react"
-import { useAsync } from "react-use"
+import { suspend } from "suspend-react"
 
 import * as css from "./styles.css"
 
 const About = React.memo(() => {
-    const { value: name = "" } = useAsync(getName)
-    const { value: version = "0.0.0" } = useAsync(getVersion)
+    const name = suspend(getName)
+    const version = suspend(getVersion)
 
     return (
         <div className={css.container}>
             <img alt="logo" height="44px" src="/icon.png" width="auto" />
-            <Text size="12px">{name}</Text>
-            <Text size="10px">Version: {version}</Text>
+            <React.Suspense>
+                <Text size="12px">{name}</Text>
+                <Text size="10px">Version: {version}</Text>
+            </React.Suspense>
             <Text size="10px" align="center">
                 Copyright © 2023 Eva1ent{" | "}
                 <a
