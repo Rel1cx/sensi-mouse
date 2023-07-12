@@ -10,6 +10,7 @@ export const Enum: <T extends string[]>(...args: T) => Readonly<{ [P in UnionFro
                 ...acc,
                 [next]: next,
             }
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         }, Object.create(null)),
     )
 }
