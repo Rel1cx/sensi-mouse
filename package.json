@@ -23,6 +23,7 @@
         "@swan-io/chicane": "1.4.1",
         "@tauri-apps/api": "1.4.0",
         "@total-typescript/ts-reset": "0.4.2",
+        "core-js": "3.31.1",
         "immer": "10.0.2",
         "jotai": "2.2.2",
         "jotai-immer": "0.2.0",

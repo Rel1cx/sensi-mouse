@@ -1,14 +1,14 @@
+import "ress/ress.css"
+import "@/styles/global.scss"
+import "@/styles/overrides.scss"
 import "@total-typescript/ts-reset"
+import "./polyfill"
 
-import { enableMapSet, setAutoFreeze } from "immer"
 import React from "react"
 import { createRoot } from "react-dom/client"
 
 import { loadConfig, loadDefaultConfig } from "./atoms"
 import { Root } from "./root"
-
-enableMapSet()
-setAutoFreeze(true)
 
 const main = async () => {
     await loadConfig().catch(loadDefaultConfig)
