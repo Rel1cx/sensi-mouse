@@ -15,7 +15,6 @@ export const Enum: <T extends string[]>(...args: T) => Readonly<{ [P in UnionFro
     )
 }
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
 export type Enum<T extends object> = T[keyof T]
 
 export const isKeyOfEnum = <T extends object>(enumType: T) => {

@@ -1,5 +1,5 @@
 import { Button as MTButton, type ButtonProps as MTButtonProps } from "@mantine/core"
-import * as React from "react"
+import React from "react"
 
 type ButtonProps = MTButtonProps &
     React.PropsWithChildren & {

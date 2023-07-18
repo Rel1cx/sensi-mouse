@@ -1,6 +1,6 @@
 import { Text } from "@mantine/core"
 import { getName, getVersion } from "@tauri-apps/api/app"
-import * as React from "react"
+import React from "react"
 import { suspend } from "suspend-react"
 
 import * as css from "./styles.css"

@@ -1,6 +1,6 @@
 import { Checkbox, NativeSelect } from "@mantine/core"
 import { useAtom, useSetAtom } from "jotai"
-import * as React from "react"
+import React from "react"
 
 import { launchAtLoginAtom, localeAtom } from "@/atoms"
 import { Title } from "@/components/Title/Title"

@@ -2,7 +2,7 @@ import { Divider, Input, Slider, Switch } from "@mantine/core"
 import { exit } from "@tauri-apps/api/process"
 import { WebviewWindow } from "@tauri-apps/api/window"
 import { useAtom, useSetAtom } from "jotai"
-import * as React from "react"
+import React from "react"
 
 import { accEnabledAtom, loadDefaultConfig, senAtom, setAccEnabledAtom, setSenAtom } from "@/atoms"
 import { Button } from "@/components/Button/Button"
@@ -27,7 +27,7 @@ const handleOpenPreferences = async () => {
         await window.setFocus()
         return
     }
-    // eslint-disable-next-line no-console
+
     console.error("Failed to get preferences window")
 }
 

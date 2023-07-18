@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from "zod"
 
 import { Enum, isKeyOfEnum } from "@/lib/enum"
