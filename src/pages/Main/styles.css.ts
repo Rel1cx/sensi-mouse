@@ -13,15 +13,15 @@ export const title = style({
     margin: "0",
     padding: "0",
     color: "rgb(18, 18, 18)",
-    fontSize: "15px",
     fontWeight: "500",
+    fontSize: "15px",
 })
 
 export const content = style({
-    padding: "0.5rem 0",
     display: "flex",
     flexDirection: "column",
     gap: "0.5rem",
+    padding: "0.5rem 0",
 })
 
 export const xSlider = style({
@@ -29,8 +29,8 @@ export const xSlider = style({
 })
 
 export const xSwitch = style({
-    marginTop: "4px",
     cursor: "pointer",
+    marginTop: "4px",
 })
 
 export const footer = style({
@@ -39,6 +39,6 @@ export const footer = style({
     justifyContent: "flex-end",
     alignItems: "center",
     gap: "0.5rem",
-    fontSize: "12px",
     opacity: "0.95",
+    fontSize: "12px",
 })

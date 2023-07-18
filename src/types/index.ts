@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-redeclare */
 import { z } from "zod"
 
 import { Enum, isKeyOfEnum } from "@/lib/enum"
@@ -18,5 +17,3 @@ export type Config = z.infer<typeof Config>
 export const Theme = Enum("light", "dark")
 
 export type Theme = Enum<typeof Theme>
-
-export const isTheme = isKeyOfEnum(Theme)

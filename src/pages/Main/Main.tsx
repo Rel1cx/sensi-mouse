@@ -2,7 +2,7 @@ import { Divider, Input, Slider, Switch } from "@mantine/core"
 import { exit } from "@tauri-apps/api/process"
 import { WebviewWindow } from "@tauri-apps/api/window"
 import { useAtom, useSetAtom } from "jotai"
-import * as React from "react"
+import React from "react"
 
 import { accEnabledAtom, loadDefaultConfig, senAtom, setAccEnabledAtom, setSenAtom } from "@/atoms"
 import { Button } from "@/components/Button/Button"
@@ -27,7 +27,7 @@ const handleOpenPreferences = async () => {
         await window.setFocus()
         return
     }
-    // eslint-disable-next-line no-console
+
     console.error("Failed to get preferences window")
 }
 
@@ -50,9 +50,9 @@ const Main = React.memo(() => {
                         marks={marks}
                         max={100}
                         min={0}
-                        onChange={setSen}
                         size="lg"
                         value={sen}
+                        onChange={setSen}
                     />
                 </Input.Wrapper>
                 <Input.Wrapper label={T.ACCELERATION()}>
@@ -60,12 +60,12 @@ const Main = React.memo(() => {
                         className={css.xSwitch}
                         checked={accEnabled}
                         offLabel="OFF"
+                        size="md"
                         onChange={async (event) => {
                             const { checked } = event.target
                             await setAccEnabled(checked)
                         }}
                         onLabel="ON"
-                        size="md"
                     />
                 </Input.Wrapper>
             </div>

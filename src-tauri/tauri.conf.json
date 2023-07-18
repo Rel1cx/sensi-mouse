@@ -8,7 +8,7 @@
     },
     "package": {
         "productName": "SensiMouse",
-        "version": "1.0.11"
+        "version": "1.0.17"
     },
     "tauri": {
         "allowlist": {
