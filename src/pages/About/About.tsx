@@ -1,6 +1,6 @@
 import { Text } from "@mantine/core"
 import { getName, getVersion } from "@tauri-apps/api/app"
-import * as React from "react"
+import React from "react"
 import { suspend } from "suspend-react"
 
 import * as css from "./styles.css"
@@ -16,7 +16,7 @@ const About = React.memo(() => {
                 <Text size="12px">{name}</Text>
                 <Text size="10px">Version: {version}</Text>
             </React.Suspense>
-            <Text size="10px" align="center">
+            <Text align="center" size="10px">
                 Copyright © 2023 Eva1ent{" | "}
                 <a
                     className={css.link}

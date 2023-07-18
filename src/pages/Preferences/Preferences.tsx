@@ -1,6 +1,6 @@
 import { Checkbox, NativeSelect } from "@mantine/core"
 import { useAtom, useSetAtom } from "jotai"
-import * as React from "react"
+import React from "react"
 
 import { launchAtLoginAtom, localeAtom } from "@/atoms"
 import { Title } from "@/components/Title/Title"
@@ -46,6 +46,7 @@ const Preferences = React.memo(() => {
             <Title>{T.LANGUAGE()}</Title>
             <NativeSelect
                 data={languages}
+                value={locale}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                     const { value } = event.target
                     if (!value || !isLocale(value)) {
@@ -53,7 +54,6 @@ const Preferences = React.memo(() => {
                     }
                     setLocale(value)
                 }}
-                value={locale}
             />
             <Title>{T.GENERAL()}</Title>
             <Checkbox

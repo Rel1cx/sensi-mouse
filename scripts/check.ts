@@ -1,11 +1,10 @@
 import { $ } from "zx"
 
-await $`pnpm run i18n --no-watch`
+await $`pnpm run i18n`
 
 await Promise.allSettled([
-    $`pnpm rome format .`,
-    $`pnpm rome check .`,
-    $`pnpm tsc --noEmit`,
-    $`pnpm eslint --color src`,
+    $`pnpm run todo`,
+    $`pnpm run typecheck`,
+    $`pnpm eslint --cache --color .`,
     $`dpdm "./**/*.(ts|tsx)"`,
 ])

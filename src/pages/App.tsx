@@ -1,7 +1,6 @@
 import { MantineProvider } from "@mantine/core"
 import { useColorScheme } from "@mantine/hooks"
-import { lazy, Suspense, useMemo } from "react"
-import * as React from "react"
+import React, { lazy, Suspense, useMemo } from "react"
 import { match } from "ts-pattern"
 
 import { Router } from "@/router"
