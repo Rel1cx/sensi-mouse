@@ -1,9 +1,9 @@
 import type { UnionFromTuple } from "./utils"
 
-export const Enum: <T extends string[]>(...args: T) => Readonly<{ [P in UnionFromTuple<T>]: P }> = <T extends string[]>(
-    ...args: T
-) => {
-    type Ret = { [P in UnionFromTuple<typeof args>]: P }
+export type Enum<T extends object> = T[keyof T]
+
+export function Enum<T extends string[]>(...args: T) {
+    type Ret = { [P in UnionFromTuple<T>]: P }
     return Object.freeze(
         args.reduce<Ret>((acc, next) => {
             return {
@@ -15,11 +15,6 @@ export const Enum: <T extends string[]>(...args: T) => Readonly<{ [P in UnionFro
     )
 }
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
-export type Enum<T extends object> = T[keyof T]
-
-export const isKeyOfEnum = <T extends object>(enumType: T) => {
-    return (key: unknown): key is keyof T => {
-        return !!Object.values(enumType).includes(key)
-    }
+export function isKeyOfEnum<T extends object>(e: T, value: unknown): value is Enum<T> {
+    return Object.values(e).includes(value)
 }

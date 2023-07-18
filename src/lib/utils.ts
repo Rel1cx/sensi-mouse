@@ -6,7 +6,6 @@ export type Remap<T> = {
 
 export type UnionFromTuple<T> = T extends (infer U)[] ? U : never
 
-// rome-ignore lint/suspicious/noExplicitAny: <explanation>
 export type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (k: infer I) => void ? I : never
 
 /**

@@ -8,10 +8,10 @@
 
 ## Benefits
 
-- Modify mouse settings globally, regardless of the connected mouse device.
-- No need for accessibility permissions.
-- Does not interfere with or take over the mouse input events.
-- Compatible with other apps that customize mouse scrolling or gestures.
+-   Modify mouse settings globally, regardless of the connected mouse device.
+-   No need for accessibility permissions.
+-   Does not interfere with or take over the mouse input events.
+-   Compatible with other apps that customize mouse scrolling or gestures.
 
 ## Releases
 
@@ -27,12 +27,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Credits
 
-- [tmexclude](https://github.com/PhotonQuantum/tmexclude) - Exclude undesired files (node_modules, target, etc) from your TimeMachine backup.
+-   [tmexclude](https://github.com/PhotonQuantum/tmexclude) - Exclude undesired files (node_modules, target, etc) from your TimeMachine backup.
 
 ## THIRD-PARTY-LICENSE
 
 This project uses code from following third-party projects:
 
-- tmexclude (MIT)
+-   tmexclude (MIT)
 
 Licenses are list in [THIRD-PARTY-LICENSE](THIRD-PARTY-LICENSE)
