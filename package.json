@@ -58,7 +58,7 @@
         "sass": "1.63.6",
         "ts-essentials": "9.3.2",
         "tsx": "3.12.7",
-        "typesafe-i18n": "5.25.0",
+        "typesafe-i18n": "5.25.1",
         "typescript": "5.1.6",
         "vite": "4.4.4",
         "zx": "7.2.3"
