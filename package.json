@@ -52,7 +52,7 @@
         "core-dts": "0.0.3",
         "dpdm": "3.13.1",
         "eslint": "8.45.0",
-        "eslint-config-with-tsconfig": "1.9.10",
+        "eslint-config-with-tsconfig": "1.9.11",
         "leasot": "13.3.0",
         "prettier": "3.0.0",
         "sass": "1.63.6",
