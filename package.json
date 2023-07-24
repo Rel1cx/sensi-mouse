@@ -60,7 +60,7 @@
         "tsx": "3.12.7",
         "typesafe-i18n": "5.25.1",
         "typescript": "5.1.6",
-        "vite": "4.4.6",
+        "vite": "4.4.7",
         "zx": "7.2.3"
     },
     "//": "dedupe packages for pnpm",
