@@ -6,7 +6,7 @@ authors = ["Eva1ent"]
 license = ""
 repository = ""
 edition = "2021"
-rust-version = "1.69.0"
+rust-version = "1.72.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -50,6 +50,6 @@ default = ["custom-protocol"]
 custom-protocol = ["tauri/custom-protocol"]
 
 [profile.release]
+lto = true
 strip = true
 opt-level = "z"
-lto = true

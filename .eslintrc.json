@@ -2,16 +2,14 @@
     "root": true,
     "extends": ["with-tsconfig"],
     "rules": {
-        "semi": ["error", "never"],
         "no-console": [
             "warn",
             {
                 "allow": ["info", "warn", "error"]
             }
         ],
+        "semi": ["error", "never"],
         "sonarjs/no-duplicate-string": "warn",
-        "import/namespace": "off",
-        "import/no-default-export": "off",
         "react/no-unused-prop-types": "off",
         "@typescript-eslint/no-redeclare": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
