@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.17...v1.1.0) (2023-09-15)
+
+
+### Features
+
+* 1.0.18 ([13a826c](https://github.com/Rel1cx/sensi-mouse/commit/13a826cea384430fd1bf9565ffdb2d8488e353c2))
+
 ## [1.0.17](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.16...v1.0.17) (2023-07-09)
 
 ### Bug Fixes
