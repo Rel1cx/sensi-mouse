@@ -1,6 +1,6 @@
 import { StrictMode } from "react"
 
-import { App } from "./pages/App"
+import { App } from "./app"
 
 export function Root() {
     return (

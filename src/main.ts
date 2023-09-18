@@ -1,4 +1,5 @@
 import "ress/ress.css"
+import "@mantine/core/styles.css"
 import "@/styles/global.scss"
 import "@/styles/overrides.scss"
 import "@total-typescript/ts-reset"

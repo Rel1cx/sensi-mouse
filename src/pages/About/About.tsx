@@ -16,7 +16,7 @@ const About = React.memo(() => {
                 <Text size="12px">{name}</Text>
                 <Text size="10px">Version: {version}</Text>
             </React.Suspense>
-            <Text align="center" size="10px">
+            <Text ta="center" size="10px">
                 Copyright © 2023 Eva1ent{" | "}
                 <a
                     className={css.link}

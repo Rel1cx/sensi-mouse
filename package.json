@@ -22,9 +22,9 @@
         "update-version": "tsx ./scripts/update_version.ts"
     },
     "dependencies": {
-        "@mantine/core": "6.0.20",
-        "@mantine/hooks": "6.0.20",
-        "@mantine/utils": "6.0.20",
+        "@mantine/core": "7.0.0",
+        "@mantine/hooks": "7.0.0",
+        "@mantine/utils": "6.0.21",
         "@swan-io/boxed": "1.2.0",
         "@swan-io/chicane": "1.4.1",
         "@tauri-apps/api": "1.4.0",
@@ -47,7 +47,7 @@
     "devDependencies": {
         "@tauri-apps/cli": "1.4.0",
         "@types/node": "20.6.2",
-        "@types/react": "18.2.21",
+        "@types/react": "18.2.22",
         "@types/react-dom": "18.2.7",
         "@types/throttle-debounce": "5.0.0",
         "@vanilla-extract/css": "1.13.0",
@@ -60,7 +60,7 @@
         "leasot": "13.3.0",
         "prettier": "3.0.3",
         "sass": "1.67.0",
-        "skott": "0.28.4",
+        "skott": "0.29.0",
         "ts-essentials": "9.4.0",
         "tsx": "3.12.10",
         "typesafe-i18n": "5.26.2",

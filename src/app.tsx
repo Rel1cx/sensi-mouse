@@ -6,11 +6,11 @@ import { match } from "ts-pattern"
 import { Router } from "@/router"
 import { mantineTheme } from "@/theme/mantine.config"
 
-import * as css from "./App.css"
+import * as css from "./app.css"
 
-const Main = lazy(() => import("./Main/Main"))
-const About = lazy(() => import("./About/About"))
-const Preferences = lazy(() => import("./Preferences/Preferences"))
+const Main = lazy(() => import("./pages/Main/Main"))
+const About = lazy(() => import("./pages/About/About"))
+const Preferences = lazy(() => import("./pages/Preferences/Preferences"))
 
 export const App = React.memo(() => {
     const preferredColorScheme = useColorScheme()
@@ -20,7 +20,7 @@ export const App = React.memo(() => {
     const route = Router.useRoute(["Main", "About", "Preferences"])
 
     return (
-        <MantineProvider theme={theme} withGlobalStyles>
+        <MantineProvider theme={theme}>
             <main className={css.appShellScreen}>
                 <Suspense>
                     {useMemo(

@@ -13,9 +13,8 @@ export const Button = React.memo(({ children, ...rest }: ButtonProps) => {
                 transition: "all 120ms ease-out",
             }}
             gradient={{ deg: 35, from: "#ed6ea0", to: "#ec8c69" }}
-            size="xs"
+            size="compact-xs"
             variant="gradient"
-            compact
             {...rest}
         >
             {children}
