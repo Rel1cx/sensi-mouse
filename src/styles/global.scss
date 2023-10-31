@@ -1,34 +1,37 @@
 html,
 body,
 #root {
-    width: 100%;
-    height: 100%;
-    background: transparent !important;
+                                          width: 100%;
+                                          height: 100%;
+                                          background: transparent !important;
 }
 
 html {
-    width: 100%;
-    height: 100%;
-    color: #53534f;
-    font-size: 16px;
-    font-family: var(--base-font-family);
+                                          width: 100%;
+                                          height: 100%;
+                                          color: #53534f;
+                                          font-size: 16px;
+                                          font-family: var(--base-font-family);
 
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                                          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-    --base-font-family: ui-sans-serif, system-ui, -apple-system, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol", "Noto Color Emoji";
+                                          --base-font-family: ui-sans-serif, system-ui, -apple-system,
+                                                                                    "Apple Color Emoji",
+                                                                                    "Segoe UI Emoji", "Segoe UI Symbol",
+                                                                                    "Noto Color Emoji";
 
-    --mono-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+                                          --mono-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                                                                                    "Liberation Mono", monospace;
 }
 
 *,
 *:before,
 *:after {
-    margin: 0;
-    padding: 0;
-    cursor: default;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    user-drag: none;
+                                          margin: 0;
+                                          padding: 0;
+                                          cursor: default;
+                                          -webkit-user-select: none;
+                                          user-select: none;
+                                          -webkit-user-drag: none;
+                                          user-drag: none;
 }

@@ -1,6 +1,0 @@
-dist
-node_modules
-src/i18n/i18n-*
-src-tauri
-updater
-.eslintcache

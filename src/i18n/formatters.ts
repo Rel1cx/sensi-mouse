@@ -1,12 +1,12 @@
-import { type FormattersInitializer } from "typesafe-i18n"
+import { type FormattersInitializer } from "typesafe-i18n";
 
-import { type Formatters, type Locales } from "./i18n-types.js"
+import { type Formatters, type Locales } from "./i18n-types.js";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const initFormatters: FormattersInitializer<Locales, Formatters> = (locale: Locales) => {
-    const formatters: Formatters = {
-        // add your formatter functions here
-    }
+  const formatters: Formatters = {
+    // add your formatter functions here
+  };
 
-    return formatters
-}
+  return formatters;
+};

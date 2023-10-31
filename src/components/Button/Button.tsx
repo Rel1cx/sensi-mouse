@@ -1,23 +1,29 @@
-import { Button as MTButton, type ButtonProps as MTButtonProps } from "@mantine/core"
-import React from "react"
+import { Button as MTButton, type ButtonProps as MTButtonProps } from "@mantine/core";
+import React from "react";
 
-type ButtonProps = MTButtonProps &
-    React.PropsWithChildren & {
-        onClick?: () => void
-    }
+type ButtonProps =
+  & MTButtonProps
+  & React.PropsWithChildren
+  & {
+    onClick?: () => void;
+  };
 
 export const Button = React.memo(({ children, ...rest }: ButtonProps) => {
-    return (
-        <MTButton
-            style={{
-                transition: "all 120ms ease-out",
-            }}
-            gradient={{ deg: 35, from: "#ed6ea0", to: "#ec8c69" }}
-            size="compact-xs"
-            variant="gradient"
-            {...rest}
-        >
-            {children}
-        </MTButton>
-    )
-})
+  return (
+    <MTButton
+      style={{
+        transition: "all 120ms ease-out",
+      }}
+      gradient={{
+        deg: 35,
+        from: "#ed6ea0",
+        to: "#ec8c69",
+      }}
+      size="compact-xs"
+      variant="gradient"
+      {...rest}
+    >
+      {children}
+    </MTButton>
+  );
+});
