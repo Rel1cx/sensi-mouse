@@ -1,7 +1,7 @@
-import "core-js/features/array/at"
-import "core-js/features/object/has-own"
+import "core-js/features/array/at";
+import "core-js/features/object/has-own";
 
-import { enableMapSet, setAutoFreeze } from "immer"
+import { enableMapSet, setAutoFreeze } from "immer";
 
-enableMapSet()
-setAutoFreeze(true)
+enableMapSet();
+setAutoFreeze(true);
