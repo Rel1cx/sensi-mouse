@@ -8,11 +8,11 @@ import { mantineTheme } from "@/theme/mantine.config";
 
 import * as css from "./app.css";
 
-const Main = lazy(() => import("./pages/Main/Main"));
-const About = lazy(() => import("./pages/About/About"));
-const Preferences = lazy(() => import("./pages/Preferences/Preferences"));
+const Main = lazy(() => import("./pages/main/main"));
+const About = lazy(() => import("./pages/about/about"));
+const Preferences = lazy(() => import("./pages/preferences/preferences"));
 
-export const App = React.memo(() => {
+export const App = React.memo(function App() {
   const preferredColorScheme = useColorScheme();
 
   const theme = useMemo(() => ({ ...mantineTheme, colorScheme: preferredColorScheme }), [preferredColorScheme]);

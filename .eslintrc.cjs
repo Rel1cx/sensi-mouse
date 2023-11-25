@@ -6,7 +6,7 @@ module.exports = defineConfig({
   extends: [
     "with-tsconfig",
     "plugin:react-hooks/recommended",
-    "plugin:@eslint-react/recommended-legacy",
+    "plugin:@eslint-react/all-legacy",
   ],
   rules: {
     "no-console": [
@@ -20,7 +20,6 @@ module.exports = defineConfig({
       },
     ],
     "sonarjs/no-duplicate-string": "warn",
-    "react/no-unused-prop-types": "off",
     "@typescript-eslint/no-redeclare": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "tailwindcss/no-custom-classname": "off",
