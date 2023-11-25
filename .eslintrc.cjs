@@ -32,6 +32,7 @@ module.exports = defineConfig({
       files: [
         "scripts/**/*.ts",
         "./*.config.ts",
+        ".eslintrc.cjs",
       ],
       rules: {
         "@typescript-eslint/no-unsafe-assignment": "off",
