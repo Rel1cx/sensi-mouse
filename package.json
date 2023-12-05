@@ -67,7 +67,7 @@
     "ts-essentials": "9.4.1",
     "typesafe-i18n": "5.26.2",
     "typescript": "5.3.2",
-    "vite": "5.0.2",
+    "vite": "5.0.5",
     "zx": "7.2.3"
   },
   "packageManager": "pnpm@8.10.5",
