@@ -1,5 +1,52 @@
 # Changelog
 
+## [2.0.0](https://github.com/Rel1cx/sensi-mouse/compare/v1.1.0...v2.0.0) (2024-12-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add auto update
+
+### Features
+
+* 1.0.18 ([f663430](https://github.com/Rel1cx/sensi-mouse/commit/f66343025fcb9a2a2c87e8925d438d36ed40e32c))
+* Add "updater" feature to tauri dependency in Cargo.toml ([62313a4](https://github.com/Rel1cx/sensi-mouse/commit/62313a4bd180653411e36ffe45c3dd816a7417e3))
+* Add auto update ([57866a1](https://github.com/Rel1cx/sensi-mouse/commit/57866a10c41554f4991429da62ce336f25e6f28a))
+* add more i18n languages ([3d119ec](https://github.com/Rel1cx/sensi-mouse/commit/3d119ecafbf495b046a8bd5315185bf13ff75019))
+* Add updater initial version with GitHub API integration and update file generation ([17581df](https://github.com/Rel1cx/sensi-mouse/commit/17581df45a28879d1a246d28c7c9d41d37b1eac9))
+
+
+### Bug Fixes
+
+* **deps:** update dependency ftld to v0.58.2 ([2a706b9](https://github.com/Rel1cx/sensi-mouse/commit/2a706b90483a6cf555ae79e1211dacf0c3bbe488))
+* **deps:** update dependency ftld to v0.58.3 ([7e57910](https://github.com/Rel1cx/sensi-mouse/commit/7e57910e2d9a57f246b09699715cd9ee2f444e63))
+* **deps:** update dependency jotai to v2.0.4 ([209f0b0](https://github.com/Rel1cx/sensi-mouse/commit/209f0b0eee6efe72c49e0556c894ccc60f861d7c))
+* **deps:** update dependency jotai to v2.1.1 ([2cd6f98](https://github.com/Rel1cx/sensi-mouse/commit/2cd6f98d7e0939c081bceecae3275d459c7e57c5))
+* **deps:** update dependency jotai to v2.2.2 ([90f64c5](https://github.com/Rel1cx/sensi-mouse/commit/90f64c57278bdac29e0b59f5ee464eba20a7b306))
+* **deps:** update dependency ts-pattern to v4.3.0 ([3881c9f](https://github.com/Rel1cx/sensi-mouse/commit/3881c9f0bedad53823b7d834bd7ff1b9973841cf))
+* **deps:** update rust crate mac-mouse-sys to 0.0.9 ([a0ddf81](https://github.com/Rel1cx/sensi-mouse/commit/a0ddf81f1525f02d0ffe0023885e2a4a2f8be1a1))
+* **deps:** update rust crate regex to 1.8.3 ([04f513c](https://github.com/Rel1cx/sensi-mouse/commit/04f513c93f0af3dd9ec79eb151de8a2c0afdd0ba))
+* **deps:** update rust crate regex to 1.8.4 ([2127722](https://github.com/Rel1cx/sensi-mouse/commit/2127722d3f26d0da984036ce92c73e966a200db1))
+* **deps:** update rust crate regex to 1.9.0 ([a8d93ab](https://github.com/Rel1cx/sensi-mouse/commit/a8d93aba68f20bc80556d9dc134c55ef0d942482))
+* **deps:** update rust crate regex to 1.9.1 ([f93b7e9](https://github.com/Rel1cx/sensi-mouse/commit/f93b7e9cd67da5087cdc4200b1ef26a694fbc717))
+* **deps:** update rust crate tauri to 1.4.1 ([a5c1c43](https://github.com/Rel1cx/sensi-mouse/commit/a5c1c43b89d3286c5a032181876bb0e05b6c94e4))
+* **deps:** update rust crate tokio to 1.28.1 ([16f44c2](https://github.com/Rel1cx/sensi-mouse/commit/16f44c241725d17b832ba74afd8d32d2c1db163f))
+* **deps:** update rust crate tokio to 1.28.2 ([ee0ec5f](https://github.com/Rel1cx/sensi-mouse/commit/ee0ec5f55d89ffdad654cf2434e62883ce63d44f))
+* **deps:** update rust crate window-vibrancy to 0.4 ([a109781](https://github.com/Rel1cx/sensi-mouse/commit/a109781fdb129ce05a66c95c7b65f13c9ddaf30c))
+* fix default theme in drak mode ([ba28728](https://github.com/Rel1cx/sensi-mouse/commit/ba287282fb0dbf8c21202a5dd12999caaf4ab163))
+* fix default theme in drak mode ([8891c9c](https://github.com/Rel1cx/sensi-mouse/commit/8891c9cf552f1c88cfc6f1994e18162997d77a5f))
+* fix default theme in drak mode ([1ce2e10](https://github.com/Rel1cx/sensi-mouse/commit/1ce2e10b9cc5bfa36affe9ef03e410c00c902c22))
+* Fix version not update ([c1f33d7](https://github.com/Rel1cx/sensi-mouse/commit/c1f33d7d65527df2671e174d0d965a868e8b198c))
+* optimize code and simplify multi-window state synchronization. ([567a5ea](https://github.com/Rel1cx/sensi-mouse/commit/567a5ea1cfe0cbcb6af453b1ad4791a877867a7e))
+* refactor configManager to improve synchronization with store ([50aee98](https://github.com/Rel1cx/sensi-mouse/commit/50aee98cfd056aaa264fb9b810d6bc13f57dcf9d))
+* Remove ipad-cursor ([7c3c4d7](https://github.com/Rel1cx/sensi-mouse/commit/7c3c4d7495b3d02b8d6c97d30005fd3db4c59fd4))
+* Save, Restore and Reapply Settings ([c533cf1](https://github.com/Rel1cx/sensi-mouse/commit/c533cf1d2382350fc8dbd452dad049ae43b7a314))
+* settings save and reapply ([3b8d9cb](https://github.com/Rel1cx/sensi-mouse/commit/3b8d9cb4d3ae32d729ec3bcd543174f847ce0fcc))
+* update header text in Main component from "SensiMouse (beta)" to "SensiMouse". ([85f21b5](https://github.com/Rel1cx/sensi-mouse/commit/85f21b58af1b9ae8d69724fab5f12502d19e00d1))
+* update version number and allow opening of raw.githubusercontent.com in Tauri configuration file ([75b1b00](https://github.com/Rel1cx/sensi-mouse/commit/75b1b00c51a156ca7d366c8da056f55f757aca72))
+* Update version number and allow opening of raw.githubusercontent.com in Tauri configuration file ([2fb7019](https://github.com/Rel1cx/sensi-mouse/commit/2fb70196bcc3bb79efce12a7a362078aea9209d7))
+* window not focus after open ([e344b27](https://github.com/Rel1cx/sensi-mouse/commit/e344b2792c4bd497a2bcc55a84b5745090b71a50))
+
 ## [1.1.0](https://github.com/Rel1cx/sensi-mouse/compare/v1.0.17...v1.1.0) (2023-09-29)
 
 ### Features
