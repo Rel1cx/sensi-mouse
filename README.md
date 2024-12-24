@@ -4,7 +4,7 @@
   <img src="./public/icon.png" height="128" />
 </p>
 
-> Easily change macOS system-wide mouse sensitivity and acceleration settings
+> Easily change macOS (Ventura and earlier versions) system-wide mouse sensitivity and acceleration settings
 
 ## Benefits
 
